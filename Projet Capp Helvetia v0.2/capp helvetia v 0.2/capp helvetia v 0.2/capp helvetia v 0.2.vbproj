@@ -116,6 +116,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnexionForm.Designer.vb">
+      <DependentUpon>ConnexionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConnexionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DataAccess.vb" />
     <Compile Include="DetailsPassagerForm.Designer.vb">
       <DependentUpon>DetailsPassagerForm.vb</DependentUpon>
@@ -123,11 +129,10 @@
     <Compile Include="DetailsPassagerForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Accueil.vb">
-      <SubType>Form</SubType>
+    <Compile Include="AccueilForm.Designer.vb">
+      <DependentUpon>AccueilForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="Accueil.Designer.vb">
-      <DependentUpon>Accueil.vb</DependentUpon>
+    <Compile Include="AccueilForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Historique.Designer.vb">
@@ -160,8 +165,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ConnexionForm.resx">
+      <DependentUpon>ConnexionForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DetailsPassagerForm.resx">
       <DependentUpon>DetailsPassagerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccueilForm.resx">
+      <DependentUpon>AccueilForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
