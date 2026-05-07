@@ -1,0 +1,124 @@
+﻿Imports System.Linq
+
+Public Class Accueil
+
+    Private Sub Accueil_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SetupUI()
+    End Sub
+
+    Private Sub SetupUI()
+        ' Eviter d'ajouter plusieurs fois les mêmes contrôles
+        If Me.Controls.ContainsKey("pnlTop") Then Return
+
+        ' Top panel / header
+        Dim pnlTop As New Panel With {
+            .Name = "pnlTop",
+            .Dock = DockStyle.Top,
+            .Height = 80,
+            .BackColor = System.Drawing.Color.FromArgb(30, 144, 255)
+        }
+
+        Dim lblTitle As New Label With {
+            .Text = "Helvetia Heli - Accueil",
+            .ForeColor = System.Drawing.Color.White,
+            .Font = New System.Drawing.Font("Segoe UI", 18, Drawing.FontStyle.Bold),
+            .AutoSize = False,
+            .TextAlign = ContentAlignment.MiddleLeft,
+            .Dock = DockStyle.Left,
+            .Width = 400,
+            .Padding = New Padding(20, 0, 0, 0)
+        }
+        pnlTop.Controls.Add(lblTitle)
+        Me.Controls.Add(pnlTop)
+
+        ' Flow panel pour les boutons de navigation
+        Dim flNav As New FlowLayoutPanel With {
+            .Name = "flNav",
+            .Dock = DockStyle.Top,
+            .Height = 140,
+            .Padding = New Padding(20),
+            .AutoSize = False
+        }
+        Me.Controls.Add(flNav)
+
+        ' Dictionnaire texte visible -> clé logique (utilisée pour chercher les forms)
+        Dim btnMap As New System.Collections.Generic.List(Of System.Tuple(Of String, String)) From {
+            Tuple.Create("Connexion / Inscription", "Connexion"),
+            Tuple.Create("Réserver un vol", "Reservation"),
+            Tuple.Create("Détails des passagers", "DetailsPassagers"),
+            Tuple.Create("Récapitulatif", "Recapitulatif"),
+            Tuple.Create("Historique des trajets", "Historique"),
+            Tuple.Create("Profil", "Profil")
+        }
+
+        For Each pair In btnMap
+            Dim b As New Button With {
+                .Text = pair.Item1,
+                .Width = 220,
+                .Height = 60,
+                .Font = New System.Drawing.Font("Segoe UI", 10),
+                .Tag = pair.Item2,
+                .Margin = New Padding(10)
+            }
+            AddHandler b.Click, AddressOf NavButton_Click
+            flNav.Controls.Add(b)
+        Next
+
+        ' Instruction / info label
+        Dim lblInfo As New Label With {
+            .Text = "Choisissez une action pour continuer.",
+            .Dock = DockStyle.Top,
+            .Height = 30,
+            .TextAlign = ContentAlignment.MiddleLeft,
+            .Padding = New Padding(20, 6, 0, 0)
+        }
+        Me.Controls.Add(lblInfo)
+
+        ' Ajustements mineurs du formulaire
+        Me.StartPosition = FormStartPosition.CenterScreen
+        Me.MinimumSize = New System.Drawing.Size(760, 420)
+    End Sub
+
+    Private Sub NavButton_Click(sender As Object, e As EventArgs)
+        Dim btn = TryCast(sender, Button)
+        If btn Is Nothing Then Return
+        Dim key = TryCast(btn.Tag, String)
+        If String.IsNullOrEmpty(key) Then Return
+
+        If Not ShowFormByPossibleNames(key) Then
+            MessageBox.Show("Formulaire pour '" & key & "' introuvable dans l'assembly.", "Navigation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+    End Sub
+
+    Private Function ShowFormByPossibleNames(key As String) As Boolean
+        ' Mapping logique -> liste de noms de classes possibles (à adapter si vos forms ont d'autres noms)
+        Dim mapping As New System.Collections.Generic.Dictionary(Of String, String()) From {
+            {"Connexion", New String() {"LoginForm", "Connexion", "ConnexionForm", "AuthForm", "InscriptionForm"}},
+            {"Reservation", New String() {"Reservation", "ReservationForm", "BookingForm"}},
+            {"DetailsPassagers", New String() {"DetailsPassagers", "PassagerDetails", "PassengerDetails", "PassagersForm"}},
+            {"Recapitulatif", New String() {"Recapitulatif", "Recap", "RecapForm", "SummaryForm"}},
+            {"Historique", New String() {"Historique", "HistoriqueForm", "HistoryForm"}},
+            {"Profil", New String() {"Profil", "ProfileForm", "UserProfile"}}
+        }
+
+        Dim candidates As String()
+        If Not mapping.TryGetValue(key, candidates) Then candidates = New String() {key}
+
+        Dim asm = System.Reflection.Assembly.GetExecutingAssembly()
+        For Each Name In candidates
+            Dim t = asm.GetTypes().FirstOrDefault(Function(tt) tt.Name.Equals(Name, StringComparison.OrdinalIgnoreCase) AndAlso GetType(Form).IsAssignableFrom(tt))
+            If t IsNot Nothing Then
+                Dim frmObj = Activator.CreateInstance(t)
+                Dim frm = TryCast(frmObj, Form)
+                If frm IsNot Nothing Then
+                    frm.StartPosition = FormStartPosition.CenterParent
+                    frm.Show()
+                    Return True
+                End If
+            End If
+        Next
+
+        Return False
+    End Function
+
+End Class

@@ -1,0 +1,506 @@
+﻿------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------PROJET INSERTION HELVETIA SKYTOURS--------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------Format DATE----------------------------------
+ALTER SESSION SET NLS_DATE_FORMAT= 'DD-MM-YYYY' ;
+------------------------------------------------------------
+--
+--
+--
+--
+--
+--
+--
+--
+------------------------------------------------
+--Script : INSERTION PROJET HELVETIA
+--Objet  : Données des tables 
+--
+--Mise à jour
+--Version    Visa       Date       Commentaires
+--------- --------- ------------  -----------------
+-- 1.1    FR        18.01.2019     
+-------------------------------------------------
+--Suppression des séquences
+
+
+drop sequence SEQ_TRAJ_ID;
+drop sequence SEQ_RES_ID;
+drop sequence SEQ_VIL_ID;
+drop sequence SEQ_CLI_ID;
+drop sequence SEQ_PASS_ID;
+drop sequence SEQ_HELI_ID;
+drop sequence SEQ_PILO_ID;
+drop sequence SEQ_ADRE_ID;
+
+-------------------------------------------------------------------------
+--Création des séquences
+--Pour la table ADRESSE
+create sequence SEQ_ADRE_ID
+  minvalue         1
+  start with       1
+  increment by        1
+  maxvalue        9999
+  nocycle;
+  
+    --Pour la table PILOTE
+create sequence SEQ_PILO_ID
+  minvalue         1
+  start with       1
+  increment by        1
+  maxvalue        99999999
+  nocycle;
+--Pour la table HELICOPTERE
+create sequence SEQ_HELI_ID
+  minvalue         1
+  start with       1
+  increment by        1
+  maxvalue        9999
+  nocycle;
+--Pour la table PASSAGERS
+create sequence SEQ_PASS_ID
+  minvalue         1
+  start with       1
+  increment by        1
+  maxvalue        99999999
+  nocycle;  
+
+  
+--Pour la table CLIENT
+create sequence SEQ_CLI_ID
+  minvalue         1
+  start with       1
+  increment by        1
+  maxvalue        99999999
+  nocycle; 
+  
+--Pour la table ville
+create sequence SEQ_VIL_ID
+  minvalue         1
+  start with       1
+  increment by        1
+  maxvalue        9999
+  nocycle; 
+  
+ 
+--Pour la table reservation
+create sequence SEQ_RES_ID
+  minvalue         1
+  start with       1
+  increment by        1
+  maxvalue        999999
+  nocycle; 
+  
+--Pour la table TRAJET
+create sequence SEQ_TRAJ_ID
+  minvalue         1
+  start with       1
+  increment by        1
+  maxvalue        999999
+  nocycle; 
+
+
+
+  
+ 
+--Début de la transaction 1 : Suppression du contenu des tables
+
+delete from HS_PASSAGERS_TRAJETS;
+delete from HS_TRAJET;
+delete from HS_RESERVATION;
+delete from HS_VILLE;
+delete from HS_CLIENT;
+delete from HS_PASSAGERS;
+delete from HS_HELICOPTERE;
+delete from HS_PILOTE;
+delete from HS_ADRESSE; --19
+
+
+---------------------------------------------------INSERTION-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------
+--table HS_ADRESSE--1
+insert into hs_adresse (adr_id, adr_rue, adr_ville, adr_num, adr_pays)
+values (SEQ_ADRE_ID.nextval, 'Rue du Rhône', 'Genève', '12', 'Suisse');
+
+insert into hs_adresse (adr_id, adr_rue, adr_ville, adr_num, adr_pays)
+values (SEQ_ADRE_ID.nextval, 'Bahnhofstrasse', 'Zurich', '45', 'Suisse');
+
+insert into hs_adresse (adr_id, adr_rue, adr_ville, adr_num, adr_pays)
+values (SEQ_ADRE_ID.nextval, 'Kramgasse', 'Berne', '8', 'Suisse');
+
+insert into hs_adresse (adr_id, adr_rue, adr_ville, adr_num, adr_pays)
+values (SEQ_ADRE_ID.nextval, 'Avenue de la Gare', 'Lausanne', '33', 'Suisse');
+
+insert into hs_adresse (adr_id, adr_rue, adr_ville, adr_num, adr_pays)
+values (SEQ_ADRE_ID.nextval, 'Freie Strasse', 'Bâle', '17', 'Suisse');
+
+insert into hs_adresse (adr_id, adr_rue, adr_ville, adr_num, adr_pays)
+values (SEQ_ADRE_ID.nextval, 'Hirschengraben', 'Lucerne', '6', 'Suisse');
+
+insert into hs_adresse (adr_id, adr_rue, adr_ville, adr_num, adr_pays)
+values (SEQ_ADRE_ID.nextval, 'Rue de Lausanne', 'Sion', '21', 'Suisse');
+
+insert into hs_adresse (adr_id, adr_rue, adr_ville, adr_num, adr_pays)
+values (SEQ_ADRE_ID.nextval, 'Rue de Romont', 'Fribourg', '3', 'Suisse');
+
+insert into hs_adresse (adr_id, adr_rue, adr_ville, adr_num, adr_pays)
+values (SEQ_ADRE_ID.nextval, 'Rue de l''Hotel de Ville', 'Neuchâtel', '9', 'Suisse');
+
+insert into hs_adresse (adr_id, adr_rue, adr_ville, adr_num, adr_pays)
+values (SEQ_ADRE_ID.nextval, 'Via Nassa', 'Lugano', '54', 'Suisse');
+--------------------------------------------------------
+
+
+--------------------------------------------------------
+--table HS_PILOTE--3
+insert into hs_pilote (pilo_id,  pilo_adr_id, pilo_nom, pilo_prenom, pilo_tel, pilo_email)
+values (SEQ_PILO_ID.Nextval ,SEQ_ADRE_ID.currval,  'Durand', 'Marc', '+41.79.111.11.11', 'marc.durand@heliservice.ch');
+
+insert into hs_pilote (pilo_id,  pilo_adr_id,  pilo_nom, pilo_prenom, pilo_tel, pilo_email)
+values (SEQ_PILO_ID.Nextval, SEQ_ADRE_ID.currval-1,  'Fournier', 'Sophie', '+41.78.212.12.12', 'sophie.fournier@heliservice.ch');
+
+insert into hs_pilote (pilo_id,  pilo_adr_id,  pilo_nom, pilo_prenom, pilo_tel, pilo_email)
+values (SEQ_PILO_ID.Nextval,   SEQ_ADRE_ID.currval-1,  'Lambert', 'Pierre', '+41.77.313.13.13', 'pierre.lambert@heliservice.ch');
+
+insert into hs_pilote (pilo_id,  pilo_adr_id,  pilo_nom, pilo_prenom, pilo_tel, pilo_email)
+values (SEQ_PILO_ID.Nextval,  SEQ_ADRE_ID.currval-3,  'Girard', 'Lucie', '+41.70.414.14.14', 'lucie.girard@heliservice.ch');
+
+insert into hs_pilote (pilo_id, pilo_adr_id,  pilo_nom, pilo_prenom, pilo_tel, pilo_email)
+values (SEQ_PILO_ID.Nextval,SEQ_ADRE_ID.currval-4,  'Roux', 'Antoine', '+41.72.515.15.15', 'antoine.roux@heliservice.ch');
+
+insert into hs_pilote (pilo_id,  pilo_adr_id,  pilo_nom, pilo_prenom, pilo_tel, pilo_email)
+values (SEQ_PILO_ID.Nextval,  SEQ_ADRE_ID.currval-5,  'Bonnet', 'Camille', '+41.77.616.16.16', 'camille.bonnet@heliservice.ch');
+
+insert into hs_pilote (pilo_id,  pilo_adr_id,  pilo_nom, pilo_prenom, pilo_tel, pilo_email)
+values (SEQ_PILO_ID.Nextval,SEQ_ADRE_ID.currval-6,  'Blanc', 'Nicolas', '+41.78.717.17.17', 'nicolas.blanc@heliservice.ch');
+
+insert into hs_pilote (pilo_id,  pilo_adr_id,  pilo_nom, pilo_prenom, pilo_tel, pilo_email)
+values (SEQ_PILO_ID.Nextval,  SEQ_ADRE_ID.currval-7,  'Chevalier', 'Laura', '+41.76.818.18.18', 'laura.chevalier@heliservice.ch');
+
+insert into hs_pilote (pilo_id,  pilo_adr_id,  pilo_nom, pilo_prenom, pilo_tel, pilo_email)
+values (SEQ_PILO_ID.Nextval, SEQ_ADRE_ID.currval-8,  'Gauthier', 'Olivier', '+41.78.919.19.19', 'olivier.gauthier@heliservice.ch');
+
+insert into hs_pilote (pilo_id,  pilo_adr_id, pilo_nom, pilo_prenom, pilo_tel, pilo_email)
+values (SEQ_PILO_ID.Nextval,  SEQ_ADRE_ID.currval-9,  'Morin', 'Elise', '+41.75.020.20.20', 'elise.morin@heliservice.ch');
+--------------------------------------------------------
+--------------------------------------------------------
+--table HS_HELICOPTERE--4
+insert into hs_helicoptere (heli_id, heli_plaque, heli_modele, heli_capacitemax, heli_poidsmax)
+values (SEQ_HELI_ID.Nextval, 'HB-ZAA', 'Airbus H125', 6, 1050);
+
+insert into hs_helicoptere (heli_id, heli_plaque, heli_modele, heli_capacitemax, heli_poidsmax)
+values (SEQ_HELI_ID.Nextval, 'HB-ZBB', 'Bell 206', 6, 900);
+
+insert into hs_helicoptere (heli_id, heli_plaque, heli_modele, heli_capacitemax, heli_poidsmax)
+values (SEQ_HELI_ID.Nextval, 'HB-ZCC', 'Robinson R44', 3, 950);
+
+insert into hs_helicoptere (heli_id, heli_plaque, heli_modele, heli_capacitemax, heli_poidsmax)
+values (SEQ_HELI_ID.Nextval, 'HB-ZDD', 'Sikorsky S-76', 12, 2400);
+
+insert into hs_helicoptere (heli_id, heli_plaque, heli_modele, heli_capacitemax, heli_poidsmax)
+values (SEQ_HELI_ID.Nextval, 'HB-ZEE', 'Airbus H135', 7, 1490);
+
+insert into hs_helicoptere (heli_id, heli_plaque, heli_modele, heli_capacitemax, heli_poidsmax)
+values (SEQ_HELI_ID.Nextval, 'HB-ZFF', 'Bell 412', 10, 2700);
+
+insert into hs_helicoptere (heli_id, heli_plaque, heli_modele, heli_capacitemax, heli_poidsmax)
+values (SEQ_HELI_ID.Nextval, 'HB-ZGG', 'Robinson R22', 3, 900);
+
+insert into hs_helicoptere (heli_id, heli_plaque, heli_modele, heli_capacitemax, heli_poidsmax)
+values (SEQ_HELI_ID.Nextval, 'HB-ZHH', 'Leonardo AW109', 7, 1350);
+
+insert into hs_helicoptere (heli_id, heli_plaque, heli_modele, heli_capacitemax, heli_poidsmax)
+values (SEQ_HELI_ID.Nextval, 'HB-ZII', 'Airbus H160', 12, 2500);
+
+insert into hs_helicoptere (heli_id, heli_plaque, heli_modele, heli_capacitemax, heli_poidsmax)
+values (SEQ_HELI_ID.Nextval, 'HB-ZJJ', 'Bell 429', 9, 1200);
+--------------------------------------------------------
+--------------------------------------------------------
+
+--table HS_PASSAGERS--5
+
+insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom )
+values ( SEQ_PASS_ID.NEXTVAL , 175, 72, 8, to_date('11.02.1998','DD.MM.YYYY'), 'Lefebvre', 'Anna');
+
+insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 180, 85, 12, to_date('24.07.1999','DD.MM.YYYY'), 'Rousseau', 'Baptiste');
+
+insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 165, 60, 5, to_date('03.12.2000','DD.MM.YYYY'), 'Vincent', 'Chloé');
+
+insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 190, 95, 15, to_date('19.05.2001','DD.MM.YYYY'), 'Faure', 'Damien');
+
+insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 160, 55, 7, to_date('28.09.2002','DD.MM.YYYY'), 'André', 'Elisa');
+
+insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 172, 78, 10, to_date('07.03.2003','DD.MM.YYYY'), 'Mercier', 'Florian');
+
+insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 168, 65, 6, to_date('15.11.2004','DD.MM.YYYY'), 'Lemaire', 'Gabrielle');
+
+insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 183, 90, 14, to_date('22.06.2005','DD.MM.YYYY'), 'Renard', 'Henri');
+
+insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 158, 52, 4, to_date('30.01.2006','DD.MM.YYYY'), 'Colin', 'Iris');
+
+insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 177, 80, 11, to_date('14.08.2007','DD.MM.YYYY'), 'Pons', 'Jacques');
+--------------------------------------------------------
+--------------------------------------------------------
+--table HS_CLIENT --8
+insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
+values (SEQ_CLI_ID.Nextval , SEQ_ADRE_ID.CURRVAL, DATE '2022-01-15', 1, 'Martin', 'Alice', '+41.77.101.01.01', 'alice.martin@email.ch', 'Qwertz');
+
+insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
+values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-1, DATE '2021-06-20', 1, 'Dupont', 'Bruno', '+41.78.202.02.02', 'bruno.dupont@email.ch', 'Qwertz');
+
+insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
+values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-2, DATE '2023-03-10', 1, 'Bernard', 'Clara', '+41.76.303.03.03', 'clara.bernard@email.ch', 'Qwertz');
+
+insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
+values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-3, DATE '2020-11-05', 0, 'Leroy', 'David', '+41.73.404.04.04', 'david.leroy@email.ch', 'Qwertz');
+
+insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
+values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-4, DATE '2022-08-18', 1, 'Moreau', 'Emma', '+41.71.505.05.05', 'emma.moreau@email.ch', 'Qwertz');
+
+insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
+values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-5, DATE '2021-12-01', 1, 'Simon', 'Fabien', '+41.70.606.06.06', 'fabien.simon@email.ch', 'Qwertz');
+
+insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
+values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-6, DATE '2023-07-22', 0, 'Laurent', 'Gina', '+41.74.707.07.07', 'gina.laurent@email.ch', 'Qwertz');
+
+insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
+values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-7, DATE '2019-04-14', 1, 'Petit', 'Hugo', '+41.78.808.08.08', 'hugo.petit@email.ch', 'Qwertz');
+
+insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
+values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-8, DATE '2024-01-30', 1, 'Garcia', 'Ines', '+41.76.909.09.09', 'ines.garcia@email.ch', 'Qwertz');
+
+insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
+values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-9, DATE '2020-09-09', 1, 'Robert', 'Jules', '+41.73.010.10.10', 'jules.robert@email.ch', 'Qwertz');
+--------------------------------------------------------
+
+
+--------------------------------------------------------
+--table HS_VILLE --9
+insert into hs_ville (vil_id, vil_code, vil_nom)
+values (SEQ_VIL_ID.nextval, 123, 'Genève');
+
+insert into hs_ville (vil_id, vil_code, vil_nom)
+values (SEQ_VIL_ID.nextval, 456, 'Zurich');
+
+insert into hs_ville (vil_id, vil_code, vil_nom)
+values (SEQ_VIL_ID.nextval, 789, 'Berne');
+
+insert into hs_ville (vil_id, vil_code, vil_nom)
+values (SEQ_VIL_ID.nextval, 124, 'Lausanne');
+
+insert into hs_ville (vil_id, vil_code, vil_nom)
+values (SEQ_VIL_ID.nextval, 125, 'Bâle');
+
+insert into hs_ville (vil_id, vil_code, vil_nom)
+values (SEQ_VIL_ID.nextval, 126, 'Lucerne');
+
+insert into hs_ville (vil_id, vil_code, vil_nom)
+values (SEQ_VIL_ID.nextval, 127, 'Sion');
+
+insert into hs_ville (vil_id, vil_code, vil_nom)
+values (SEQ_VIL_ID.nextval, 128, 'Fribourg');
+
+insert into hs_ville (vil_id, vil_code, vil_nom)
+values (SEQ_VIL_ID.nextval, 129, 'Saint-Gale');
+
+insert into hs_ville (vil_id, vil_code, vil_nom)
+values (SEQ_VIL_ID.nextval, 130, 'Lugano');
+--------------------------------------------------------
+
+  
+-------------------------------------------------TABLE RESERVATION-----------------------------------------------------------------------12
+-- 1 – Alice Martin (Genève → Zurich)
+insert into hs_reservation
+  (res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+values
+  (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-9, SEQ_VIL_ID.currval-8, SEQ_CLI_ID.currval,to_date('05.01.2023 09:00:00','DD.MM.YYYY HH24:MI:SS'), 60, 50, 'confirmer', 2);
+
+-- 2 – Bruno Dupont (Berne → Lausanne)
+insert into hs_reservation
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+values
+  (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-7, SEQ_VIL_ID.currval-6, SEQ_CLI_ID.currval, to_date('08.01.2023 14:30:00','DD.MM.YYYY HH24:MI:SS'), 90, 80, 'confirmer', 3);
+
+-- 3 – Clara Bernard (Bâle → Lucerne)
+insert into hs_reservation
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+values
+  (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-5, SEQ_VIL_ID.currval-4, SEQ_CLI_ID.currval, to_date('12.01.2023 11:00:00','DD.MM.YYYY HH24:MI:SS'), 120, 100, 'en_attente', 4);
+
+-- 4 – David Leroy (Sion → Fribourg)
+insert into hs_reservation
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+values
+  (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-3, SEQ_VIL_ID.currval-2, SEQ_CLI_ID.currval, to_date('15.01.2023 16:00:00','DD.MM.YYYY HH24:MI:SS'), 45, 30, 'confirmer', 1);
+
+-- 5 – Emma Moreau (Saint-Galle → Lugano)
+insert into hs_reservation
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+values
+  (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-1, SEQ_VIL_ID.currval, SEQ_CLI_ID.currval, to_date('18.01.2023 10:15:00','DD.MM.YYYY HH24:MI:SS'), 75, 60, 'annuler', 2);
+
+-- 6 – Fabien Simon (Genève → Berne)
+insert into hs_reservation
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+values
+  (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-9, SEQ_VIL_ID.currval-7, SEQ_CLI_ID.currval, to_date('20.01.2023 13:45:00','DD.MM.YYYY HH24:MI:SS'), 100, 120, 'confirmer', 5);
+
+-- 7 – Gina Laurent (Zurich → Lausanne)
+insert into hs_reservation
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+values
+  (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-8, SEQ_VIL_ID.currval-6, SEQ_CLI_ID.currval, to_date('22.01.2023 08:30:00','DD.MM.YYYY HH24:MI:SS'), 55, 40, 'confirmer', 2);
+
+-- 8 – Hugo Petit (Bâle → Lucerne)
+insert into hs_reservation
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+values
+  (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-5, SEQ_VIL_ID.currval-4, SEQ_CLI_ID.currval, to_date('25.01.2023 17:20:00','DD.MM.YYYY HH24:MI:SS'), 85, 90, 'confirmer', 3);
+
+-- 9 – Ines Garcia (Sion → Fribourg)
+insert into hs_reservation
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+values
+  (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-3, SEQ_VIL_ID.currval-2, SEQ_CLI_ID.currval, to_date('28.01.2023 12:10:00','DD.MM.YYYY HH24:MI:SS'), 110, 150, 'en_attente', 4);
+
+-- 10 – Jules Robert (Saint-Galle → Lugano)
+insert into hs_reservation
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+values
+  (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-1, SEQ_VIL_ID.currval, SEQ_CLI_ID.currval, to_date('30.01.2023 15:40:00','DD.MM.YYYY HH24:MI:SS'),70, 70, 'confirmer', 2);
+
+-------------------------------------------------TABLE TRAJET----------------------------------------------------------------------------
+-- 1 Airbus H125 (capacité 6)
+insert into hs_trajet
+(traj_id, vil_id_depart, res_trajet_id, heli_trajet_id, vil_id_arriver, traj_date_effectif, traj_dureeestime, traj_dateprevue, traj_facture_montant, traj_passagers_presents, traj_poids_total)
+values
+(SEQ_TRAJ_ID.nextval, SEQ_VIL_ID.currval-9, SEQ_RES_ID.currval-9, SEQ_HELI_ID.currval-9, SEQ_VIL_ID.currval-8,
+to_date('06.01.2023 09:00:00','DD.MM.YYYY HH24:MI:SS'),60,to_date('06.01.2023 09:00:00','DD.MM.YYYY HH24:MI:SS'),600,2,160);
+
+-- 2 Bell 206 (capacité 6)
+insert into hs_trajet
+(traj_id, vil_id_depart, res_trajet_id, heli_trajet_id, vil_id_arriver, traj_date_effectif, traj_dureeestime, traj_dateprevue, traj_facture_montant, traj_passagers_presents, traj_poids_total)
+values
+(SEQ_TRAJ_ID.nextval, SEQ_VIL_ID.currval-8, SEQ_RES_ID.currval-8, SEQ_HELI_ID.currval-8, SEQ_VIL_ID.currval-7,
+to_date('08.01.2023 14:30:00','DD.MM.YYYY HH24:MI:SS'),90,to_date('08.01.2023 14:30:00','DD.MM.YYYY HH24:MI:SS'),800,3,240);
+
+-- 3 Robinson R44 (capacité 3)
+insert into hs_trajet
+(traj_id, vil_id_depart, res_trajet_id, heli_trajet_id, vil_id_arriver, traj_date_effectif, traj_dureeestime, traj_dateprevue, traj_facture_montant, traj_passagers_presents, traj_poids_total)
+values
+(SEQ_TRAJ_ID.nextval, SEQ_VIL_ID.currval-7, SEQ_RES_ID.currval-7, SEQ_HELI_ID.currval-7, SEQ_VIL_ID.currval-6,
+to_date('12.01.2023 11:00:00','DD.MM.YYYY HH24:MI:SS'),75,to_date('12.01.2023 11:00:00','DD.MM.YYYY HH24:MI:SS'),500,2,160);
+
+-- 4 Sikorsky S-76 (capacité 12)
+insert into hs_trajet
+(traj_id, vil_id_depart, res_trajet_id, heli_trajet_id, vil_id_arriver, traj_date_effectif, traj_dureeestime, traj_dateprevue, traj_facture_montant, traj_passagers_presents, traj_poids_total)
+values
+(SEQ_TRAJ_ID.nextval, SEQ_VIL_ID.currval-6, SEQ_RES_ID.currval-6, SEQ_HELI_ID.currval-6, SEQ_VIL_ID.currval-5,
+to_date('15.01.2023 16:00:00','DD.MM.YYYY HH24:MI:SS'),45,to_date('15.01.2023 16:00:00','DD.MM.YYYY HH24:MI:SS'),900,6,480);
+
+-- 5 Airbus H135 (capacité 7)
+insert into hs_trajet
+(traj_id, vil_id_depart, res_trajet_id, heli_trajet_id, vil_id_arriver, traj_date_effectif, traj_dureeestime, traj_dateprevue, traj_facture_montant, traj_passagers_presents, traj_poids_total)
+values
+(SEQ_TRAJ_ID.nextval, SEQ_VIL_ID.currval-5, SEQ_RES_ID.currval-5, SEQ_HELI_ID.currval-5, SEQ_VIL_ID.currval-4,
+to_date('18.01.2023 10:15:00','DD.MM.YYYY HH24:MI:SS'),70,to_date('18.01.2023 10:15:00','DD.MM.YYYY HH24:MI:SS'),750,4,320);
+
+-- 6 Bell 412 (capacité 10)
+insert into hs_trajet
+(traj_id, vil_id_depart, res_trajet_id, heli_trajet_id, vil_id_arriver, traj_date_effectif, traj_dureeestime, traj_dateprevue, traj_facture_montant, traj_passagers_presents, traj_poids_total)
+values
+(SEQ_TRAJ_ID.nextval, SEQ_VIL_ID.currval-4, SEQ_RES_ID.currval-4, SEQ_HELI_ID.currval-4, SEQ_VIL_ID.currval-3,
+to_date('20.01.2023 13:45:00','DD.MM.YYYY HH24:MI:SS'),100,to_date('20.01.2023 13:45:00','DD.MM.YYYY HH24:MI:SS'),1200,8,640);
+
+-- 7 Robinson R22 (capacité 3)
+insert into hs_trajet
+(traj_id, vil_id_depart, res_trajet_id, heli_trajet_id, vil_id_arriver, traj_date_effectif, traj_dureeestime, traj_dateprevue, traj_facture_montant, traj_passagers_presents, traj_poids_total)
+values
+(SEQ_TRAJ_ID.nextval, SEQ_VIL_ID.currval-3, SEQ_RES_ID.currval-3, SEQ_HELI_ID.currval-3, SEQ_VIL_ID.currval-2,
+to_date('22.01.2023 08:30:00','DD.MM.YYYY HH24:MI:SS'),55,to_date('22.01.2023 08:30:00','DD.MM.YYYY HH24:MI:SS'),450,2,150);
+
+-- 8 Leonardo AW109 (capacité 7)
+insert into hs_trajet
+(traj_id, vil_id_depart, res_trajet_id, heli_trajet_id, vil_id_arriver, traj_date_effectif, traj_dureeestime, traj_dateprevue, traj_facture_montant, traj_passagers_presents, traj_poids_total)
+values
+(SEQ_TRAJ_ID.nextval, SEQ_VIL_ID.currval-2, SEQ_RES_ID.currval-2, SEQ_HELI_ID.currval-2, SEQ_VIL_ID.currval-1,
+to_date('25.01.2023 17:20:00','DD.MM.YYYY HH24:MI:SS'),85,to_date('25.01.2023 17:20:00','DD.MM.YYYY HH24:MI:SS'),900,5,400);
+
+-- 9 Airbus H160 (capacité 12)
+insert into hs_trajet
+(traj_id, vil_id_depart, res_trajet_id, heli_trajet_id, vil_id_arriver, traj_date_effectif, traj_dureeestime, traj_dateprevue, traj_facture_montant, traj_passagers_presents, traj_poids_total)
+values
+(SEQ_TRAJ_ID.nextval, SEQ_VIL_ID.currval-1, SEQ_RES_ID.currval-1, SEQ_HELI_ID.currval-1, SEQ_VIL_ID.currval,
+to_date('28.01.2023 12:10:00','DD.MM.YYYY HH24:MI:SS'),110,to_date('28.01.2023 12:10:00','DD.MM.YYYY HH24:MI:SS'),1500,9,720);
+
+-- 10 Bell 429 (capacité 9)
+insert into hs_trajet
+(traj_id, vil_id_depart, res_trajet_id, heli_trajet_id, vil_id_arriver, traj_date_effectif, traj_dureeestime, traj_dateprevue, traj_facture_montant, traj_passagers_presents, traj_poids_total)
+values
+(SEQ_TRAJ_ID.nextval, SEQ_VIL_ID.currval-9, SEQ_RES_ID.currval, SEQ_HELI_ID.currval, SEQ_VIL_ID.currval-4,
+to_date('30.01.2023 15:40:00','DD.MM.YYYY HH24:MI:SS'),70,to_date('30.01.2023 15:40:00','DD.MM.YYYY HH24:MI:SS'),950,6,480);
+
+-------------------------------------------------TABLE PASSAGERS_TRAJET------------------------------------------------------------------
+insert into hs_passagers_trajets
+(pass_id, traj_id, poidsbagages, poidspassagers)
+values
+(SEQ_PASS_ID.currval-9, SEQ_TRAJ_ID.currval-9, 8, 72);
+
+insert into hs_passagers_trajets
+(pass_id, traj_id, poidsbagages, poidspassagers)
+values
+(SEQ_PASS_ID.currval-8, SEQ_TRAJ_ID.currval-8, 12, 85);
+
+insert into hs_passagers_trajets
+(pass_id, traj_id, poidsbagages, poidspassagers)
+values
+(SEQ_PASS_ID.currval-7, SEQ_TRAJ_ID.currval-7, 5, 60);
+
+insert into hs_passagers_trajets
+(pass_id, traj_id, poidsbagages, poidspassagers)
+values
+(SEQ_PASS_ID.currval-6, SEQ_TRAJ_ID.currval-6, 15, 95);
+
+insert into hs_passagers_trajets
+(pass_id, traj_id, poidsbagages, poidspassagers)
+values
+(SEQ_PASS_ID.currval-5, SEQ_TRAJ_ID.currval-5, 7, 55);
+
+insert into hs_passagers_trajets
+(pass_id, traj_id, poidsbagages, poidspassagers)
+values
+(SEQ_PASS_ID.currval-4, SEQ_TRAJ_ID.currval-4, 10, 78);
+
+insert into hs_passagers_trajets
+(pass_id, traj_id, poidsbagages, poidspassagers)
+values
+(SEQ_PASS_ID.currval-3, SEQ_TRAJ_ID.currval-3, 6, 65);
+
+insert into hs_passagers_trajets
+(pass_id, traj_id, poidsbagages, poidspassagers)
+values
+(SEQ_PASS_ID.currval-2, SEQ_TRAJ_ID.currval-2, 14, 90);
+
+insert into hs_passagers_trajets
+(pass_id, traj_id, poidsbagages, poidspassagers)
+values
+(SEQ_PASS_ID.currval-1, SEQ_TRAJ_ID.currval-1, 4, 52);
+
+insert into hs_passagers_trajets
+(pass_id, traj_id, poidsbagages, poidspassagers)
+values
+(SEQ_PASS_ID.currval, SEQ_TRAJ_ID.currval, 11, 80);
+ 
+commit;

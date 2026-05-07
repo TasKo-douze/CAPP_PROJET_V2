@@ -1,0 +1,153 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|c:\\users\\koncs\\desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\detailspassagerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\detailspassagerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|c:\\users\\koncs\\desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\recapitulatifform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\recapitulatifform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|c:\\users\\koncs\\desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\detailspassagerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\detailspassagerform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|capp helvetia v 0.2||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|c:\\users\\koncs\\desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\recapitulatifform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\recapitulatifform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|c:\\users\\koncs\\desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\historique.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\historique.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|c:\\users\\koncs\\desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\accueil.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\accueil.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|c:\\users\\koncs\\desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\accueil.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\accueil.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|c:\\users\\koncs\\desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|8998e48e-b89a-4034-b66e-353d8c1fdc2e"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "capp helvetia v 0.2",
+              "DocumentMoniker": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\capp helvetia v 0.2.vbproj",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\capp helvetia v 0.2.vbproj",
+              "ToolTip": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\capp helvetia v 0.2.vbproj",
+              "RelativeToolTip": "capp helvetia v 0.2\\capp helvetia v 0.2.vbproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-27T20:57:46.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Accueil.vb",
+              "DocumentMoniker": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\Accueil.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\Accueil.vb",
+              "ToolTip": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\Accueil.vb",
+              "RelativeToolTip": "capp helvetia v 0.2\\Accueil.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-27T20:14:30.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Accueil.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\Accueil.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\Accueil.vb",
+              "ToolTip": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\Accueil.vb [Design]",
+              "RelativeToolTip": "capp helvetia v 0.2\\Accueil.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-27T19:52:55.822Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RecapitulatifForm.vb",
+              "DocumentMoniker": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\RecapitulatifForm.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\RecapitulatifForm.vb",
+              "ToolTip": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\RecapitulatifForm.vb",
+              "RelativeToolTip": "capp helvetia v 0.2\\RecapitulatifForm.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-27T19:57:09.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RecapitulatifForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\RecapitulatifForm.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\RecapitulatifForm.vb",
+              "ToolTip": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\RecapitulatifForm.vb [Design]",
+              "RelativeToolTip": "capp helvetia v 0.2\\RecapitulatifForm.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-27T19:55:19.209Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DetailsPassagerForm.vb",
+              "DocumentMoniker": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\DetailsPassagerForm.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\DetailsPassagerForm.vb",
+              "ToolTip": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\DetailsPassagerForm.vb",
+              "RelativeToolTip": "capp helvetia v 0.2\\DetailsPassagerForm.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-27T21:10:10.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DetailsPassagerForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\DetailsPassagerForm.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\DetailsPassagerForm.vb",
+              "ToolTip": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\DetailsPassagerForm.vb [Design]",
+              "RelativeToolTip": "capp helvetia v 0.2\\DetailsPassagerForm.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-27T19:55:00.259Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Historique.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\Historique.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\Historique.vb",
+              "ToolTip": "C:\\Users\\Koncs\\Desktop\\capp helvetia v 0.2\\capp helvetia v 0.2\\Historique.vb [Design]",
+              "RelativeToolTip": "capp helvetia v 0.2\\Historique.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-04-27T19:53:53.719Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

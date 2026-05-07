@@ -1,0 +1,223 @@
+﻿Imports System.Drawing
+Imports System.Globalization
+
+Public Class DetailsPassagerForm
+
+    ' Nombre de passagers à afficher. Appeler InitializePassengers avant d'afficher si possible.
+    Private _passengerCount As Integer = 2
+
+    ' Profil de l'utilisateur connecté (premier passager). Remplir depuis votre logique d'authentification.
+    Public Property CurrentUserProfile As PassengerInfo = Nothing
+
+    ' Résultat après validation
+    Public Property CollectedPassengers As New System.Collections.Generic.List(Of PassengerInfo)
+
+    Private pnlContainer As FlowLayoutPanel
+
+    Private btnBack As Button
+    Private btnNext As Button
+
+    Private Structure FieldControls
+        Public txtNom As TextBox
+        Public txtPrenom As TextBox
+        Public dtpDob As DateTimePicker
+        Public nudTaille As NumericUpDown
+        Public nudPoids As NumericUpDown
+        Public nudBagage As NumericUpDown
+    End Structure
+
+    Private passengerControls As New System.Collections.Generic.Dictionary(Of Integer, FieldControls)
+
+    Public Class PassengerInfo
+        Public Property Nom As String
+        Public Property Prenom As String
+        Public Property DateNaissance As DateTime
+        Public Property TailleCm As Decimal
+        Public Property PoidsKg As Decimal
+        Public Property BagageKg As Decimal
+    End Class
+
+    Private Sub DetailsPassagerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        SetupUI()
+        ' Si _passengerCount a été défini avant le chargement, on initialise
+        If _passengerCount > 0 Then
+            RenderPassengerPanels(_passengerCount)
+        End If
+    End Sub
+
+    Private Sub SetupUI()
+        Me.Text = "Détails des passagers"
+        Me.StartPosition = FormStartPosition.CenterParent
+        Me.MinimumSize = New Size(700, 480)
+
+        Dim lblTitle As New Label With {
+            .Text = "Détails des passagers",
+            .Font = New Font("Segoe UI", 16, FontStyle.Bold),
+            .AutoSize = False,
+            .Height = 40,
+            .Dock = DockStyle.Top,
+            .TextAlign = ContentAlignment.MiddleLeft,
+            .Padding = New Padding(12, 0, 0, 0)
+        }
+        Me.Controls.Add(lblTitle)
+
+        pnlContainer = New FlowLayoutPanel With {
+            .Dock = DockStyle.Fill,
+            .AutoScroll = True,
+            .FlowDirection = FlowDirection.TopDown,
+            .WrapContents = False,
+            .Padding = New Padding(12)
+        }
+        Me.Controls.Add(pnlContainer)
+
+        Dim pnlButtons As New Panel With {
+            .Dock = DockStyle.Bottom,
+            .Height = 60
+        }
+        btnBack = New Button With {
+            .Text = "Retour",
+            .Width = 100,
+            .Height = 34,
+            .Left = 12,
+            .Top = 12
+        }
+        AddHandler btnBack.Click, AddressOf BtnBack_Click
+        pnlButtons.Controls.Add(btnBack)
+
+        btnNext = New Button With {
+            .Text = "Suivant",
+            .Width = 120,
+            .Height = 34,
+            .Anchor = AnchorStyles.Right Or AnchorStyles.Top
+        }
+        btnNext.Left = Me.ClientSize.Width - btnNext.Width - 20
+        btnNext.Top = 12
+        AddHandler btnNext.Click, AddressOf BtnNext_Click
+        pnlButtons.Controls.Add(btnNext)
+
+        ' Repositionnement lorsque la taille change
+        AddHandler Me.Resize, Sub(s, ev)
+                                  btnNext.Left = Math.Max(12, Me.ClientSize.Width - btnNext.Width - 20)
+                              End Sub
+
+        Me.Controls.Add(pnlButtons)
+    End Sub
+
+    ' Appeler cette méthode pour indiquer combien de passagers doivent être renseignés
+    Public Sub InitializePassengers(count As Integer)
+        If count < 1 Then count = 1
+        _passengerCount = count
+        If Me.IsHandleCreated Then
+            RenderPassengerPanels(count)
+        End If
+    End Sub
+
+    Private Sub RenderPassengerPanels(count As Integer)
+        pnlContainer.Controls.Clear()
+        passengerControls.Clear()
+
+        For i As Integer = 1 To count
+            Dim pnl As New Panel With {
+                .Width = Math.Max(640, Me.ClientSize.Width - 60),
+                .Height = 150,
+                .BorderStyle = BorderStyle.FixedSingle,
+                .Padding = New Padding(8),
+                .Margin = New Padding(6)
+            }
+
+            Dim lblHeader As New Label With {
+                .Text = "Passager " & i.ToString() & If(i = 1, " (profil connecté)", ""),
+                .Font = New Font("Segoe UI", 10, FontStyle.Bold),
+                .AutoSize = False,
+                .Height = 22,
+                .Dock = DockStyle.Top
+            }
+            pnl.Controls.Add(lblHeader)
+
+            ' Layout simple à deux colonnes
+            Dim lblNom As New Label With {.Text = "Nom:", .Left = 8, .Top = 34, .AutoSize = True}
+            Dim txtNom As New TextBox With {.Left = 120, .Top = 30, .Width = 220}
+
+            Dim lblPrenom As New Label With {.Text = "Prénom:", .Left = 360, .Top = 34, .AutoSize = True}
+            Dim txtPrenom As New TextBox With {.Left = 440, .Top = 30, .Width = 180}
+
+            Dim lblDob As New Label With {.Text = "Date de naissance:", .Left = 8, .Top = 68, .AutoSize = True}
+            Dim dtpDob As New DateTimePicker With {.Left = 120, .Top = 64, .Width = 220, .Format = DateTimePickerFormat.Short}
+
+            Dim lblTaille As New Label With {.Text = "Taille (cm):", .Left = 360, .Top = 68, .AutoSize = True}
+            Dim nudTaille As New NumericUpDown With {.Left = 440, .Top = 64, .Width = 80, .Minimum = 50, .Maximum = 250, .Value = 170}
+
+            Dim lblPoids As New Label With {.Text = "Poids (kg):", .Left = 8, .Top = 100, .AutoSize = True}
+            Dim nudPoids As New NumericUpDown With {.Left = 120, .Top = 96, .Width = 80, .Minimum = 20, .Maximum = 250, .DecimalPlaces = 1, .Value = 70}
+
+            Dim lblBagage As New Label With {.Text = "Poids bagage (kg):", .Left = 220, .Top = 100, .AutoSize = True}
+            Dim nudBagage As New NumericUpDown With {.Left = 340, .Top = 96, .Width = 80, .Minimum = 0, .Maximum = 200, .DecimalPlaces = 1, .Value = 0}
+
+            pnl.Controls.AddRange(New Control() {lblNom, txtNom, lblPrenom, txtPrenom, lblDob, dtpDob, lblTaille, nudTaille, lblPoids, nudPoids, lblBagage, nudBagage})
+
+            ' Si premier passager, afficher les données du profil (en lecture seule)
+            If i = 1 AndAlso CurrentUserProfile IsNot Nothing Then
+                txtNom.Text = CurrentUserProfile.Nom
+                txtPrenom.Text = CurrentUserProfile.Prenom
+                dtpDob.Value = CurrentUserProfile.DateNaissance
+                nudTaille.Value = Math.Min(nudTaille.Maximum, Math.Max(nudTaille.Minimum, CurrentUserProfile.TailleCm))
+                nudPoids.Value = Math.Min(nudPoids.Maximum, Math.Max(nudPoids.Minimum, CurrentUserProfile.PoidsKg))
+                nudBagage.Value = Math.Min(nudBagage.Maximum, Math.Max(nudBagage.Minimum, CurrentUserProfile.BagageKg))
+
+                ' Rendre les champs du premier passager en lecture seule
+                txtNom.ReadOnly = True
+                txtPrenom.ReadOnly = True
+                dtpDob.Enabled = False
+                nudTaille.Enabled = False
+                nudPoids.Enabled = False
+                nudBagage.Enabled = False
+            End If
+
+            ' Sauvegarder les contrôles pour extraction future
+            Dim fc As FieldControls
+            fc.txtNom = txtNom
+            fc.txtPrenom = txtPrenom
+            fc.dtpDob = dtpDob
+            fc.nudTaille = nudTaille
+            fc.nudPoids = nudPoids
+            fc.nudBagage = nudBagage
+            passengerControls(i) = fc
+
+            pnlContainer.Controls.Add(pnl)
+        Next
+    End Sub
+
+    Private Sub BtnBack_Click(sender As Object, e As EventArgs)
+        Me.Close()
+    End Sub
+
+    Private Sub BtnNext_Click(sender As Object, e As EventArgs)
+        ' Valider et collecter les données
+        CollectedPassengers.Clear()
+        For i As Integer = 1 To _passengerCount
+            Dim fc As FieldControls = passengerControls(i)
+            Dim nom = fc.txtNom.Text.Trim()
+            Dim prenom = fc.txtPrenom.Text.Trim()
+            If String.IsNullOrEmpty(nom) Or String.IsNullOrEmpty(prenom) Then
+                MessageBox.Show("Veuillez renseigner le nom et le prénom pour le passager " & i & ".", "Données manquantes", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Return
+            End If
+
+            Dim info As New PassengerInfo With {
+                .Nom = nom,
+                .Prenom = prenom,
+                .DateNaissance = fc.dtpDob.Value,
+                .TailleCm = fc.nudTaille.Value,
+                .PoidsKg = fc.nudPoids.Value,
+                .BagageKg = fc.nudBagage.Value
+            }
+            CollectedPassengers.Add(info)
+        Next
+
+        ' Ici vous pouvez transmettre CollectedPassengers à la logique de réservation
+        MessageBox.Show("Informations des passagers enregistrées.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Me.DialogResult = DialogResult.OK
+        Me.Close()
+    End Sub
+
+End Class
