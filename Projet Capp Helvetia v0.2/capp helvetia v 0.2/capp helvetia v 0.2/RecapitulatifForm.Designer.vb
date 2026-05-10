@@ -22,12 +22,13 @@ Partial Class RecapitulatifForm
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.pnlRecapitulatif = New System.Windows.Forms.Panel()
         Me.grbRecap = New System.Windows.Forms.GroupBox()
+        Me.btnRetour = New System.Windows.Forms.Button()
         Me.btnReserver = New System.Windows.Forms.Button()
         Me.lblPrix = New System.Windows.Forms.Label()
         Me.grbContact = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtTelephone = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtTaille = New System.Windows.Forms.TextBox()
         Me.txtPoids = New System.Windows.Forms.TextBox()
@@ -56,24 +57,26 @@ Partial Class RecapitulatifForm
         Me.lblArriver = New System.Windows.Forms.Label()
         Me.lblDepart = New System.Windows.Forms.Label()
         Me.lblVille = New System.Windows.Forms.Label()
-        Me.Panel1.SuspendLayout()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.pnlRecapitulatif.SuspendLayout()
         Me.grbRecap.SuspendLayout()
         Me.grbContact.SuspendLayout()
         Me.grbVol.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
+        'pnlRecapitulatif
         '
-        Me.Panel1.AutoScroll = True
-        Me.Panel1.Controls.Add(Me.grbRecap)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 450)
-        Me.Panel1.TabIndex = 0
+        Me.pnlRecapitulatif.AutoScroll = True
+        Me.pnlRecapitulatif.Controls.Add(Me.grbRecap)
+        Me.pnlRecapitulatif.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlRecapitulatif.Location = New System.Drawing.Point(0, 0)
+        Me.pnlRecapitulatif.Name = "pnlRecapitulatif"
+        Me.pnlRecapitulatif.Size = New System.Drawing.Size(800, 450)
+        Me.pnlRecapitulatif.TabIndex = 0
         '
         'grbRecap
         '
+        Me.grbRecap.Controls.Add(Me.btnRetour)
         Me.grbRecap.Controls.Add(Me.btnReserver)
         Me.grbRecap.Controls.Add(Me.lblPrix)
         Me.grbRecap.Controls.Add(Me.grbContact)
@@ -90,6 +93,16 @@ Partial Class RecapitulatifForm
         Me.grbRecap.TabIndex = 0
         Me.grbRecap.TabStop = False
         Me.grbRecap.Text = "Récapitulatif"
+        '
+        'btnRetour
+        '
+        Me.btnRetour.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRetour.Location = New System.Drawing.Point(565, 813)
+        Me.btnRetour.Name = "btnRetour"
+        Me.btnRetour.Size = New System.Drawing.Size(65, 26)
+        Me.btnRetour.TabIndex = 7
+        Me.btnRetour.Text = "Retour"
+        Me.btnRetour.UseVisualStyleBackColor = True
         '
         'btnReserver
         '
@@ -114,7 +127,7 @@ Partial Class RecapitulatifForm
         'grbContact
         '
         Me.grbContact.BackColor = System.Drawing.Color.Transparent
-        Me.grbContact.Controls.Add(Me.TextBox1)
+        Me.grbContact.Controls.Add(Me.txtTelephone)
         Me.grbContact.Controls.Add(Me.Label1)
         Me.grbContact.Controls.Add(Me.txtTaille)
         Me.grbContact.Controls.Add(Me.txtPoids)
@@ -133,14 +146,14 @@ Partial Class RecapitulatifForm
         Me.grbContact.TabStop = False
         Me.grbContact.Text = "Votre contact"
         '
-        'TextBox1
+        'txtTelephone
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.TextBox1.Location = New System.Drawing.Point(152, 225)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(312, 20)
-        Me.TextBox1.TabIndex = 13
+        Me.txtTelephone.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtTelephone.Location = New System.Drawing.Point(152, 225)
+        Me.txtTelephone.Name = "txtTelephone"
+        Me.txtTelephone.ReadOnly = True
+        Me.txtTelephone.Size = New System.Drawing.Size(312, 20)
+        Me.txtTelephone.TabIndex = 13
         '
         'Label1
         '
@@ -290,6 +303,7 @@ Partial Class RecapitulatifForm
         'dtpDateReservation
         '
         Me.dtpDateReservation.CalendarFont = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpDateReservation.Enabled = False
         Me.dtpDateReservation.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpDateReservation.Location = New System.Drawing.Point(152, 169)
         Me.dtpDateReservation.Name = "dtpDateReservation"
@@ -423,15 +437,25 @@ Partial Class RecapitulatifForm
         Me.lblVille.TabIndex = 0
         Me.lblVille.Text = "Ville "
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(0, 0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'RecapitulatifForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.pnlRecapitulatif)
         Me.Name = "RecapitulatifForm"
         Me.Text = "RecapitulatifForm"
-        Me.Panel1.ResumeLayout(False)
+        Me.pnlRecapitulatif.ResumeLayout(False)
         Me.grbRecap.ResumeLayout(False)
         Me.grbRecap.PerformLayout()
         Me.grbContact.ResumeLayout(False)
@@ -442,7 +466,7 @@ Partial Class RecapitulatifForm
 
     End Sub
 
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pnlRecapitulatif As Panel
     Friend WithEvents grbRecap As GroupBox
     Friend WithEvents lblVille As Label
     Friend WithEvents Label5 As Label
@@ -474,6 +498,8 @@ Partial Class RecapitulatifForm
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents txtNom As TextBox
     Friend WithEvents txtPrenom As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtTelephone As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents btnRetour As Button
+    Friend WithEvents Button1 As Button
 End Class

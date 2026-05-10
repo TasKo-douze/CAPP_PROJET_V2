@@ -22,9 +22,29 @@ Partial Class Historique
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.pnlHistorique = New System.Windows.Forms.Panel()
+        Me.SuspendLayout()
+        '
+        'pnlHistorique
+        '
+        Me.pnlHistorique.AutoScroll = True
+        Me.pnlHistorique.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnlHistorique.Location = New System.Drawing.Point(0, 0)
+        Me.pnlHistorique.Name = "pnlHistorique"
+        Me.pnlHistorique.Size = New System.Drawing.Size(800, 450)
+        Me.pnlHistorique.TabIndex = 0
+        '
+        'Historique
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.pnlHistorique)
+        Me.Name = "Historique"
         Me.Text = "Historique"
+        Me.ResumeLayout(False)
+
     End Sub
+
+    Friend WithEvents pnlHistorique As Panel
 End Class

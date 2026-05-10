@@ -174,6 +174,9 @@
     <EmbeddedResource Include="AccueilForm.resx">
       <DependentUpon>AccueilForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Historique.resx">
+      <DependentUpon>Historique.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
