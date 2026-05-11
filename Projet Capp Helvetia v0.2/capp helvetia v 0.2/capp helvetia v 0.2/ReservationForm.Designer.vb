@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Reservation
+Partial Class ReservationForm
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
@@ -204,7 +204,7 @@ Partial Class Reservation
         Me.lblReservation.TabIndex = 13
         Me.lblReservation.Text = "Réservation"
         '
-        'Reservation
+        'ReservationForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -217,7 +217,7 @@ Partial Class Reservation
         Me.Controls.Add(Me.btnSuivant)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.Name = "Reservation"
+        Me.Name = "ReservationForm"
         Me.Text = "Réservation"
         Me.grbVille.ResumeLayout(False)
         Me.grbVille.PerformLayout()

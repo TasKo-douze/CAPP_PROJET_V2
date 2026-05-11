@@ -1,6 +1,6 @@
-﻿Public Class Reservation
+﻿Public Class ReservationForm
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ReservationForm(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Charge les villes dans les deux ComboBox au démarrage
         ChargerVillesDepart()
@@ -87,5 +87,44 @@
         End If
 
     End Sub
+
+    Private Sub btnSuivant_Click(sender As Object, e As EventArgs) Handles btnSuivant.Click
+        'condition pour pouvoir passer a la suite
+        If cbmVilleDepart.SelectedIndex = -1 Then
+            MessageBox.Show("Veuillez choisir une ville de départ.")
+            Return
+        End If
+
+        If cbmVilleArriver.SelectedIndex = -1 Then
+            MessageBox.Show("Veuillez choisir une ville d'arrivée.")
+            Return
+        End If
+
+        If cbmPassager.SelectedIndex = -1 Then
+            MessageBox.Show("Veuillez choisir le nombre de passagers.")
+            Return
+        End If
+
+        If cbmBagage.SelectedIndex = -1 Then
+            MessageBox.Show("Veuillez choisir le nombre de Bagage.")
+            Return
+        End If
+
+        ' bouton pour passer à la page de détails des passagers
+        Dim form As New DetailsPassagerForm()
+
+        form.NbPassagers = CInt(cbmPassager.Text)
+        form.NbBagage = CInt(cbmBagage.Text)
+        form.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btnPrecedent_Click(sender As Object, e As EventArgs) Handles btnPrecedent.Click
+        ' retour à la page d'accueil
+        Dim form As New AccueilForm()
+        form.Show()
+        Close()
+    End Sub
+
 
 End Class

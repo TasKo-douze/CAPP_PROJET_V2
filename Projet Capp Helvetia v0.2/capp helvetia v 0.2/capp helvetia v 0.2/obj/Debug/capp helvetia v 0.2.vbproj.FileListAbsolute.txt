@@ -151,3 +151,4 @@ C:\Users\MATYAS.KNCSK\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helv
 C:\Users\MATYAS.KNCSK\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\MATYAS.KNCSK\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\System.ValueTuple.xml
 C:\Users\MATYAS.KNCSK\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp hel.0106C2B2.Up2Date
+C:\Users\MATYAS.KNCSK\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.ReservationForm.resources

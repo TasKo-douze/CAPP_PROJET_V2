@@ -1,6 +1,7 @@
 ﻿Public Class DetailsPassagerForm
 
-    Public NbPassagers As Integer = 2
+    Public NbPassagers As Integer
+    Public NbBagage As Integer
     ' Variables globales pour stocker les données du client
     Public ClientNom As String
     Public ClientPrenom As String
@@ -112,6 +113,8 @@
         txt.Location = New Point(200, y)
         txt.Width = 200
 
+        txt.Tag = titre
+
         parent.Controls.Add(lbl)
         parent.Controls.Add(txt)
 
@@ -145,9 +148,9 @@
     End Sub
 
     Private Sub btnRetourDetails_Click(sender As Object, e As EventArgs) Handles btnRetourDetails.Click
-        ' bouton pour retourner à la page de réservation
-        'Dim form As New ReservationForm()
-        'Form.Show()
-        'Close()
+        'bouton pour retourner à la page de réservation
+        Dim form As New ReservationForm()
+        form.Show()
+        Close()
     End Sub
 End Class
