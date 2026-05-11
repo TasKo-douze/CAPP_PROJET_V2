@@ -24,12 +24,14 @@ Partial Class DetailsPassagerForm
     Private Sub InitializeComponent()
         Me.PanelPassagers = New System.Windows.Forms.Panel()
         Me.btnContinuer = New System.Windows.Forms.Button()
+        Me.btnRetourDetails = New System.Windows.Forms.Button()
         Me.PanelPassagers.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelPassagers
         '
         Me.PanelPassagers.AutoScroll = True
+        Me.PanelPassagers.Controls.Add(Me.btnRetourDetails)
         Me.PanelPassagers.Controls.Add(Me.btnContinuer)
         Me.PanelPassagers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelPassagers.Location = New System.Drawing.Point(0, 0)
@@ -47,6 +49,16 @@ Partial Class DetailsPassagerForm
         Me.btnContinuer.Text = "Continuer"
         Me.btnContinuer.UseVisualStyleBackColor = True
         '
+        'btnRetourDetails
+        '
+        Me.btnRetourDetails.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRetourDetails.Location = New System.Drawing.Point(612, 415)
+        Me.btnRetourDetails.Name = "btnRetourDetails"
+        Me.btnRetourDetails.Size = New System.Drawing.Size(75, 23)
+        Me.btnRetourDetails.TabIndex = 1
+        Me.btnRetourDetails.Text = "Retour"
+        Me.btnRetourDetails.UseVisualStyleBackColor = True
+        '
         'DetailsPassagerForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -62,4 +74,5 @@ Partial Class DetailsPassagerForm
 
     Friend WithEvents PanelPassagers As Panel
     Friend WithEvents btnContinuer As Button
+    Friend WithEvents btnRetourDetails As Button
 End Class

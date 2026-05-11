@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class RecapitulatifForm
     Inherits System.Windows.Forms.Form
 
     'Form remplace la méthode Dispose pour nettoyer la liste des composants.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class RecapitulatifForm
     'REMARQUE : la procédure suivante est requise par le Concepteur Windows Form
     'Elle peut être modifiée à l'aide du Concepteur Windows Form.  
     'Ne la modifiez pas à l'aide de l'éditeur de code.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.pnlRecapitulatif = New System.Windows.Forms.Panel()
         Me.grbRecap = New System.Windows.Forms.GroupBox()
@@ -57,7 +57,6 @@ Partial Class RecapitulatifForm
         Me.lblArriver = New System.Windows.Forms.Label()
         Me.lblDepart = New System.Windows.Forms.Label()
         Me.lblVille = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.pnlRecapitulatif.SuspendLayout()
         Me.grbRecap.SuspendLayout()
         Me.grbContact.SuspendLayout()
@@ -148,11 +147,11 @@ Partial Class RecapitulatifForm
         '
         'txtTelephone
         '
-        Me.txtTelephone.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtTelephone.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTelephone.Location = New System.Drawing.Point(152, 225)
         Me.txtTelephone.Name = "txtTelephone"
         Me.txtTelephone.ReadOnly = True
-        Me.txtTelephone.Size = New System.Drawing.Size(312, 20)
+        Me.txtTelephone.Size = New System.Drawing.Size(312, 22)
         Me.txtTelephone.TabIndex = 13
         '
         'Label1
@@ -167,47 +166,47 @@ Partial Class RecapitulatifForm
         '
         'txtTaille
         '
-        Me.txtTaille.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtTaille.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTaille.Location = New System.Drawing.Point(152, 320)
         Me.txtTaille.Name = "txtTaille"
         Me.txtTaille.ReadOnly = True
-        Me.txtTaille.Size = New System.Drawing.Size(99, 20)
+        Me.txtTaille.Size = New System.Drawing.Size(99, 22)
         Me.txtTaille.TabIndex = 11
         '
         'txtPoids
         '
-        Me.txtPoids.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtPoids.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPoids.Location = New System.Drawing.Point(152, 276)
         Me.txtPoids.Name = "txtPoids"
         Me.txtPoids.ReadOnly = True
-        Me.txtPoids.Size = New System.Drawing.Size(105, 20)
+        Me.txtPoids.Size = New System.Drawing.Size(105, 22)
         Me.txtPoids.TabIndex = 10
         '
         'txtEmail
         '
-        Me.txtEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtEmail.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEmail.Location = New System.Drawing.Point(127, 159)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.ReadOnly = True
-        Me.txtEmail.Size = New System.Drawing.Size(312, 20)
+        Me.txtEmail.Size = New System.Drawing.Size(312, 22)
         Me.txtEmail.TabIndex = 9
         '
         'txtNom
         '
-        Me.txtNom.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtNom.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNom.Location = New System.Drawing.Point(111, 81)
         Me.txtNom.Name = "txtNom"
         Me.txtNom.ReadOnly = True
-        Me.txtNom.Size = New System.Drawing.Size(210, 20)
+        Me.txtNom.Size = New System.Drawing.Size(210, 22)
         Me.txtNom.TabIndex = 8
         '
         'txtPrenom
         '
-        Me.txtPrenom.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtPrenom.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPrenom.Location = New System.Drawing.Point(403, 81)
         Me.txtPrenom.Name = "txtPrenom"
         Me.txtPrenom.ReadOnly = True
-        Me.txtPrenom.Size = New System.Drawing.Size(230, 20)
+        Me.txtPrenom.Size = New System.Drawing.Size(230, 22)
         Me.txtPrenom.TabIndex = 7
         '
         'lblTaille
@@ -283,11 +282,11 @@ Partial Class RecapitulatifForm
         '
         'txtNbBagage
         '
-        Me.txtNbBagage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtNbBagage.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNbBagage.Location = New System.Drawing.Point(515, 236)
         Me.txtNbBagage.Name = "txtNbBagage"
         Me.txtNbBagage.ReadOnly = True
-        Me.txtNbBagage.Size = New System.Drawing.Size(58, 20)
+        Me.txtNbBagage.Size = New System.Drawing.Size(58, 22)
         Me.txtNbBagage.TabIndex = 10
         '
         'lblBagage
@@ -312,29 +311,29 @@ Partial Class RecapitulatifForm
         '
         'txtNbPassager
         '
-        Me.txtNbPassager.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtNbPassager.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNbPassager.Location = New System.Drawing.Point(213, 237)
         Me.txtNbPassager.Name = "txtNbPassager"
         Me.txtNbPassager.ReadOnly = True
-        Me.txtNbPassager.Size = New System.Drawing.Size(58, 20)
+        Me.txtNbPassager.Size = New System.Drawing.Size(58, 22)
         Me.txtNbPassager.TabIndex = 7
         '
         'txtDepart
         '
-        Me.txtDepart.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtDepart.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDepart.Location = New System.Drawing.Point(171, 100)
         Me.txtDepart.Name = "txtDepart"
         Me.txtDepart.ReadOnly = True
-        Me.txtDepart.Size = New System.Drawing.Size(142, 20)
+        Me.txtDepart.Size = New System.Drawing.Size(142, 22)
         Me.txtDepart.TabIndex = 6
         '
         'txtArriver
         '
-        Me.txtArriver.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.txtArriver.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtArriver.Location = New System.Drawing.Point(431, 100)
         Me.txtArriver.Name = "txtArriver"
         Me.txtArriver.ReadOnly = True
-        Me.txtArriver.Size = New System.Drawing.Size(142, 20)
+        Me.txtArriver.Size = New System.Drawing.Size(142, 22)
         Me.txtArriver.TabIndex = 5
         '
         'lblNbPassager
@@ -437,21 +436,11 @@ Partial Class RecapitulatifForm
         Me.lblVille.TabIndex = 0
         Me.lblVille.Text = "Ville "
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(0, 0)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'RecapitulatifForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.pnlRecapitulatif)
         Me.Name = "RecapitulatifForm"
         Me.Text = "RecapitulatifForm"
@@ -501,5 +490,4 @@ Partial Class RecapitulatifForm
     Friend WithEvents txtTelephone As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnRetour As Button
-    Friend WithEvents Button1 As Button
 End Class

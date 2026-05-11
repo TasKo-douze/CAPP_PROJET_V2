@@ -136,4 +136,18 @@
 
         y += 30
     End Sub
+
+    Private Sub btnContinuer_Click(sender As Object, e As EventArgs) Handles btnContinuer.Click
+        ' bouton pour continuer vers le récapitulatif
+        Dim form As New RecapitulatifForm()
+        form.ShowDialog()
+        Hide()
+    End Sub
+
+    Private Sub btnRetourDetails_Click(sender As Object, e As EventArgs) Handles btnRetourDetails.Click
+        ' bouton pour retourner à la page de réservation
+        'Dim form As New ReservationForm()
+        'Form.Show()
+        'Close()
+    End Sub
 End Class

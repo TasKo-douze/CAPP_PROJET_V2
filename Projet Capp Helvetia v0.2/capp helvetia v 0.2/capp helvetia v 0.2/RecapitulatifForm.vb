@@ -92,6 +92,10 @@
 
     End Sub
 
-
-
+    Private Sub btnRetour_Click(sender As Object, e As EventArgs) Handles btnRetour.Click
+        'bouton pour revenir à la page précédente (DetailsPassagerForm)
+        Dim form As New DetailsPassagerForm()
+        form.Show()
+        Close()
+    End Sub
 End Class
