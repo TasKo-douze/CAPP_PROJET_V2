@@ -254,35 +254,275 @@ values ( SEQ_PASS_ID.NEXTVAL , 177, 80, 11, to_date('14.08.2007','DD.MM.YYYY'), 
 --------------------------------------------------------
 --------------------------------------------------------
 --table HS_CLIENT --8
-insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
-values (SEQ_CLI_ID.Nextval , SEQ_ADRE_ID.CURRVAL, DATE '2022-01-15', 1, 'Martin', 'Alice', '+41.77.101.01.01', 'alice.martin@email.ch', 'Qwertz');
+insert into hs_client
+  (cli_id,
+   cli_adr_id,
+   cli_dateinscription,
+   cli_active,
+   cli_nom,
+   cli_prenom,
+   cli_date_naissance,
+   cli_taille,
+   cli_poids,
+   cli_tel,
+   cli_email,
+   CLI_MOTS_DE_PASSE)
 
-insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
-values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-1, DATE '2021-06-20', 1, 'Dupont', 'Bruno', '+41.78.202.02.02', 'bruno.dupont@email.ch', 'Qwertz');
+values
+  (SEQ_CLI_ID.Nextval,
+   SEQ_ADRE_ID.CURRVAL,
+   DATE '2022-01-15',
+   1,
+   'Martin',
+   'Alice',
+   DATE '1998-05-12',
+   168,
+   58,
+   '+41.77.101.01.01',
+   'alice.martin@email.ch',
+   'Qwertz');
 
-insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
-values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-2, DATE '2023-03-10', 1, 'Bernard', 'Clara', '+41.76.303.03.03', 'clara.bernard@email.ch', 'Qwertz');
+insert into hs_client
+  (cli_id,
+   cli_adr_id,
+   cli_dateinscription,
+   cli_active,
+   cli_nom,
+   cli_prenom,
+   cli_date_naissance,
+   cli_taille,
+   cli_poids,
+   cli_tel,
+   cli_email,
+   CLI_MOTS_DE_PASSE)
+values
+  (SEQ_CLI_ID.Nextval,
+   SEQ_ADRE_ID.CURRVAL - 1,
+   DATE '2021-06-20',
+   1,
+   'Dupont',
+   'Bruno',
+   DATE '1992-09-03',
+   182,
+   82,
+   '+41.78.202.02.02',
+   'bruno.dupont@email.ch',
+   'Qwertz');
 
-insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
-values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-3, DATE '2020-11-05', 0, 'Leroy', 'David', '+41.73.404.04.04', 'david.leroy@email.ch', 'Qwertz');
+insert into hs_client
+  (cli_id,
+   cli_adr_id,
+   cli_dateinscription,
+   cli_active,
+   cli_nom,
+   cli_prenom,
+   cli_date_naissance,
+   cli_taille,
+   cli_poids,
+   cli_tel,
+   cli_email,
+   CLI_MOTS_DE_PASSE)
+values
+  (SEQ_CLI_ID.Nextval,
+   SEQ_ADRE_ID.CURRVAL - 2,
+   DATE '2023-03-10',
+   1,
+   'Bernard',
+   'Clara',
+   DATE '2000-11-15',
+   170,
+   63,
+   '+41.76.303.03.03',
+   'clara.bernard@email.ch',
+   'Qwertz');
 
-insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
-values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-4, DATE '2022-08-18', 1, 'Moreau', 'Emma', '+41.71.505.05.05', 'emma.moreau@email.ch', 'Qwertz');
+insert into hs_client
+  (cli_id,
+   cli_adr_id,
+   cli_dateinscription,
+   cli_active,
+   cli_nom,
+   cli_prenom,
+   cli_date_naissance,
+   cli_taille,
+   cli_poids,
+   cli_tel,
+   cli_email,
+   CLI_MOTS_DE_PASSE)
+values
+  (SEQ_CLI_ID.Nextval,
+   SEQ_ADRE_ID.CURRVAL - 3,
+   DATE '2020-11-05',
+   0,
+   'Leroy',
+   'David',
+   DATE '1989-02-20',
+   185,
+   88,
+   '+41.73.404.04.04',
+   'david.leroy@email.ch',
+   'Qwertz');
 
-insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
-values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-5, DATE '2021-12-01', 1, 'Simon', 'Fabien', '+41.70.606.06.06', 'fabien.simon@email.ch', 'Qwertz');
+insert into hs_client
+  (cli_id,
+   cli_adr_id,
+   cli_dateinscription,
+   cli_active,
+   cli_nom,
+   cli_prenom,
+   cli_date_naissance,
+   cli_taille,
+   cli_poids,
+   cli_tel,
+   cli_email,
+   CLI_MOTS_DE_PASSE)
+values
+  (SEQ_CLI_ID.Nextval,
+   SEQ_ADRE_ID.CURRVAL - 4,
+   DATE '2022-08-18',
+   1,
+   'Moreau',
+   'Emma',
+   DATE '1997-07-08',
+   165,
+   57,
+   '+41.71.505.05.05',
+   'emma.moreau@email.ch',
+   'Qwertz');
 
-insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
-values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-6, DATE '2023-07-22', 0, 'Laurent', 'Gina', '+41.74.707.07.07', 'gina.laurent@email.ch', 'Qwertz');
+insert into hs_client
+  (cli_id,
+   cli_adr_id,
+   cli_dateinscription,
+   cli_active,
+   cli_nom,
+   cli_prenom,
+   cli_date_naissance,
+   cli_taille,
+   cli_poids,
+   cli_tel,
+   cli_email,
+   CLI_MOTS_DE_PASSE)
+values
+  (SEQ_CLI_ID.Nextval,
+   SEQ_ADRE_ID.CURRVAL - 5,
+   DATE '2021-12-01',
+   1,
+   'Simon',
+   'Fabien',
+   DATE '1995-01-30',
+   178,
+   76,
+   '+41.70.606.06.06',
+   'fabien.simon@email.ch',
+   'Qwertz');
 
-insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
-values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-7, DATE '2019-04-14', 1, 'Petit', 'Hugo', '+41.78.808.08.08', 'hugo.petit@email.ch', 'Qwertz');
+insert into hs_client
+  (cli_id,
+   cli_adr_id,
+   cli_dateinscription,
+   cli_active,
+   cli_nom,
+   cli_prenom,
+   cli_date_naissance,
+   cli_taille,
+   cli_poids,
+   cli_tel,
+   cli_email,
+   CLI_MOTS_DE_PASSE)
+values
+  (SEQ_CLI_ID.Nextval,
+   SEQ_ADRE_ID.CURRVAL - 6,
+   DATE '2023-07-22',
+   0,
+   'Laurent',
+   'Gina',
+   DATE '2001-04-14',
+   172,
+   64,
+   '+41.74.707.07.07',
+   'gina.laurent@email.ch',
+   'Qwertz');
+insert into hs_client
+  (cli_id,
+   cli_adr_id,
+   cli_dateinscription,
+   cli_active,
+   cli_nom,
+   cli_prenom,
+   cli_date_naissance,
+   cli_taille,
+   cli_poids,
+   cli_tel,
+   cli_email,
+   CLI_MOTS_DE_PASSE)
+values
+  (SEQ_CLI_ID.Nextval,
+   SEQ_ADRE_ID.CURRVAL - 7,
+   DATE '2019-04-14',
+   1,
+   'Petit',
+   'Hugo',
+   DATE '1993-12-11',
+   181,
+   84,
+   '+41.78.808.08.08',
+   'hugo.petit@email.ch',
+   'Qwertz');
 
-insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
-values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-8, DATE '2024-01-30', 1, 'Garcia', 'Ines', '+41.76.909.09.09', 'ines.garcia@email.ch', 'Qwertz');
+insert into hs_client
+  (cli_id,
+   cli_adr_id,
+   cli_dateinscription,
+   cli_active,
+   cli_nom,
+   cli_prenom,
+   cli_date_naissance,
+   cli_taille,
+   cli_poids,
+   cli_tel,
+   cli_email,
+   CLI_MOTS_DE_PASSE)
+values
+  (SEQ_CLI_ID.Nextval,
+   SEQ_ADRE_ID.CURRVAL - 8,
+   DATE '2024-01-30',
+   1,
+   'Garcia',
+   'Ines',
+   DATE '1999-06-25',
+   167,
+   59,
+   '+41.76.909.09.09',
+   'ines.garcia@email.ch',
+   'Qwertz');
 
-insert into hs_client (cli_id, cli_adr_id, cli_dateinscription, cli_active, cli_nom, cli_prenom, cli_tel, cli_email, CLI_MOTS_DE_PASSE)
-values (SEQ_CLI_ID.Nextval, SEQ_ADRE_ID.CURRVAL-9, DATE '2020-09-09', 1, 'Robert', 'Jules', '+41.73.010.10.10', 'jules.robert@email.ch', 'Qwertz');
+insert into hs_client
+  (cli_id,
+   cli_adr_id,
+   cli_dateinscription,
+   cli_active,
+   cli_nom,
+   cli_prenom,
+   cli_date_naissance,
+   cli_taille,
+   cli_poids,
+   cli_tel,
+   cli_email,
+   CLI_MOTS_DE_PASSE)
+values
+  (SEQ_CLI_ID.Nextval,
+   SEQ_ADRE_ID.CURRVAL - 9,
+   DATE '2020-09-09',
+   1,
+   'Robert',
+   'Jules',
+   DATE '1990-10-18',
+   179,
+   79,
+   '+41.73.010.10.10',
+   'jules.robert@email.ch',
+   'Qwertz');
 --------------------------------------------------------
 
 
