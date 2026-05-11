@@ -33,4 +33,9 @@
     End Function
 
 
+    Public Function GetVilles() As List(Of Dictionary(Of String, Object))
+        Dim selectQuery = "SELECT VIL_NOM FROM HS_VILLE ORDER BY VIL_NOM"
+        Return DatabaseHelper.ExecuteQuery(selectQuery)
+    End Function
+
 End Module
