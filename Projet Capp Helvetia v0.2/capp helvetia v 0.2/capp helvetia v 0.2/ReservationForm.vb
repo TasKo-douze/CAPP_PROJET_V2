@@ -121,10 +121,12 @@
 
     Private Sub btnPrecedent_Click(sender As Object, e As EventArgs) Handles btnPrecedent.Click
         ' retour à la page d'accueil
-        Dim form As New AccueilForm()
+        Dim form As New AccueilForm
         form.Show()
         Close()
     End Sub
 
+    Private Sub ReservationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

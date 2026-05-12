@@ -135,6 +135,24 @@
     <Compile Include="AccueilForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Inscription3.Designer.vb">
+      <DependentUpon>Inscription3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inscription3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inscription2.Designer.vb">
+      <DependentUpon>Inscription2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inscription2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inscription1.Designer.vb">
+      <DependentUpon>Inscription1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inscription1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Historique.Designer.vb">
       <DependentUpon>Historique.vb</DependentUpon>
     </Compile>
@@ -182,6 +200,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Historique.resx">
       <DependentUpon>Historique.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inscription2.resx">
+      <DependentUpon>Inscription2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inscription3.resx">
+      <DependentUpon>Inscription3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inscription1.resx">
+      <DependentUpon>Inscription1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
