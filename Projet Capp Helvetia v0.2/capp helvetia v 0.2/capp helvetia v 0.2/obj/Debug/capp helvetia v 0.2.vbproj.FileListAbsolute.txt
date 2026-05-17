@@ -242,3 +242,8 @@ J:\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 
 J:\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.Inscription2.resources
 J:\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.Inscription3.resources
 J:\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.Inscription1.resources
+C:\Users\Koncs\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.Historique.resources
+C:\Users\Koncs\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.Inscription2.resources
+C:\Users\Koncs\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.Inscription3.resources
+C:\Users\Koncs\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.Inscription1.resources
+C:\Users\Koncs\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.ReservationForm.resources

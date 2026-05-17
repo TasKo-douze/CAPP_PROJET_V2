@@ -9,7 +9,36 @@
         Return DatabaseHelper.ExecuteQuery(requete)
     End Function
 
+    Public Sub InsertPassager(
+    nom As String,
+    prenom As String,
+    dateNaissance As Date,
+    taille As Integer,
+    poids As Integer,
+    bagage As Integer
+)
 
+        Dim requete As String =
+    "INSERT INTO HS_PASSAGERS
+    (PASS_ID, PASS_TAILLE, PASS_POIDS, PASS_POIDSBAGAGE,
+    PASS_DATE_NAISSANCE, PASS_NOM, PASS_PRENOM)
+
+    VALUES
+    (SEQ_PASS_ID.NEXTVAL, :taille, :poids, :bagage,
+    :dateNaissance, :nom, :prenom)"
+
+        Dim parametres As New Dictionary(Of String, Object)
+
+        parametres.Add("taille", taille)
+        parametres.Add("poids", poids)
+        parametres.Add("bagage", bagage)
+        parametres.Add("dateNaissance", dateNaissance)
+        parametres.Add("nom", nom)
+        parametres.Add("prenom", prenom)
+
+        DatabaseHelper.ExecuteNonQuery(requete, parametres)
+
+    End Sub
     Public Function InscriptionClient(nom As String,
                                       prenom As String,
                                       telephone As String,

@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.capp_helvetia_v_0._2.ConnexionForm
+            Me.MainForm = Global.capp_helvetia_v_0._2.ReservationForm
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
