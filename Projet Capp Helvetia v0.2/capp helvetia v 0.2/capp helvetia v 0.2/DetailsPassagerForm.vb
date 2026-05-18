@@ -33,7 +33,7 @@
             ClientDateNaissance = CDate(client("CLI_DATE_NAISSANCE"))
             ClientTaille = CInt(client("CLI_TAILLE"))
             ClientPoids = CInt(client("CLI_POIDS"))
-            ClientBagage = CInt(client("CLI_POIDSBAGAGE"))
+            'ClientBagage = CInt(client("CLI_POIDSBAGAGE"))
 
         Else
             MessageBox.Show("Aucun client trouvé")
