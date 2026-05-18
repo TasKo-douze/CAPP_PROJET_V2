@@ -222,35 +222,35 @@ values (SEQ_HELI_ID.Nextval, 'HB-ZJJ', 'Bell 429', 9, 1200);
 
 --table HS_PASSAGERS--5
 
-insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom )
-values ( SEQ_PASS_ID.NEXTVAL , 175, 72, 8, to_date('11.02.1998','DD.MM.YYYY'), 'Lefebvre', 'Anna');
+insert into hs_passagers (pass_id, pass_taille, pass_poids, PASS_DATE_NAISSANCE, pass_nom, pass_prenom )
+values ( SEQ_PASS_ID.NEXTVAL , 175, 72, to_date('11.02.1998','DD.MM.YYYY'), 'Lefebvre', 'Anna');
 
-insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
-values ( SEQ_PASS_ID.NEXTVAL , 180, 85, 12, to_date('24.07.1999','DD.MM.YYYY'), 'Rousseau', 'Baptiste');
+insert into hs_passagers (pass_id, pass_taille, pass_poids, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 180, 85, to_date('24.07.1999','DD.MM.YYYY'), 'Rousseau', 'Baptiste');
 
-insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
-values ( SEQ_PASS_ID.NEXTVAL , 165, 60, 5, to_date('03.12.2000','DD.MM.YYYY'), 'Vincent', 'Chloé');
+insert into hs_passagers (pass_id, pass_taille, pass_poids, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 165, 60, to_date('03.12.2000','DD.MM.YYYY'), 'Vincent', 'Chloé');
 
-insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
-values ( SEQ_PASS_ID.NEXTVAL , 190, 95, 15, to_date('19.05.2001','DD.MM.YYYY'), 'Faure', 'Damien');
+insert into hs_passagers (pass_id, pass_taille, pass_poids, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 190, 95, to_date('19.05.2001','DD.MM.YYYY'), 'Faure', 'Damien');
 
-insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
-values ( SEQ_PASS_ID.NEXTVAL , 160, 55, 7, to_date('28.09.2002','DD.MM.YYYY'), 'André', 'Elisa');
+insert into hs_passagers (pass_id, pass_taille, pass_poids, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 160, 55, to_date('28.09.2002','DD.MM.YYYY'), 'André', 'Elisa');
 
-insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
-values ( SEQ_PASS_ID.NEXTVAL , 172, 78, 10, to_date('07.03.2003','DD.MM.YYYY'), 'Mercier', 'Florian');
+insert into hs_passagers (pass_id, pass_taille, pass_poids, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 172, 78, to_date('07.03.2003','DD.MM.YYYY'), 'Mercier', 'Florian');
 
-insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
-values ( SEQ_PASS_ID.NEXTVAL , 168, 65, 6, to_date('15.11.2004','DD.MM.YYYY'), 'Lemaire', 'Gabrielle');
+insert into hs_passagers (pass_id, pass_taille, pass_poids, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 168, 65, to_date('15.11.2004','DD.MM.YYYY'), 'Lemaire', 'Gabrielle');
 
-insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
-values ( SEQ_PASS_ID.NEXTVAL , 183, 90, 14, to_date('22.06.2005','DD.MM.YYYY'), 'Renard', 'Henri');
+insert into hs_passagers (pass_id, pass_taille, pass_poids, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 183, 90, to_date('22.06.2005','DD.MM.YYYY'), 'Renard', 'Henri');
 
-insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
-values ( SEQ_PASS_ID.NEXTVAL , 158, 52, 4, to_date('30.01.2006','DD.MM.YYYY'), 'Colin', 'Iris');
+insert into hs_passagers (pass_id, pass_taille, pass_poids, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 158, 52, to_date('30.01.2006','DD.MM.YYYY'), 'Colin', 'Iris');
 
-insert into hs_passagers (pass_id, pass_taille, pass_poids, pass_poidsbagage, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
-values ( SEQ_PASS_ID.NEXTVAL , 177, 80, 11, to_date('14.08.2007','DD.MM.YYYY'), 'Pons', 'Jacques');
+insert into hs_passagers (pass_id, pass_taille, pass_poids, PASS_DATE_NAISSANCE, pass_nom, pass_prenom)
+values ( SEQ_PASS_ID.NEXTVAL , 177, 80, to_date('14.08.2007','DD.MM.YYYY'), 'Pons', 'Jacques');
 --------------------------------------------------------
 --------------------------------------------------------
 --table HS_CLIENT --8
@@ -563,61 +563,61 @@ values (SEQ_VIL_ID.nextval, 130, 'Lugano');
 -------------------------------------------------TABLE RESERVATION-----------------------------------------------------------------------12
 -- 1 – Alice Martin (Genève → Zurich)
 insert into hs_reservation
-  (res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+  (res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, RES_NOMBRE_PASSAGERS_ESTIME)
 values
   (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-9, SEQ_VIL_ID.currval-8, SEQ_CLI_ID.currval,to_date('05.01.2023 09:00:00','DD.MM.YYYY HH24:MI:SS'), 60, 50, 'confirmer', 2);
 
 -- 2 – Bruno Dupont (Berne → Lausanne)
 insert into hs_reservation
-(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, RES_NOMBRE_PASSAGERS_ESTIME)
 values
   (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-7, SEQ_VIL_ID.currval-6, SEQ_CLI_ID.currval, to_date('08.01.2023 14:30:00','DD.MM.YYYY HH24:MI:SS'), 90, 80, 'confirmer', 3);
 
 -- 3 – Clara Bernard (Bâle → Lucerne)
 insert into hs_reservation
-(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, RES_NOMBRE_PASSAGERS_ESTIME)
 values
   (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-5, SEQ_VIL_ID.currval-4, SEQ_CLI_ID.currval, to_date('12.01.2023 11:00:00','DD.MM.YYYY HH24:MI:SS'), 120, 100, 'en_attente', 4);
 
 -- 4 – David Leroy (Sion → Fribourg)
 insert into hs_reservation
-(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, RES_NOMBRE_PASSAGERS_ESTIME)
 values
   (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-3, SEQ_VIL_ID.currval-2, SEQ_CLI_ID.currval, to_date('15.01.2023 16:00:00','DD.MM.YYYY HH24:MI:SS'), 45, 30, 'confirmer', 1);
 
 -- 5 – Emma Moreau (Saint-Galle → Lugano)
 insert into hs_reservation
-(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, RES_NOMBRE_PASSAGERS_ESTIME)
 values
   (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-1, SEQ_VIL_ID.currval, SEQ_CLI_ID.currval, to_date('18.01.2023 10:15:00','DD.MM.YYYY HH24:MI:SS'), 75, 60, 'annuler', 2);
 
 -- 6 – Fabien Simon (Genève → Berne)
 insert into hs_reservation
-(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, RES_NOMBRE_PASSAGERS_ESTIME)
 values
   (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-9, SEQ_VIL_ID.currval-7, SEQ_CLI_ID.currval, to_date('20.01.2023 13:45:00','DD.MM.YYYY HH24:MI:SS'), 100, 120, 'confirmer', 5);
 
 -- 7 – Gina Laurent (Zurich → Lausanne)
 insert into hs_reservation
-(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, RES_NOMBRE_PASSAGERS_ESTIME)
 values
   (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-8, SEQ_VIL_ID.currval-6, SEQ_CLI_ID.currval, to_date('22.01.2023 08:30:00','DD.MM.YYYY HH24:MI:SS'), 55, 40, 'confirmer', 2);
 
 -- 8 – Hugo Petit (Bâle → Lucerne)
 insert into hs_reservation
-(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, RES_NOMBRE_PASSAGERS_ESTIME)
 values
   (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-5, SEQ_VIL_ID.currval-4, SEQ_CLI_ID.currval, to_date('25.01.2023 17:20:00','DD.MM.YYYY HH24:MI:SS'), 85, 90, 'confirmer', 3);
 
 -- 9 – Ines Garcia (Sion → Fribourg)
 insert into hs_reservation
-(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, RES_NOMBRE_PASSAGERS_ESTIME)
 values
   (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-3, SEQ_VIL_ID.currval-2, SEQ_CLI_ID.currval, to_date('28.01.2023 12:10:00','DD.MM.YYYY HH24:MI:SS'), 110, 150, 'en_attente', 4);
 
 -- 10 – Jules Robert (Saint-Galle → Lugano)
 insert into hs_reservation
-(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, res_nombre_passagers_estimee)
+(res_id, vil_id_de, vil_id_pour, cli_res_id, res_date_reservation, res_dureeestime, res_accompte, res_statut, RES_NOMBRE_PASSAGERS_ESTIME)
 values
   (SEQ_RES_ID.nextval, SEQ_VIL_ID.currval-1, SEQ_VIL_ID.currval, SEQ_CLI_ID.currval, to_date('30.01.2023 15:40:00','DD.MM.YYYY HH24:MI:SS'),70, 70, 'confirmer', 2);
 
@@ -694,53 +694,53 @@ to_date('30.01.2023 15:40:00','DD.MM.YYYY HH24:MI:SS'),70,to_date('30.01.2023 15
 
 -------------------------------------------------TABLE PASSAGERS_TRAJET------------------------------------------------------------------
 insert into hs_passagers_trajets
-(pass_id, traj_id, poidsbagages, poidspassagers)
+(pass_id, traj_id, poidsbagages)
 values
-(SEQ_PASS_ID.currval-9, SEQ_TRAJ_ID.currval-9, 8, 72);
+(SEQ_PASS_ID.currval-9, SEQ_TRAJ_ID.currval-9, 8);
 
 insert into hs_passagers_trajets
-(pass_id, traj_id, poidsbagages, poidspassagers)
+(pass_id, traj_id, poidsbagages)
 values
-(SEQ_PASS_ID.currval-8, SEQ_TRAJ_ID.currval-8, 12, 85);
+(SEQ_PASS_ID.currval-8, SEQ_TRAJ_ID.currval-8, 12);
 
 insert into hs_passagers_trajets
-(pass_id, traj_id, poidsbagages, poidspassagers)
+(pass_id, traj_id, poidsbagages)
 values
-(SEQ_PASS_ID.currval-7, SEQ_TRAJ_ID.currval-7, 5, 60);
+(SEQ_PASS_ID.currval-7, SEQ_TRAJ_ID.currval-7, 5);
 
 insert into hs_passagers_trajets
-(pass_id, traj_id, poidsbagages, poidspassagers)
+(pass_id, traj_id, poidsbagages)
 values
-(SEQ_PASS_ID.currval-6, SEQ_TRAJ_ID.currval-6, 15, 95);
+(SEQ_PASS_ID.currval-6, SEQ_TRAJ_ID.currval-6, 15);
 
 insert into hs_passagers_trajets
-(pass_id, traj_id, poidsbagages, poidspassagers)
+(pass_id, traj_id, poidsbagages)
 values
-(SEQ_PASS_ID.currval-5, SEQ_TRAJ_ID.currval-5, 7, 55);
+(SEQ_PASS_ID.currval-5, SEQ_TRAJ_ID.currval-5, 7);
 
 insert into hs_passagers_trajets
-(pass_id, traj_id, poidsbagages, poidspassagers)
+(pass_id, traj_id, poidsbagages)
 values
-(SEQ_PASS_ID.currval-4, SEQ_TRAJ_ID.currval-4, 10, 78);
+(SEQ_PASS_ID.currval-4, SEQ_TRAJ_ID.currval-4, 10);
 
 insert into hs_passagers_trajets
-(pass_id, traj_id, poidsbagages, poidspassagers)
+(pass_id, traj_id, poidsbagages)
 values
-(SEQ_PASS_ID.currval-3, SEQ_TRAJ_ID.currval-3, 6, 65);
+(SEQ_PASS_ID.currval-3, SEQ_TRAJ_ID.currval-3, 6);
 
 insert into hs_passagers_trajets
-(pass_id, traj_id, poidsbagages, poidspassagers)
+(pass_id, traj_id, poidsbagages)
 values
-(SEQ_PASS_ID.currval-2, SEQ_TRAJ_ID.currval-2, 14, 90);
+(SEQ_PASS_ID.currval-2, SEQ_TRAJ_ID.currval-2, 14);
 
 insert into hs_passagers_trajets
-(pass_id, traj_id, poidsbagages, poidspassagers)
+(pass_id, traj_id, poidsbagages)
 values
-(SEQ_PASS_ID.currval-1, SEQ_TRAJ_ID.currval-1, 4, 52);
+(SEQ_PASS_ID.currval-1, SEQ_TRAJ_ID.currval-1, 4);
 
 insert into hs_passagers_trajets
-(pass_id, traj_id, poidsbagages, poidspassagers)
+(pass_id, traj_id, poidsbagages)
 values
-(SEQ_PASS_ID.currval, SEQ_TRAJ_ID.currval, 11, 80);
+(SEQ_PASS_ID.currval, SEQ_TRAJ_ID.currval, 11);
  
 commit;

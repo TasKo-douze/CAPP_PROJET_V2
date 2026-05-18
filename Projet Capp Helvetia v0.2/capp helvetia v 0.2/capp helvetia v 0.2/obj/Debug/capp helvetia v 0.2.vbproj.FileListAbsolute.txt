@@ -294,3 +294,6 @@ C:\Users\samir.mlq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helveti
 C:\Users\samir.mlq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp helvetia v 0.2.exe
 C:\Users\samir.mlq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp helvetia v 0.2.xml
 C:\Users\samir.mlq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp helvetia v 0.2.pdb
+C:\Users\MATYAS.KNCSK\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.Inscription2.resources
+C:\Users\MATYAS.KNCSK\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.Inscription3.resources
+C:\Users\MATYAS.KNCSK\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.Inscription1.resources
