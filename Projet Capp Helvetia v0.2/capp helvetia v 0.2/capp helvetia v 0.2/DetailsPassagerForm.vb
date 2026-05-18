@@ -308,7 +308,7 @@
 
                 Next
 
-                DataAccess.InsertPassager(nom, prenom, dateNaissance, taille, poids, bagage)
+                DataAccess.InsertPassager(nom, prenom, dateNaissance, taille, poids)
             End If
 
         Next
