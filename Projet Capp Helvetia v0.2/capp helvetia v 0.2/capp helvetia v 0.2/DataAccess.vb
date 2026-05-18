@@ -39,17 +39,8 @@
         DatabaseHelper.ExecuteNonQuery(requete, parametres)
 
     End Sub
-    Public Function InscriptionClient(nom As String,
-                                      prenom As String,
-                                      telephone As String,
-                                      email As String,
-                                      motdepasse As String,
-                                      dateNaissance As Date,
-                                      taille As Integer,
-                                      poids As Integer,
-                                      rue As String,
-                                      ville As String,
-                                      numero As Integer) As Boolean
+    Public Function InscriptionClient(nom As String, prenom As String, telephone As String, email As String, motdepasse As String,
+    dateNaissance As Date, taille As Integer, poids As Integer, rue As String, ville As String, numero As Integer) As Boolean
 
         nom = nom.Trim()
         prenom = prenom.Trim()
@@ -59,29 +50,21 @@
         rue = rue.Trim()
         ville = ville.Trim()
 
-        ' Vérification téléphone avec la contrainte de formatage
-        If Not telephone Like "+41.##.###.##.##" Then
-            MessageBox.Show("Format téléphone invalide")
-            Return False
-        End If
 
-        ' Vérification email
-        If Not email.Contains("@") Or Not email.Contains(".") Then
-            MessageBox.Show("Format email invalide")
-            Return False
-        End If
+
+
 
         ' 1. INSERT ADRESSE
         Dim requeteAdresse As String = "
         INSERT INTO HS_ADRESSE (
-            ADR_ID,
+        
             ADR_RUE,
             ADR_VILLE,
             ADR_NUM,
             ADR_PAYS
         )
         VALUES (
-            SEQ_ADRE_ID.NEXTVAL,
+           
             '" & rue & "',
             '" & ville & "',
             " & numero & ",
@@ -94,7 +77,6 @@
         ' 2. INSERT CLIENT
         Dim requeteClient As String = "
         INSERT INTO HS_CLIENT (
-            CLI_ID,
             CLI_ADR_ID,
             CLI_DATEINSCRIPTION,
             CLI_DATE_NAISSANCE,
@@ -108,10 +90,9 @@
             CLI_POIDS
         )
         VALUES (
-            SEQ_CLI_ID.NEXTVAL,
             SEQ_ADRE_ID.CURRVAL,
             SYSDATE,
-            DATE '" & dateNaissance.ToString("yyyy-MM-dd") & "',
+            TO_DATE('" & dateNaissance.ToString("dd.mm.yyyy") & "','DD.MM.YYYY'),
             '1',
             '" & nom & "',
             '" & prenom & "',
@@ -133,20 +114,10 @@
 
 
 
-
-
-
-
-
     Public Function Connexion(email As String, motdepasse As String) As Boolean
 
-        'sert à enlever les espaces inutiles avant et après le texte.'
-        email = email.Trim()
-        motdepasse = motdepasse.Trim()
-
-
         Dim requete As String = "
-        SELECT *FROM HS_CLIENT
+        SELECT * FROM HS_CLIENT
         WHERE CLI_EMAIL = '" & email & "'
         AND CLI_MOTS_DE_PASSE = '" & motdepasse & "'
     "
