@@ -1,34 +1,128 @@
-﻿Public Class Inscription1
-    Private Sub btnSuivantIns1_Click(sender As Object, e As EventArgs) Handles btnSuivantIns1.Click
+﻿Imports System.Text.RegularExpressions
 
-        If txtbNom.Text.Trim() = "" Or
-           txtbPrenom.Text.Trim() = "" Or
-           txtbRue.Text.Trim() = "" Or
-           txtbVille.Text.Trim() = "" Or
-           txtbNumero.Text.Trim() = "" Then
+Public Class Inscription1
+    Private Sub Inscription1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-            MessageBox.Show("Veuillez remplir tous les champs")
-            Exit Sub
+        btnValiderInscription.Enabled = False
+
+        mtxtbTelephone.Mask = "+41.00.000.00.00"
+
+        dtpDateNaissance.Format = DateTimePickerFormat.Custom
+        dtpDateNaissance.CustomFormat = "dd.MM.yyyy"
+
+    End Sub
+
+    Private Sub VerifierChamps()
+
+
+        ' Tant que le text box est rempli le bouton de validation s'activera
+        If txtbNom.Text.Trim() = "" And
+       txtbPrenom.Text.Trim() = "" And
+       txtbRue.Text.Trim() = "" And
+       txtbVille.Text.Trim() = "" And
+       txtbNumero.Text.Trim() = "" And
+       txtbEmail.Text.Trim() = "" And
+       mtxtbTelephone.Text.Trim() = "" And
+       txtbMDPIns.Text.Trim() = "" Then
+
+            btnValiderInscription.Enabled = False
+
+        Else
+
+            btnValiderInscription.Enabled = True
 
         End If
+
+    End Sub
+
+
+    'Regroupement plusieurs TextBox dans un seul événement qui vérifie si tous les champs sont remplis
+    'et active quand le textbox se déclenche la procédure verifierchamps s'active
+    'en gros si on ecrit le teextChanged ce lance et verifie en tant reel
+
+
+    Private Sub Champs_TextChanged(sender As Object, e As EventArgs) Handles _
+        txtbNom.TextChanged,
+        txtbPrenom.TextChanged,
+        txtbRue.TextChanged,
+        txtbVille.TextChanged,
+        txtbNumero.TextChanged,
+        txtbEmail.TextChanged,
+        mtxtbTelephone.TextChanged,
+        txtbMDPIns.TextChanged
+
+        VerifierChamps()
+
+    End Sub
+
+
+    Private Sub btnValiderIns_Click(sender As Object, e As EventArgs) Handles btnValiderInscription.Click
+
+
 
         If Not IsNumeric(txtbNumero.Text) Then
-            MessageBox.Show("Le numéro de rue doit être un nombre")
+            MessageBox.Show("Le numéro de rue doit être un nombre", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
-        'pour que les informations soient enregistrées
-        Dim page2 As New Inscription2(
-            txtbNom.Text.Trim(),
-            txtbPrenom.Text.Trim(),
-            txtbRue.Text.Trim(),
-            txtbVille.Text.Trim(),
-            CInt(txtbNumero.Text)
-        )
+        If Not txtbEmail.Text.Contains("@") Or Not txtbEmail.Text.Contains(".") Then
+            MessageBox.Show("Email invalide", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
 
-        page2.Show()
-        Me.Hide()
 
+        If Not Regex.IsMatch(txtbMDPIns.Text, "^(?=.*[A-Z])(?=.*\d).{8,}$") Then
+
+            MessageBox.Show(
+            "Le mot de passe doit contenir au minimum 8 caractères, une majuscule et un chiffre.",
+            "Mot de passe invalide",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Error
+    )
+
+            Exit Sub
+
+        End If
+
+
+        If Not mtxtbTelephone.MaskCompleted Then
+            MessageBox.Show("Téléphone incomplet", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Exit Sub
+        End If
+
+
+
+
+        Dim ok As Boolean = DataAccess.InscriptionClient(txtbNom.Text, txtbPrenom.Text, mtxtbTelephone.Text, txtbEmail.Text, txtbMDPIns.Text, dtpDateNaissance.Value, CInt(nudTaille.Value), CInt(nudPoids.Value), txtbRue.Text, txtbVille.Text, CInt(txtbNumero.Text))
+
+        If ok Then
+
+            AccueilForm.Show()
+            MessageBox.Show("Bienvenue !")
+            Me.Hide()
+        Else
+            MessageBox.Show("Erreur inscription", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+
+    End Sub
+
+    Private Sub mtxtbTelephone_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles mtxtbTelephone.MaskInputRejected
+
+    End Sub
+
+    Private Sub lblInscription_Click(sender As Object, e As EventArgs) Handles lblInscription.Click
+
+    End Sub
+
+    Private Sub grpbInfoPerso_Enter(sender As Object, e As EventArgs) Handles grpbInfoPerso.Enter
 
     End Sub
 End Class
+
+
+
+
+
+
+
+
