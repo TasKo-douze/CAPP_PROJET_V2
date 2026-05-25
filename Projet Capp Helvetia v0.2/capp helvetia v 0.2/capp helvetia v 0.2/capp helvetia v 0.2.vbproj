@@ -116,6 +116,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AProposForm.Designer.vb">
+      <DependentUpon>AProposForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AProposForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfidentialiteDonneesForm.Designer.vb">
+      <DependentUpon>ConfidentialiteDonneesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConfidentialiteDonneesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ConnexionForm.Designer.vb">
       <DependentUpon>ConnexionForm.vb</DependentUpon>
     </Compile>
@@ -133,6 +145,12 @@
       <DependentUpon>AccueilForm.vb</DependentUpon>
     </Compile>
     <Compile Include="AccueilForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformationsPersonnellesForm.Designer.vb">
+      <DependentUpon>InformationsPersonnellesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="InformationsPersonnellesForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inscription1.Designer.vb">
@@ -163,6 +181,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ProfilForm.Designer.vb">
+      <DependentUpon>ProfilForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProfilForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="RecapitulatifForm.Designer.vb">
       <DependentUpon>RecapitulatifForm.vb</DependentUpon>
     </Compile>
@@ -175,8 +199,20 @@
     <Compile Include="ReservationForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SecuriteForm.Designer.vb">
+      <DependentUpon>SecuriteForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SecuriteForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AProposForm.resx">
+      <DependentUpon>AProposForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfidentialiteDonneesForm.resx">
+      <DependentUpon>ConfidentialiteDonneesForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConnexionForm.resx">
       <DependentUpon>ConnexionForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +225,9 @@
     <EmbeddedResource Include="Historique.resx">
       <DependentUpon>Historique.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InformationsPersonnellesForm.resx">
+      <DependentUpon>InformationsPersonnellesForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inscription1.resx">
       <DependentUpon>Inscription1.vb</DependentUpon>
     </EmbeddedResource>
@@ -198,11 +237,17 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProfilForm.resx">
+      <DependentUpon>ProfilForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RecapitulatifForm.resx">
       <DependentUpon>RecapitulatifForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReservationForm.resx">
       <DependentUpon>ReservationForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecuriteForm.resx">
+      <DependentUpon>SecuriteForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
