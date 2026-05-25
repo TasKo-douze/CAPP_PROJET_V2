@@ -33,12 +33,14 @@ Partial Class ReservationForm
         Me.btnPrecedent = New System.Windows.Forms.Button()
         Me.grpDetails = New System.Windows.Forms.GroupBox()
         Me.lblReservation = New System.Windows.Forms.Label()
+        Me.wbGoogleMaps = New System.Windows.Forms.WebBrowser()
         Me.grbVille.SuspendLayout()
+        Me.grpDetails.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSuivant
         '
-        Me.btnSuivant.Location = New System.Drawing.Point(772, 388)
+        Me.btnSuivant.Location = New System.Drawing.Point(772, 419)
         Me.btnSuivant.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSuivant.Name = "btnSuivant"
         Me.btnSuivant.Size = New System.Drawing.Size(136, 33)
@@ -94,7 +96,7 @@ Partial Class ReservationForm
         Me.grbVille.Controls.Add(Me.cbmVilleArriver)
         Me.grbVille.Controls.Add(Me.cbmVilleDepart)
         Me.grbVille.Controls.Add(Me.lblArriveVille)
-        Me.grbVille.Location = New System.Drawing.Point(26, 127)
+        Me.grbVille.Location = New System.Drawing.Point(26, 105)
         Me.grbVille.Margin = New System.Windows.Forms.Padding(4)
         Me.grbVille.Name = "grbVille"
         Me.grbVille.Padding = New System.Windows.Forms.Padding(4)
@@ -123,7 +125,7 @@ Partial Class ReservationForm
         '
         'btnPrecedent
         '
-        Me.btnPrecedent.Location = New System.Drawing.Point(772, 429)
+        Me.btnPrecedent.Location = New System.Drawing.Point(772, 460)
         Me.btnPrecedent.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrecedent.Name = "btnPrecedent"
         Me.btnPrecedent.Size = New System.Drawing.Size(136, 33)
@@ -133,11 +135,12 @@ Partial Class ReservationForm
         '
         'grpDetails
         '
-        Me.grpDetails.Location = New System.Drawing.Point(532, 127)
+        Me.grpDetails.Controls.Add(Me.wbGoogleMaps)
+        Me.grpDetails.Location = New System.Drawing.Point(531, 112)
         Me.grpDetails.Margin = New System.Windows.Forms.Padding(4)
         Me.grpDetails.Name = "grpDetails"
         Me.grpDetails.Padding = New System.Windows.Forms.Padding(4)
-        Me.grpDetails.Size = New System.Drawing.Size(377, 152)
+        Me.grpDetails.Size = New System.Drawing.Size(377, 253)
         Me.grpDetails.TabIndex = 12
         Me.grpDetails.TabStop = False
         Me.grpDetails.Text = "Détails réservation"
@@ -152,6 +155,15 @@ Partial Class ReservationForm
         Me.lblReservation.Size = New System.Drawing.Size(92, 21)
         Me.lblReservation.TabIndex = 13
         Me.lblReservation.Text = "Réservation"
+        '
+        'wbGoogleMaps
+        '
+        Me.wbGoogleMaps.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.wbGoogleMaps.Location = New System.Drawing.Point(4, 22)
+        Me.wbGoogleMaps.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.wbGoogleMaps.Name = "wbGoogleMaps"
+        Me.wbGoogleMaps.Size = New System.Drawing.Size(369, 227)
+        Me.wbGoogleMaps.TabIndex = 0
         '
         'ReservationForm
         '
@@ -170,6 +182,7 @@ Partial Class ReservationForm
         Me.Text = "Réservation"
         Me.grbVille.ResumeLayout(False)
         Me.grbVille.PerformLayout()
+        Me.grpDetails.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -186,4 +199,5 @@ Partial Class ReservationForm
     Friend WithEvents dtpDateDepart As DateTimePicker
     Friend WithEvents lblDateDepart As Label
     Friend WithEvents lblReservation As Label
+    Friend WithEvents wbGoogleMaps As WebBrowser
 End Class
