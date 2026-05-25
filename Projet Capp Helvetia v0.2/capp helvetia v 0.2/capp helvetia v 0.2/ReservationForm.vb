@@ -100,21 +100,9 @@
             Return
         End If
 
-        If cbmPassager.SelectedIndex = -1 Then
-            MessageBox.Show("Veuillez choisir le nombre de passagers.")
-            Return
-        End If
-
-        If cbmBagage.SelectedIndex = -1 Then
-            MessageBox.Show("Veuillez choisir le nombre de Bagage.")
-            Return
-        End If
-
         ' bouton pour passer à la page de détails des passagers
         Dim form As New DetailsPassagerForm()
 
-        form.NbPassagers = CInt(cbmPassager.Text)
-        form.NbBagage = CInt(cbmBagage.Text)
         form.Show()
         Me.Hide()
     End Sub
@@ -126,7 +114,4 @@
         Close()
     End Sub
 
-    Private Sub ReservationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

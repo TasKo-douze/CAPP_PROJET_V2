@@ -30,15 +30,10 @@ Partial Class ReservationForm
         Me.grbVille = New System.Windows.Forms.GroupBox()
         Me.dtpDateDepart = New System.Windows.Forms.DateTimePicker()
         Me.lblDateDepart = New System.Windows.Forms.Label()
-        Me.lblNbPassager = New System.Windows.Forms.Label()
-        Me.lblBagage = New System.Windows.Forms.Label()
         Me.btnPrecedent = New System.Windows.Forms.Button()
         Me.grpDetails = New System.Windows.Forms.GroupBox()
-        Me.cbmBagage = New System.Windows.Forms.ComboBox()
-        Me.cbmPassager = New System.Windows.Forms.ComboBox()
         Me.lblReservation = New System.Windows.Forms.Label()
         Me.grbVille.SuspendLayout()
-        Me.grpDetails.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSuivant
@@ -126,26 +121,6 @@ Partial Class ReservationForm
         Me.lblDateDepart.TabIndex = 5
         Me.lblDateDepart.Text = "Date de départ :"
         '
-        'lblNbPassager
-        '
-        Me.lblNbPassager.AutoSize = True
-        Me.lblNbPassager.Location = New System.Drawing.Point(12, 35)
-        Me.lblNbPassager.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblNbPassager.Name = "lblNbPassager"
-        Me.lblNbPassager.Size = New System.Drawing.Size(141, 17)
-        Me.lblNbPassager.TabIndex = 6
-        Me.lblNbPassager.Text = "Nombre de passager :"
-        '
-        'lblBagage
-        '
-        Me.lblBagage.AutoSize = True
-        Me.lblBagage.Location = New System.Drawing.Point(241, 35)
-        Me.lblBagage.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblBagage.Name = "lblBagage"
-        Me.lblBagage.Size = New System.Drawing.Size(59, 17)
-        Me.lblBagage.TabIndex = 8
-        Me.lblBagage.Text = "Bagage :"
-        '
         'btnPrecedent
         '
         Me.btnPrecedent.Location = New System.Drawing.Point(772, 429)
@@ -158,10 +133,6 @@ Partial Class ReservationForm
         '
         'grpDetails
         '
-        Me.grpDetails.Controls.Add(Me.cbmBagage)
-        Me.grpDetails.Controls.Add(Me.cbmPassager)
-        Me.grpDetails.Controls.Add(Me.lblBagage)
-        Me.grpDetails.Controls.Add(Me.lblNbPassager)
         Me.grpDetails.Location = New System.Drawing.Point(532, 127)
         Me.grpDetails.Margin = New System.Windows.Forms.Padding(4)
         Me.grpDetails.Name = "grpDetails"
@@ -170,28 +141,6 @@ Partial Class ReservationForm
         Me.grpDetails.TabIndex = 12
         Me.grpDetails.TabStop = False
         Me.grpDetails.Text = "Détails réservation"
-        '
-        'cbmBagage
-        '
-        Me.cbmBagage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbmBagage.FormattingEnabled = True
-        Me.cbmBagage.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6"})
-        Me.cbmBagage.Location = New System.Drawing.Point(245, 71)
-        Me.cbmBagage.Margin = New System.Windows.Forms.Padding(4)
-        Me.cbmBagage.Name = "cbmBagage"
-        Me.cbmBagage.Size = New System.Drawing.Size(56, 25)
-        Me.cbmBagage.TabIndex = 12
-        '
-        'cbmPassager
-        '
-        Me.cbmPassager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbmPassager.FormattingEnabled = True
-        Me.cbmPassager.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6"})
-        Me.cbmPassager.Location = New System.Drawing.Point(15, 71)
-        Me.cbmPassager.Margin = New System.Windows.Forms.Padding(4)
-        Me.cbmPassager.Name = "cbmPassager"
-        Me.cbmPassager.Size = New System.Drawing.Size(56, 25)
-        Me.cbmPassager.TabIndex = 11
         '
         'lblReservation
         '
@@ -221,8 +170,6 @@ Partial Class ReservationForm
         Me.Text = "Réservation"
         Me.grbVille.ResumeLayout(False)
         Me.grbVille.PerformLayout()
-        Me.grpDetails.ResumeLayout(False)
-        Me.grpDetails.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -234,13 +181,9 @@ Partial Class ReservationForm
     Friend WithEvents cbmVilleDepart As ComboBox
     Friend WithEvents cbmVilleArriver As ComboBox
     Friend WithEvents grbVille As GroupBox
-    Friend WithEvents lblNbPassager As Label
-    Friend WithEvents lblBagage As Label
     Friend WithEvents btnPrecedent As Button
     Friend WithEvents grpDetails As GroupBox
-    Friend WithEvents cbmPassager As ComboBox
     Friend WithEvents dtpDateDepart As DateTimePicker
     Friend WithEvents lblDateDepart As Label
-    Friend WithEvents cbmBagage As ComboBox
     Friend WithEvents lblReservation As Label
 End Class

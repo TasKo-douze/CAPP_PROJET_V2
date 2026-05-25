@@ -153,4 +153,30 @@
         Return DatabaseHelper.ExecuteQuery(selectQuery)
     End Function
 
+    Public Function GetClientByEmail(email As String) As List(Of Dictionary(Of String, Object))
+
+        ' récupère les informations du client avec son email
+        Dim requete As String = "
+    SELECT 
+        c.CLI_NOM,
+        c.CLI_PRENOM,
+        c.CLI_DATE_NAISSANCE,
+        c.CLI_TAILLE,
+        c.CLI_POIDS,
+        c.CLI_TEL,
+        c.CLI_EMAIL,
+        a.ADR_RUE,
+        a.ADR_NUM,
+        a.ADR_VILLE,
+        a.ADR_PAYS
+    FROM HS_CLIENT c
+    JOIN HS_ADRESSE a ON a.ADR_ID = c.CLI_ADR_ID
+    WHERE c.CLI_EMAIL = '" & email & "'
+    "
+
+        Return DatabaseHelper.ExecuteQuery(requete)
+
+    End Function
+
+
 End Module
