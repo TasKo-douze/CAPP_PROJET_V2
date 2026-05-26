@@ -43,17 +43,18 @@ Partial Class ConnexionForm
         '
         'txtbEmail
         '
-        Me.txtbEmail.Location = New System.Drawing.Point(145, 150)
+        Me.txtbEmail.Location = New System.Drawing.Point(129, 150)
         Me.txtbEmail.Name = "txtbEmail"
         Me.txtbEmail.Size = New System.Drawing.Size(150, 20)
         Me.txtbEmail.TabIndex = 1
         '
         'txtbMDP
         '
-        Me.txtbMDP.Location = New System.Drawing.Point(145, 262)
+        Me.txtbMDP.Location = New System.Drawing.Point(129, 262)
         Me.txtbMDP.Name = "txtbMDP"
         Me.txtbMDP.Size = New System.Drawing.Size(150, 20)
         Me.txtbMDP.TabIndex = 2
+        Me.txtbMDP.UseSystemPasswordChar = True
         '
         'btnConnexion
         '
@@ -68,6 +69,7 @@ Partial Class ConnexionForm
         'lnklblInscription
         '
         Me.lnklblInscription.AutoSize = True
+        Me.lnklblInscription.BackColor = System.Drawing.Color.Transparent
         Me.lnklblInscription.LinkColor = System.Drawing.Color.Black
         Me.lnklblInscription.Location = New System.Drawing.Point(292, 422)
         Me.lnklblInscription.Name = "lnklblInscription"
@@ -79,7 +81,7 @@ Partial Class ConnexionForm
         'lblEmail
         '
         Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(125, 134)
+        Me.lblEmail.Location = New System.Drawing.Point(108, 134)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(35, 13)
         Me.lblEmail.TabIndex = 5
@@ -88,7 +90,7 @@ Partial Class ConnexionForm
         'lblMDP
         '
         Me.lblMDP.AutoSize = True
-        Me.lblMDP.Location = New System.Drawing.Point(125, 246)
+        Me.lblMDP.Location = New System.Drawing.Point(108, 246)
         Me.lblMDP.Name = "lblMDP"
         Me.lblMDP.Size = New System.Drawing.Size(75, 13)
         Me.lblMDP.TabIndex = 6

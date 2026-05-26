@@ -1,4 +1,6 @@
-﻿Public Class ConnexionForm
+﻿Imports System.Runtime.Remoting.Services
+
+Public Class ConnexionForm
 
 
     Private Sub btnConnexion_Click(sender As Object, e As EventArgs) Handles btnConnexion.Click
@@ -28,7 +30,10 @@
         Me.Hide()
     End Sub
 
-    Private Sub ConnexionForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
+
+
+
+
+
 End Class
