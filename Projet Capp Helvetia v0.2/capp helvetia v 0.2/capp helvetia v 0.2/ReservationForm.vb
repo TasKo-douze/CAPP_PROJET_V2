@@ -134,8 +134,12 @@
         ' Bouton pour passer à la page de détails des passagers
         Dim form As New DetailsPassagerForm()
 
+        form.VilleDepart = cbmVilleDepart.Text
+        form.VilleArrivee = cbmVilleArriver.Text
+        form.DateReservation = dtpDateDepart.Value
+
         form.Show()
-        Me.Hide()
+        Close()
 
     End Sub
 
@@ -148,8 +152,6 @@
 
     End Sub
 
-    Private Sub ReservationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
 End Class
