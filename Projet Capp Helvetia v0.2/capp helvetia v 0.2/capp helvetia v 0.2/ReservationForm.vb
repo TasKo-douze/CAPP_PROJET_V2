@@ -1,6 +1,6 @@
 ﻿Public Class ReservationForm
 
-    Private Sub ReservationForm(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ReservationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Charge les villes dans les deux ComboBox au démarrage
         ChargerVillesDepart()
@@ -102,7 +102,7 @@
 
     Private Sub cbmVilleArriver_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbmVilleArriver.SelectedIndexChanged
 
-        ' Vérifie si la ville d'arrivée est la même que la ville de départ
+        ' Vérifie si la ville d'arrivee est la même que la ville de départ
         If cbmVilleArriver.Text = cbmVilleDepart.Text And cbmVilleArriver.Text <> "" Then
 
             ' Affiche un message d'erreur
@@ -132,7 +132,7 @@
         End If
 
         ' Bouton pour passer à la page de détails des passagers
-        Dim form As New DetailsPassagerForm()
+        Dim form As New RecapitulatifForm()
 
         form.VilleDepart = cbmVilleDepart.Text
         form.VilleArrivee = cbmVilleArriver.Text
