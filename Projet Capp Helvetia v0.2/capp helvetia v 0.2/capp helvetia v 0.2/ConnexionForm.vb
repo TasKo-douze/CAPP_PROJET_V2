@@ -30,10 +30,7 @@ Public Class ConnexionForm
         Me.Hide()
     End Sub
 
+    Private Sub lblConnexion_Click(sender As Object, e As EventArgs) Handles lblConnexion.Click
 
-
-
-
-
-
+    End Sub
 End Class

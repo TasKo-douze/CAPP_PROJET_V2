@@ -25,17 +25,7 @@
         DatabaseHelper.ExecuteNonQuery(requete, parametres)
 
     End Sub
-    Public Function InscriptionClient(nom As String,
-                                      prenom As String,
-                                      telephone As String,
-                                      email As String,
-                                      motdepasse As String,
-                                      dateNaissance As Date,
-                                      taille As Integer,
-                                      poids As Integer,
-                                      rue As String,
-                                      ville As String,
-                                      numero As Integer) As Boolean
+    Public Function InscriptionClient(nom As String, prenom As String, telephone As String, email As String, motdepasse As String, dateNaissance As Date, taille As Integer, poids As Integer, rue As String, ville As String, numero As Integer) As Boolean
 
         nom = nom.Trim()
         prenom = prenom.Trim()
@@ -50,31 +40,25 @@
 
 
         ' 1. INSERT ADRESSE
-        Dim requeteAdresse As String = "
-        INSERT INTO HS_ADRESSE (
-        
-            ADR_RUE,
-            ADR_VILLE,
-            ADR_NUM,
-            ADR_PAYS
-        )
-        VALUES (
-           
-            '" & rue & "',
-            '" & ville & "',
-            " & numero & ",
-            'Suisse'
-        )
-    "
+        Dim requeteAdresse As String =
+        "INSERT INTO HS_ADRESSE (ADR_ID,ADR_RUE, ADR_VILLE, ADR_NUM, ADR_PAYS)
+        VALUES (SEQ_ADRE_ID.NEXTVAL,:rue, :ville , :numero ,'Suisse')"
 
-        DatabaseHelper.ExecuteQuery(requeteAdresse)
+
+        Dim parametresAdresse As New Dictionary(Of String, Object)
+
+        parametresAdresse.Add("rue", rue)
+        parametresAdresse.Add("ville", ville)
+        parametresAdresse.Add("numero", numero)
+
+
+
+
+        DatabaseHelper.ExecuteNonQuery(requeteAdresse, parametresAdresse)
 
         ' 2. INSERT CLIENT
         Dim requeteClient As String = "
-        INSERT INTO HS_CLIENT (
-            CLI_ADR_ID,
-            CLI_DATEINSCRIPTION,
-            CLI_DATE_NAISSANCE,
+        INSERT INTO HS_CLIENT (CLI_ADR_ID,CLI_DATEINSCRIPTION,CLI_DATE_NAISSANCE,
             CLI_ACTIVE,
             CLI_NOM,
             CLI_PRENOM,
@@ -99,7 +83,13 @@
         )
     "
 
-        DatabaseHelper.ExecuteQuery(requeteClient)
+        Dim parametresClient As New Dictionary(Of String, Object)
+
+        parametresClient.Add("rue", rue)
+        parametresClient.Add("ville", ville)
+        parametresClient.Add("numero", numero)
+
+        DatabaseHelper.ExecuteQuery(requeteClient, parametresClient)
 
         Return True
 
