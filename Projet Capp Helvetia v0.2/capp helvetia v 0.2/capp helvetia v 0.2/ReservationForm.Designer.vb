@@ -32,8 +32,10 @@ Partial Class ReservationForm
         Me.lblDateDepart = New System.Windows.Forms.Label()
         Me.btnPrecedent = New System.Windows.Forms.Button()
         Me.grpDetails = New System.Windows.Forms.GroupBox()
-        Me.lblReservation = New System.Windows.Forms.Label()
         Me.wbGoogleMaps = New System.Windows.Forms.WebBrowser()
+        Me.lblReservation = New System.Windows.Forms.Label()
+        Me.lblNbPassager = New System.Windows.Forms.Label()
+        Me.cbmNbPassager = New System.Windows.Forms.ComboBox()
         Me.grbVille.SuspendLayout()
         Me.grpDetails.SuspendLayout()
         Me.SuspendLayout()
@@ -90,6 +92,8 @@ Partial Class ReservationForm
         '
         'grbVille
         '
+        Me.grbVille.Controls.Add(Me.cbmNbPassager)
+        Me.grbVille.Controls.Add(Me.lblNbPassager)
         Me.grbVille.Controls.Add(Me.dtpDateDepart)
         Me.grbVille.Controls.Add(Me.lblDateDepart)
         Me.grbVille.Controls.Add(Me.lblVilleDepart)
@@ -107,7 +111,7 @@ Partial Class ReservationForm
         '
         'dtpDateDepart
         '
-        Me.dtpDateDepart.Location = New System.Drawing.Point(117, 174)
+        Me.dtpDateDepart.Location = New System.Drawing.Point(260, 174)
         Me.dtpDateDepart.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpDateDepart.Name = "dtpDateDepart"
         Me.dtpDateDepart.Size = New System.Drawing.Size(198, 25)
@@ -116,7 +120,7 @@ Partial Class ReservationForm
         'lblDateDepart
         '
         Me.lblDateDepart.AutoSize = True
-        Me.lblDateDepart.Location = New System.Drawing.Point(170, 153)
+        Me.lblDateDepart.Location = New System.Drawing.Point(257, 153)
         Me.lblDateDepart.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDateDepart.Name = "lblDateDepart"
         Me.lblDateDepart.Size = New System.Drawing.Size(104, 17)
@@ -145,6 +149,15 @@ Partial Class ReservationForm
         Me.grpDetails.TabStop = False
         Me.grpDetails.Text = "Détails réservation"
         '
+        'wbGoogleMaps
+        '
+        Me.wbGoogleMaps.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.wbGoogleMaps.Location = New System.Drawing.Point(4, 22)
+        Me.wbGoogleMaps.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.wbGoogleMaps.Name = "wbGoogleMaps"
+        Me.wbGoogleMaps.Size = New System.Drawing.Size(369, 227)
+        Me.wbGoogleMaps.TabIndex = 0
+        '
         'lblReservation
         '
         Me.lblReservation.AutoSize = True
@@ -156,14 +169,26 @@ Partial Class ReservationForm
         Me.lblReservation.TabIndex = 13
         Me.lblReservation.Text = "Réservation"
         '
-        'wbGoogleMaps
+        'lblNbPassager
         '
-        Me.wbGoogleMaps.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.wbGoogleMaps.Location = New System.Drawing.Point(4, 22)
-        Me.wbGoogleMaps.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.wbGoogleMaps.Name = "wbGoogleMaps"
-        Me.wbGoogleMaps.Size = New System.Drawing.Size(369, 227)
-        Me.wbGoogleMaps.TabIndex = 0
+        Me.lblNbPassager.AutoSize = True
+        Me.lblNbPassager.Location = New System.Drawing.Point(8, 153)
+        Me.lblNbPassager.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNbPassager.Name = "lblNbPassager"
+        Me.lblNbPassager.Size = New System.Drawing.Size(137, 17)
+        Me.lblNbPassager.TabIndex = 8
+        Me.lblNbPassager.Text = "Nombre de passager:"
+        '
+        'cbmNbPassager
+        '
+        Me.cbmNbPassager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbmNbPassager.FormattingEnabled = True
+        Me.cbmNbPassager.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
+        Me.cbmNbPassager.Location = New System.Drawing.Point(10, 177)
+        Me.cbmNbPassager.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbmNbPassager.Name = "cbmNbPassager"
+        Me.cbmNbPassager.Size = New System.Drawing.Size(170, 25)
+        Me.cbmNbPassager.TabIndex = 9
         '
         'ReservationForm
         '
@@ -200,4 +225,6 @@ Partial Class ReservationForm
     Friend WithEvents lblDateDepart As Label
     Friend WithEvents lblReservation As Label
     Friend WithEvents wbGoogleMaps As WebBrowser
+    Friend WithEvents cbmNbPassager As ComboBox
+    Friend WithEvents lblNbPassager As Label
 End Class

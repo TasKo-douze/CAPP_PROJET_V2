@@ -373,3 +373,8 @@ C:\Users\MATYAS.KNCSK\Desktop\Projet capp\CAPP_PROJET_V2\Projet Capp Helvetia v0
 C:\Users\MATYAS.KNCSK\Desktop\Projet capp\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp helvetia v 0.2.exe
 C:\Users\MATYAS.KNCSK\Desktop\Projet capp\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp helvetia v 0.2.xml
 C:\Users\MATYAS.KNCSK\Desktop\Projet capp\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp helvetia v 0.2.pdb
+C:\Users\samir.mlq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.AProposForm.resources
+C:\Users\samir.mlq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.ConfidentialiteDonneesForm.resources
+C:\Users\samir.mlq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.InformationsPersonnellesForm.resources
+C:\Users\samir.mlq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.ProfilForm.resources
+C:\Users\samir.mlq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.SecuriteForm.resources
