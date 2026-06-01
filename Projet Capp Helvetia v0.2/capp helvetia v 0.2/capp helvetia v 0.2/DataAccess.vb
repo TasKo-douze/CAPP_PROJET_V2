@@ -25,7 +25,7 @@
         DatabaseHelper.ExecuteNonQuery(requete, parametres)
 
     End Sub
-    Public Function InscriptionClient(dateNaissance As Date, nom As String, prenom As String, telephone As String, email As String, motdepasse As String, dateNaissance As Date, taille As Integer, poids As Integer, rue As String, ville As String, numero As Integer) As Boolean
+    Public Function InscriptionClient(nom As String, prenom As String, telephone As String, email As String, motdepasse As String, dateNaissance As Date, taille As Integer, poids As Integer, rue As String, ville As String, numero As Integer) As Boolean
 
         'trim sert a valider la donnée du client meme si il y a un esapce après
         nom = nom.Trim()
@@ -59,11 +59,11 @@
 
         Dim requeteClient As String =
         "INSERT INTO HS_CLIENT (CLI_ADR_ID, CLI_DATEINSCRIPTION, CLI_DATE_NAISSANCE, CLI_ACTIVE, CLI_NOM, CLI_PRENOM, CLI_TEL, CLI_EMAIL, CLI_MOTS_DE_PASSE, CLI_TAILLE, CLI_POIDS)
-        VALUES (SEQ_ADRE_ID.CURRVAL, SYDATA, :dateNaissance, '1', :nom, :prenom, :telephone, :email, :motdepasse, :taille, :poids)"
+        VALUES (SEQ_ADRE_ID.CURRVAL, SYDATA, TO_DATE('" & dateNaissance.ToString("dd.MM.yyyy") & "','DD.MM.YYYY'), '1', :nom, :prenom, :telephone, :email, :motdepasse, :taille, :poids)"
 
         Dim parametresClient As New Dictionary(Of String, Object)
 
-        parametresClient.Add("dateNaissance", dateNaissance)
+
         parametresClient.Add("nom", nom)
         parametresClient.Add("prenom", prenom)
         parametresClient.Add("telephone", telephone)
