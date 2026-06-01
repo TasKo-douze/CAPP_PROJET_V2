@@ -23,8 +23,8 @@ Partial Class DetailsPassagerForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.PanelPassagers = New System.Windows.Forms.Panel()
-        Me.btnContinuer = New System.Windows.Forms.Button()
         Me.btnRetourDetails = New System.Windows.Forms.Button()
+        Me.btnContinuer = New System.Windows.Forms.Button()
         Me.PanelPassagers.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -36,34 +36,34 @@ Partial Class DetailsPassagerForm
         Me.PanelPassagers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelPassagers.Location = New System.Drawing.Point(0, 0)
         Me.PanelPassagers.Name = "PanelPassagers"
-        Me.PanelPassagers.Size = New System.Drawing.Size(780, 450)
+        Me.PanelPassagers.Size = New System.Drawing.Size(800, 450)
         Me.PanelPassagers.TabIndex = 0
-        '
-        'btnContinuer
-        '
-        Me.btnContinuer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnContinuer.Location = New System.Drawing.Point(693, 415)
-        Me.btnContinuer.Name = "btnContinuer"
-        Me.btnContinuer.Size = New System.Drawing.Size(75, 23)
-        Me.btnContinuer.TabIndex = 0
-        Me.btnContinuer.Text = "Continuer"
-        Me.btnContinuer.UseVisualStyleBackColor = True
         '
         'btnRetourDetails
         '
         Me.btnRetourDetails.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnRetourDetails.Location = New System.Drawing.Point(612, 415)
+        Me.btnRetourDetails.Location = New System.Drawing.Point(632, 415)
         Me.btnRetourDetails.Name = "btnRetourDetails"
         Me.btnRetourDetails.Size = New System.Drawing.Size(75, 23)
         Me.btnRetourDetails.TabIndex = 1
         Me.btnRetourDetails.Text = "Retour"
         Me.btnRetourDetails.UseVisualStyleBackColor = True
         '
+        'btnContinuer
+        '
+        Me.btnContinuer.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnContinuer.Location = New System.Drawing.Point(713, 415)
+        Me.btnContinuer.Name = "btnContinuer"
+        Me.btnContinuer.Size = New System.Drawing.Size(75, 23)
+        Me.btnContinuer.TabIndex = 0
+        Me.btnContinuer.Text = "Continuer"
+        Me.btnContinuer.UseVisualStyleBackColor = True
+        '
         'DetailsPassagerForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(780, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.PanelPassagers)
         Me.Name = "DetailsPassagerForm"
         Me.Text = "DetailsPassagerForm"
