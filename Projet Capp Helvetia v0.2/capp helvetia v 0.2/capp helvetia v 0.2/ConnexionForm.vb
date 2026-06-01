@@ -2,6 +2,8 @@
 
 Public Class ConnexionForm
 
+    Private placeholderEmail As String = "Ex: nom@mail.com"
+    Private placeholderMotdePasse As String = "Entrez votre Mot de Passe"
 
     Private Sub btnConnexion_Click(sender As Object, e As EventArgs) Handles btnConnexion.Click
 
@@ -30,7 +32,8 @@ Public Class ConnexionForm
         Me.Hide()
     End Sub
 
-    Private Sub lblConnexion_Click(sender As Object, e As EventArgs) Handles lblConnexion.Click
-
+    Private Sub ConnexionForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        InitTextBox(txtbEmailIns, placeholderEmail)
+        InitTextBox(txtbMDPIns, placeholderMotdePasse)
     End Sub
 End Class

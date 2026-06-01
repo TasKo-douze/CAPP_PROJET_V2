@@ -50,7 +50,7 @@ Partial Class Inscription1
         Me.txtbMDPIns = New System.Windows.Forms.TextBox()
         Me.lblMDP = New System.Windows.Forms.Label()
         Me.lblEmail = New System.Windows.Forms.Label()
-        Me.txtbEmail = New System.Windows.Forms.TextBox()
+        Me.txtbEmailIns = New System.Windows.Forms.TextBox()
         Me.txtbPrenom = New System.Windows.Forms.TextBox()
         Me.txtbNom = New System.Windows.Forms.TextBox()
         Me.pnlInscription.SuspendLayout()
@@ -192,7 +192,7 @@ Partial Class Inscription1
         Me.grpbInfoPerso.Controls.Add(Me.txtbMDPIns)
         Me.grpbInfoPerso.Controls.Add(Me.lblMDP)
         Me.grpbInfoPerso.Controls.Add(Me.lblEmail)
-        Me.grpbInfoPerso.Controls.Add(Me.txtbEmail)
+        Me.grpbInfoPerso.Controls.Add(Me.txtbEmailIns)
         Me.grpbInfoPerso.Controls.Add(Me.txtbPrenom)
         Me.grpbInfoPerso.Controls.Add(Me.txtbNom)
         Me.grpbInfoPerso.Location = New System.Drawing.Point(56, 89)
@@ -331,12 +331,12 @@ Partial Class Inscription1
         Me.lblEmail.TabIndex = 5
         Me.lblEmail.Text = "Email:"
         '
-        'txtbEmail
+        'txtbEmailIns
         '
-        Me.txtbEmail.Location = New System.Drawing.Point(122, 113)
-        Me.txtbEmail.Name = "txtbEmail"
-        Me.txtbEmail.Size = New System.Drawing.Size(100, 20)
-        Me.txtbEmail.TabIndex = 4
+        Me.txtbEmailIns.Location = New System.Drawing.Point(122, 113)
+        Me.txtbEmailIns.Name = "txtbEmailIns"
+        Me.txtbEmailIns.Size = New System.Drawing.Size(100, 20)
+        Me.txtbEmailIns.TabIndex = 4
         '
         'txtbPrenom
         '
@@ -376,7 +376,7 @@ Partial Class Inscription1
     Friend WithEvents txtbNom As TextBox
     Friend WithEvents txtbPrenom As TextBox
     Friend WithEvents lblEmail As Label
-    Friend WithEvents txtbEmail As TextBox
+    Friend WithEvents txtbEmailIns As TextBox
     Friend WithEvents lblMDP As Label
     Friend WithEvents txtbMDPIns As TextBox
     Friend WithEvents lblPrenom As Label

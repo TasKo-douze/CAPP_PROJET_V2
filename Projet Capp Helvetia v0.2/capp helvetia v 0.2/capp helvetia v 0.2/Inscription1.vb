@@ -1,7 +1,52 @@
 ﻿Imports System.Text.RegularExpressions
 
 Public Class Inscription1
+
+    Private placeholderNom As String = "Entrez votre nom"
+    Private placeholderPrenom As String = "Entrez votre prénom"
+    Private placeholderEmail As String = "Ex: nom@mail.com"
+    Private placeholderMotdePasse As String = "Entrez votre Mot de Passe"
+    Private placeholderRue As String = "Rue de l'adresse"
+    Private placeholderVille As String = "Ville de l'adresse"
+    Private placeholderNumero As String = "Numéro de l'adresse"
+
+
+
     Private Sub Inscription1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        InitTextBox(txtbNom, placeholderNom)
+        InitTextBox(txtbPrenom, placeholderPrenom)
+        InitTextBox(txtbEmailIns, placeholderEmail)
+        InitTextBox(txtbMDPIns, placeholderMotdePasse)
+        InitTextBox(txtbRue, placeholderRue)
+        InitTextBox(txtbVille, placeholderVille)
+        InitTextBox(txtbNumero, placeholderNumero)
+
+    End Sub
+
+    Private Sub InitTextBox(tb As TextBox, placeholder As String)
+        tb.BackColor = Color.Black
+        tb.ForeColor = Color.Gray
+        tb.BorderStyle = BorderStyle.None
+        tb.Text = placeholder
+    End Sub
+
+    Private Sub HandleEnter(tb As TextBox, placeholder As String, isPassword As Boolean)
+        If tb.Text = placeholder Then
+            tb.Text = ""
+            tb.ForeColor = Color.White
+            If isPassword Then tb.UseSystemPasswordChar = True
+        End If
+    End Sub
+
+    Private Sub HandleLeave(tb As TextBox, placeholder As String, isPassword As Boolean)
+        If tb.Text = "" Then
+            tb.Text = placeholder
+            tb.ForeColor = Color.Gray
+            If isPassword Then tb.UseSystemPasswordChar = False
+        End If
+    End Sub
+
 
         btnValiderInscription.Enabled = False
 
@@ -10,7 +55,7 @@ Public Class Inscription1
         dtpDateNaissance.Format = DateTimePickerFormat.Custom
         dtpDateNaissance.CustomFormat = "dd.MM.yyyy"
 
-    End Sub
+    
 
     Private Sub VerifierChamps()
 
@@ -21,7 +66,7 @@ Public Class Inscription1
        txtbRue.Text.Trim() = "" And
        txtbVille.Text.Trim() = "" And
        txtbNumero.Text.Trim() = "" And
-       txtbEmail.Text.Trim() = "" And
+       txtbEmailIns.Text.Trim() = "" And
        mtxtbTelephone.Text.Trim() = "" And
        txtbMDPIns.Text.Trim() = "" Then
 
@@ -47,7 +92,7 @@ Public Class Inscription1
         txtbRue.TextChanged,
         txtbVille.TextChanged,
         txtbNumero.TextChanged,
-        txtbEmail.TextChanged,
+        txtbEmailIns.TextChanged,
         mtxtbTelephone.TextChanged,
         txtbMDPIns.TextChanged
 
@@ -58,31 +103,35 @@ Public Class Inscription1
 
     Private Sub btnValiderIns_Click(sender As Object, e As EventArgs) Handles btnValiderInscription.Click
 
-
+        ' Contains = doit contenire
+        ' "IsNumeric"(= qui met la valeur en nombre du txtbNumero.text)
+        ' "not" mets déjà de base en NON le contenue du textbox donc il va mettre le message, si le contenue est similaire la contrainte alors c'est "Exit"
 
         If Not IsNumeric(txtbNumero.Text) Then
             MessageBox.Show("Le numéro de rue doit être un nombre", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
-        If Not txtbEmail.Text.Contains("@") Or Not txtbEmail.Text.Contains(".") Then
+        If Not txtbEmailIns.Text.Contains("@") Or Not txtbEmailIns.Text.Contains(".") Then
             MessageBox.Show("Email invalide", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
 
-        If Not Regex.IsMatch(txtbMDPIns.Text, "^(?=.*[A-Z])(?=.*\d).{8,}$") Then
 
-            MessageBox.Show(
-            "Le mot de passe doit contenir au minimum 8 caractères, une majuscule et un chiffre.",
-            "Mot de passe invalide",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Error
-    )
+
+        Dim motdepasse As String = txtbMDPIns.Text
+
+        If motdepasse.Length <= 8 Or
+            Not motdepasse.Any(AddressOf Char.IsUpper) Or
+            Not motdepasse.Any(AddressOf Char.IsDigit) Then
+
+            MessageBox.Show("Le mot de passe doit contenir au minimum 8 caractères, une majuscule et un chiffre.", "Mot de passe invalide", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
             Exit Sub
 
         End If
+
 
 
         If Not mtxtbTelephone.MaskCompleted Then
@@ -104,7 +153,7 @@ Public Class Inscription1
         End If
 
 
-        Dim ok As Boolean = DataAccess.InscriptionClient(txtbNom.Text, txtbPrenom.Text, mtxtbTelephone.Text, txtbEmail.Text, txtbMDPIns.Text, dtpDateNaissance.Value, CInt(nudTaille.Value), CInt(nudPoids.Value), txtbRue.Text, txtbVille.Text, CInt(txtbNumero.Text))
+        Dim ok As Boolean = DataAccess.InscriptionClient(txtbNom.Text, txtbPrenom.Text, mtxtbTelephone.Text, txtbEmailIns.Text, txtbMDPIns.Text, dtpDateNaissance.Value, CInt(nudTaille.Value), CInt(nudPoids.Value), txtbRue.Text, txtbVille.Text, CInt(txtbNumero.Text))
 
         If ok Then
 
