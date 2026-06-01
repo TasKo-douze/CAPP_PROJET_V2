@@ -28,6 +28,7 @@ Partial Class AccueilForm
         Me.btnReserver = New System.Windows.Forms.Button()
         Me.btnProfil = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lnklDeconnexion = New System.Windows.Forms.LinkLabel()
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -79,21 +80,36 @@ Partial Class AccueilForm
         Me.PictureBox1.TabIndex = 4
         Me.PictureBox1.TabStop = False
         '
-        'Form2
+        'lnklDeconnexion
+        '
+        Me.lnklDeconnexion.AutoSize = True
+        Me.lnklDeconnexion.BackColor = System.Drawing.Color.Transparent
+        Me.lnklDeconnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnklDeconnexion.LinkColor = System.Drawing.Color.Black
+        Me.lnklDeconnexion.Location = New System.Drawing.Point(682, 31)
+        Me.lnklDeconnexion.Name = "lnklDeconnexion"
+        Me.lnklDeconnexion.Size = New System.Drawing.Size(86, 16)
+        Me.lnklDeconnexion.TabIndex = 5
+        Me.lnklDeconnexion.TabStop = True
+        Me.lnklDeconnexion.Text = "Déconnexion"
+        '
+        'AccueilForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.lnklDeconnexion)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnProfil)
         Me.Controls.Add(Me.btnReserver)
         Me.Controls.Add(Me.btnHistoriques)
         Me.Controls.Add(Me.pbxLogo)
-        Me.Name = "Form2"
+        Me.Name = "AccueilForm"
         Me.Text = "Form2"
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -102,4 +118,5 @@ Partial Class AccueilForm
     Friend WithEvents btnReserver As Button
     Friend WithEvents btnProfil As Button
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents lnklDeconnexion As LinkLabel
 End Class

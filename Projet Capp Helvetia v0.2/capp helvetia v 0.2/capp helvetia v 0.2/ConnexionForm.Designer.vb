@@ -35,32 +35,33 @@ Partial Class ConnexionForm
         '
         Me.lblConnexion.AutoSize = True
         Me.lblConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConnexion.Location = New System.Drawing.Point(104, 56)
+        Me.lblConnexion.Location = New System.Drawing.Point(71, 64)
         Me.lblConnexion.Name = "lblConnexion"
-        Me.lblConnexion.Size = New System.Drawing.Size(191, 39)
+        Me.lblConnexion.Size = New System.Drawing.Size(233, 39)
         Me.lblConnexion.TabIndex = 0
-        Me.lblConnexion.Text = "Connexion"
+        Me.lblConnexion.Text = "Se connecter"
         '
         'txtbEmail
         '
-        Me.txtbEmail.Location = New System.Drawing.Point(145, 150)
+        Me.txtbEmail.Location = New System.Drawing.Point(111, 150)
         Me.txtbEmail.Name = "txtbEmail"
         Me.txtbEmail.Size = New System.Drawing.Size(150, 20)
         Me.txtbEmail.TabIndex = 1
         '
         'txtbMDP
         '
-        Me.txtbMDP.Location = New System.Drawing.Point(145, 262)
+        Me.txtbMDP.Location = New System.Drawing.Point(111, 199)
         Me.txtbMDP.Name = "txtbMDP"
         Me.txtbMDP.Size = New System.Drawing.Size(150, 20)
         Me.txtbMDP.TabIndex = 2
+        Me.txtbMDP.UseSystemPasswordChar = True
         '
         'btnConnexion
         '
-        Me.btnConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConnexion.Location = New System.Drawing.Point(111, 318)
+        Me.btnConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.btnConnexion.Location = New System.Drawing.Point(129, 320)
         Me.btnConnexion.Name = "btnConnexion"
-        Me.btnConnexion.Size = New System.Drawing.Size(184, 51)
+        Me.btnConnexion.Size = New System.Drawing.Size(126, 31)
         Me.btnConnexion.TabIndex = 3
         Me.btnConnexion.Text = "Connexion"
         Me.btnConnexion.UseVisualStyleBackColor = True
@@ -68,6 +69,7 @@ Partial Class ConnexionForm
         'lnklblInscription
         '
         Me.lnklblInscription.AutoSize = True
+        Me.lnklblInscription.BackColor = System.Drawing.Color.Transparent
         Me.lnklblInscription.LinkColor = System.Drawing.Color.Black
         Me.lnklblInscription.Location = New System.Drawing.Point(292, 422)
         Me.lnklblInscription.Name = "lnklblInscription"
@@ -79,7 +81,7 @@ Partial Class ConnexionForm
         'lblEmail
         '
         Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(125, 134)
+        Me.lblEmail.Location = New System.Drawing.Point(108, 134)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(35, 13)
         Me.lblEmail.TabIndex = 5
@@ -88,7 +90,7 @@ Partial Class ConnexionForm
         'lblMDP
         '
         Me.lblMDP.AutoSize = True
-        Me.lblMDP.Location = New System.Drawing.Point(125, 246)
+        Me.lblMDP.Location = New System.Drawing.Point(108, 183)
         Me.lblMDP.Name = "lblMDP"
         Me.lblMDP.Size = New System.Drawing.Size(75, 13)
         Me.lblMDP.TabIndex = 6

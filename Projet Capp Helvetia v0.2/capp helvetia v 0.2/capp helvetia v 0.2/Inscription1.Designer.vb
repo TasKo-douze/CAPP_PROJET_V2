@@ -70,12 +70,12 @@ Partial Class Inscription1
         Me.pnlInscription.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlInscription.Location = New System.Drawing.Point(0, 0)
         Me.pnlInscription.Name = "pnlInscription"
-        Me.pnlInscription.Size = New System.Drawing.Size(452, 498)
+        Me.pnlInscription.Size = New System.Drawing.Size(410, 456)
         Me.pnlInscription.TabIndex = 8
         '
         'btnValiderInscription
         '
-        Me.btnValiderInscription.Location = New System.Drawing.Point(289, 738)
+        Me.btnValiderInscription.Location = New System.Drawing.Point(285, 726)
         Me.btnValiderInscription.Name = "btnValiderInscription"
         Me.btnValiderInscription.Size = New System.Drawing.Size(75, 23)
         Me.btnValiderInscription.TabIndex = 3
@@ -86,7 +86,7 @@ Partial Class Inscription1
         '
         Me.lblInscription.AutoSize = True
         Me.lblInscription.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblInscription.Location = New System.Drawing.Point(124, 26)
+        Me.lblInscription.Location = New System.Drawing.Point(106, 31)
         Me.lblInscription.Name = "lblInscription"
         Me.lblInscription.Size = New System.Drawing.Size(187, 39)
         Me.lblInscription.TabIndex = 2
@@ -102,7 +102,7 @@ Partial Class Inscription1
         Me.GroupBox1.Controls.Add(Me.lblNumero)
         Me.GroupBox1.Controls.Add(Me.lblVille)
         Me.GroupBox1.Controls.Add(Me.lblRue)
-        Me.GroupBox1.Location = New System.Drawing.Point(81, 490)
+        Me.GroupBox1.Location = New System.Drawing.Point(56, 479)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(283, 207)
         Me.GroupBox1.TabIndex = 1
@@ -195,7 +195,7 @@ Partial Class Inscription1
         Me.grpbInfoPerso.Controls.Add(Me.txtbEmail)
         Me.grpbInfoPerso.Controls.Add(Me.txtbPrenom)
         Me.grpbInfoPerso.Controls.Add(Me.txtbNom)
-        Me.grpbInfoPerso.Location = New System.Drawing.Point(81, 96)
+        Me.grpbInfoPerso.Location = New System.Drawing.Point(56, 89)
         Me.grpbInfoPerso.Name = "grpbInfoPerso"
         Me.grpbInfoPerso.Size = New System.Drawing.Size(283, 355)
         Me.grpbInfoPerso.TabIndex = 0
@@ -311,6 +311,7 @@ Partial Class Inscription1
         Me.txtbMDPIns.Name = "txtbMDPIns"
         Me.txtbMDPIns.Size = New System.Drawing.Size(100, 20)
         Me.txtbMDPIns.TabIndex = 7
+        Me.txtbMDPIns.UseSystemPasswordChar = True
         '
         'lblMDP
         '
@@ -355,7 +356,7 @@ Partial Class Inscription1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(452, 498)
+        Me.ClientSize = New System.Drawing.Size(410, 456)
         Me.Controls.Add(Me.pnlInscription)
         Me.Name = "Inscription1"
         Me.Text = "Form1"

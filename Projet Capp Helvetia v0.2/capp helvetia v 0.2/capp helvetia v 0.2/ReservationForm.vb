@@ -1,6 +1,6 @@
 ﻿Public Class ReservationForm
 
-    Private Sub ReservationForm(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ReservationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         ' Charge les villes dans les deux ComboBox au démarrage
         ChargerVillesDepart()
@@ -31,6 +31,30 @@
         For Each ville In lstVilles
             cbmVilleArriver.Items.Add(ville("VIL_NOM"))
         Next
+
+    End Sub
+
+    Private Sub AfficherCarte()
+
+        ' Vérifie que les deux villes sont bien choisies
+        If cbmVilleDepart.Text <> "" And cbmVilleArriver.Text <> "" Then
+
+            ' Récupère la ville de départ
+            Dim villeDepart As String = cbmVilleDepart.Text
+
+            ' Récupère la ville d'arrivée
+            Dim villeArrivee As String = cbmVilleArriver.Text
+
+            ' Construit l'url Google Maps
+            Dim url As String = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyDAyd32CGuA_QZtkAe60RGL0csL7hcPKy0&origin=" &
+                                Uri.EscapeDataString(villeDepart) &
+                                "&destination=" &
+                                Uri.EscapeDataString(villeArrivee)
+
+            ' Affiche la carte dans le WebBrowser
+            wbGoogleMaps.Navigate(url)
+
+        End If
 
     End Sub
 
@@ -71,11 +95,14 @@
 
         End If
 
+        ' Affiche la carte si les deux villes sont choisies
+        AfficherCarte()
+
     End Sub
 
     Private Sub cbmVilleArriver_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbmVilleArriver.SelectedIndexChanged
 
-        ' Vérifie si la ville d'arrivée est la même que la ville de départ
+        ' Vérifie si la ville d'arrivee est la même que la ville de départ
         If cbmVilleArriver.Text = cbmVilleDepart.Text And cbmVilleArriver.Text <> "" Then
 
             ' Affiche un message d'erreur
@@ -86,10 +113,14 @@
 
         End If
 
+        ' Affiche la carte si les deux villes sont choisies
+        AfficherCarte()
+
     End Sub
 
     Private Sub btnSuivant_Click(sender As Object, e As EventArgs) Handles btnSuivant.Click
-        'condition pour pouvoir passer a la suite
+
+        ' Condition pour pouvoir passer à la suite
         If cbmVilleDepart.SelectedIndex = -1 Then
             MessageBox.Show("Veuillez choisir une ville de départ.")
             Return
@@ -100,33 +131,27 @@
             Return
         End If
 
-        If cbmPassager.SelectedIndex = -1 Then
-            MessageBox.Show("Veuillez choisir le nombre de passagers.")
-            Return
-        End If
+        ' Bouton pour passer à la page de détails des passagers
+        Dim form As New RecapitulatifForm()
 
-        If cbmBagage.SelectedIndex = -1 Then
-            MessageBox.Show("Veuillez choisir le nombre de Bagage.")
-            Return
-        End If
+        form.VilleDepart = cbmVilleDepart.Text
+        form.VilleArrivee = cbmVilleArriver.Text
+        form.DateReservation = dtpDateDepart.Value
 
-        ' bouton pour passer à la page de détails des passagers
-        Dim form As New DetailsPassagerForm()
-
-        form.NbPassagers = CInt(cbmPassager.Text)
-        form.NbBagage = CInt(cbmBagage.Text)
         form.Show()
-        Me.Hide()
+        Close()
+
     End Sub
 
     Private Sub btnPrecedent_Click(sender As Object, e As EventArgs) Handles btnPrecedent.Click
-        ' retour à la page d'accueil
+
+        ' Retour à la page d'accueil
         Dim form As New AccueilForm
         form.Show()
         Close()
-    End Sub
-
-    Private Sub ReservationForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
+
+
 End Class

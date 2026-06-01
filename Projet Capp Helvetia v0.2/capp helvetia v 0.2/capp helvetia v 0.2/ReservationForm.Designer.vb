@@ -30,20 +30,19 @@ Partial Class ReservationForm
         Me.grbVille = New System.Windows.Forms.GroupBox()
         Me.dtpDateDepart = New System.Windows.Forms.DateTimePicker()
         Me.lblDateDepart = New System.Windows.Forms.Label()
-        Me.lblNbPassager = New System.Windows.Forms.Label()
-        Me.lblBagage = New System.Windows.Forms.Label()
         Me.btnPrecedent = New System.Windows.Forms.Button()
         Me.grpDetails = New System.Windows.Forms.GroupBox()
-        Me.cbmBagage = New System.Windows.Forms.ComboBox()
-        Me.cbmPassager = New System.Windows.Forms.ComboBox()
+        Me.wbGoogleMaps = New System.Windows.Forms.WebBrowser()
         Me.lblReservation = New System.Windows.Forms.Label()
+        Me.lblNbPassager = New System.Windows.Forms.Label()
+        Me.cbmNbPassager = New System.Windows.Forms.ComboBox()
         Me.grbVille.SuspendLayout()
         Me.grpDetails.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSuivant
         '
-        Me.btnSuivant.Location = New System.Drawing.Point(772, 388)
+        Me.btnSuivant.Location = New System.Drawing.Point(772, 419)
         Me.btnSuivant.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSuivant.Name = "btnSuivant"
         Me.btnSuivant.Size = New System.Drawing.Size(136, 33)
@@ -93,13 +92,15 @@ Partial Class ReservationForm
         '
         'grbVille
         '
+        Me.grbVille.Controls.Add(Me.cbmNbPassager)
+        Me.grbVille.Controls.Add(Me.lblNbPassager)
         Me.grbVille.Controls.Add(Me.dtpDateDepart)
         Me.grbVille.Controls.Add(Me.lblDateDepart)
         Me.grbVille.Controls.Add(Me.lblVilleDepart)
         Me.grbVille.Controls.Add(Me.cbmVilleArriver)
         Me.grbVille.Controls.Add(Me.cbmVilleDepart)
         Me.grbVille.Controls.Add(Me.lblArriveVille)
-        Me.grbVille.Location = New System.Drawing.Point(26, 127)
+        Me.grbVille.Location = New System.Drawing.Point(26, 105)
         Me.grbVille.Margin = New System.Windows.Forms.Padding(4)
         Me.grbVille.Name = "grbVille"
         Me.grbVille.Padding = New System.Windows.Forms.Padding(4)
@@ -110,7 +111,7 @@ Partial Class ReservationForm
         '
         'dtpDateDepart
         '
-        Me.dtpDateDepart.Location = New System.Drawing.Point(117, 174)
+        Me.dtpDateDepart.Location = New System.Drawing.Point(260, 174)
         Me.dtpDateDepart.Margin = New System.Windows.Forms.Padding(4)
         Me.dtpDateDepart.Name = "dtpDateDepart"
         Me.dtpDateDepart.Size = New System.Drawing.Size(198, 25)
@@ -119,36 +120,16 @@ Partial Class ReservationForm
         'lblDateDepart
         '
         Me.lblDateDepart.AutoSize = True
-        Me.lblDateDepart.Location = New System.Drawing.Point(170, 153)
+        Me.lblDateDepart.Location = New System.Drawing.Point(257, 153)
         Me.lblDateDepart.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDateDepart.Name = "lblDateDepart"
         Me.lblDateDepart.Size = New System.Drawing.Size(104, 17)
         Me.lblDateDepart.TabIndex = 5
         Me.lblDateDepart.Text = "Date de départ :"
         '
-        'lblNbPassager
-        '
-        Me.lblNbPassager.AutoSize = True
-        Me.lblNbPassager.Location = New System.Drawing.Point(12, 35)
-        Me.lblNbPassager.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblNbPassager.Name = "lblNbPassager"
-        Me.lblNbPassager.Size = New System.Drawing.Size(141, 17)
-        Me.lblNbPassager.TabIndex = 6
-        Me.lblNbPassager.Text = "Nombre de passager :"
-        '
-        'lblBagage
-        '
-        Me.lblBagage.AutoSize = True
-        Me.lblBagage.Location = New System.Drawing.Point(241, 35)
-        Me.lblBagage.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.lblBagage.Name = "lblBagage"
-        Me.lblBagage.Size = New System.Drawing.Size(59, 17)
-        Me.lblBagage.TabIndex = 8
-        Me.lblBagage.Text = "Bagage :"
-        '
         'btnPrecedent
         '
-        Me.btnPrecedent.Location = New System.Drawing.Point(772, 429)
+        Me.btnPrecedent.Location = New System.Drawing.Point(772, 460)
         Me.btnPrecedent.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrecedent.Name = "btnPrecedent"
         Me.btnPrecedent.Size = New System.Drawing.Size(136, 33)
@@ -158,40 +139,24 @@ Partial Class ReservationForm
         '
         'grpDetails
         '
-        Me.grpDetails.Controls.Add(Me.cbmBagage)
-        Me.grpDetails.Controls.Add(Me.cbmPassager)
-        Me.grpDetails.Controls.Add(Me.lblBagage)
-        Me.grpDetails.Controls.Add(Me.lblNbPassager)
-        Me.grpDetails.Location = New System.Drawing.Point(532, 127)
+        Me.grpDetails.Controls.Add(Me.wbGoogleMaps)
+        Me.grpDetails.Location = New System.Drawing.Point(531, 112)
         Me.grpDetails.Margin = New System.Windows.Forms.Padding(4)
         Me.grpDetails.Name = "grpDetails"
         Me.grpDetails.Padding = New System.Windows.Forms.Padding(4)
-        Me.grpDetails.Size = New System.Drawing.Size(377, 152)
+        Me.grpDetails.Size = New System.Drawing.Size(377, 253)
         Me.grpDetails.TabIndex = 12
         Me.grpDetails.TabStop = False
         Me.grpDetails.Text = "Détails réservation"
         '
-        'cbmBagage
+        'wbGoogleMaps
         '
-        Me.cbmBagage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbmBagage.FormattingEnabled = True
-        Me.cbmBagage.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6"})
-        Me.cbmBagage.Location = New System.Drawing.Point(245, 71)
-        Me.cbmBagage.Margin = New System.Windows.Forms.Padding(4)
-        Me.cbmBagage.Name = "cbmBagage"
-        Me.cbmBagage.Size = New System.Drawing.Size(56, 25)
-        Me.cbmBagage.TabIndex = 12
-        '
-        'cbmPassager
-        '
-        Me.cbmPassager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cbmPassager.FormattingEnabled = True
-        Me.cbmPassager.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5", "6"})
-        Me.cbmPassager.Location = New System.Drawing.Point(15, 71)
-        Me.cbmPassager.Margin = New System.Windows.Forms.Padding(4)
-        Me.cbmPassager.Name = "cbmPassager"
-        Me.cbmPassager.Size = New System.Drawing.Size(56, 25)
-        Me.cbmPassager.TabIndex = 11
+        Me.wbGoogleMaps.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.wbGoogleMaps.Location = New System.Drawing.Point(4, 22)
+        Me.wbGoogleMaps.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.wbGoogleMaps.Name = "wbGoogleMaps"
+        Me.wbGoogleMaps.Size = New System.Drawing.Size(369, 227)
+        Me.wbGoogleMaps.TabIndex = 0
         '
         'lblReservation
         '
@@ -203,6 +168,27 @@ Partial Class ReservationForm
         Me.lblReservation.Size = New System.Drawing.Size(92, 21)
         Me.lblReservation.TabIndex = 13
         Me.lblReservation.Text = "Réservation"
+        '
+        'lblNbPassager
+        '
+        Me.lblNbPassager.AutoSize = True
+        Me.lblNbPassager.Location = New System.Drawing.Point(8, 153)
+        Me.lblNbPassager.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNbPassager.Name = "lblNbPassager"
+        Me.lblNbPassager.Size = New System.Drawing.Size(137, 17)
+        Me.lblNbPassager.TabIndex = 8
+        Me.lblNbPassager.Text = "Nombre de passager:"
+        '
+        'cbmNbPassager
+        '
+        Me.cbmNbPassager.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbmNbPassager.FormattingEnabled = True
+        Me.cbmNbPassager.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6"})
+        Me.cbmNbPassager.Location = New System.Drawing.Point(10, 177)
+        Me.cbmNbPassager.Margin = New System.Windows.Forms.Padding(4)
+        Me.cbmNbPassager.Name = "cbmNbPassager"
+        Me.cbmNbPassager.Size = New System.Drawing.Size(170, 25)
+        Me.cbmNbPassager.TabIndex = 9
         '
         'ReservationForm
         '
@@ -222,7 +208,6 @@ Partial Class ReservationForm
         Me.grbVille.ResumeLayout(False)
         Me.grbVille.PerformLayout()
         Me.grpDetails.ResumeLayout(False)
-        Me.grpDetails.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -234,13 +219,12 @@ Partial Class ReservationForm
     Friend WithEvents cbmVilleDepart As ComboBox
     Friend WithEvents cbmVilleArriver As ComboBox
     Friend WithEvents grbVille As GroupBox
-    Friend WithEvents lblNbPassager As Label
-    Friend WithEvents lblBagage As Label
     Friend WithEvents btnPrecedent As Button
     Friend WithEvents grpDetails As GroupBox
-    Friend WithEvents cbmPassager As ComboBox
     Friend WithEvents dtpDateDepart As DateTimePicker
     Friend WithEvents lblDateDepart As Label
-    Friend WithEvents cbmBagage As ComboBox
     Friend WithEvents lblReservation As Label
+    Friend WithEvents wbGoogleMaps As WebBrowser
+    Friend WithEvents cbmNbPassager As ComboBox
+    Friend WithEvents lblNbPassager As Label
 End Class

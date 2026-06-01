@@ -34,7 +34,7 @@ Partial Class InformationsPersonnellesForm
         Me.txtTelephone = New System.Windows.Forms.TextBox()
         Me.lblTelephone = New System.Windows.Forms.Label()
         Me.lblEmail = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtDateNaissance = New System.Windows.Forms.TextBox()
         Me.lblNaissance = New System.Windows.Forms.Label()
         Me.txtPrenom = New System.Windows.Forms.TextBox()
         Me.txtNom = New System.Windows.Forms.TextBox()
@@ -67,7 +67,7 @@ Partial Class InformationsPersonnellesForm
         Me.grpInfosPerso.Controls.Add(Me.txtTelephone)
         Me.grpInfosPerso.Controls.Add(Me.lblTelephone)
         Me.grpInfosPerso.Controls.Add(Me.lblEmail)
-        Me.grpInfosPerso.Controls.Add(Me.TextBox1)
+        Me.grpInfosPerso.Controls.Add(Me.txtDateNaissance)
         Me.grpInfosPerso.Controls.Add(Me.lblNaissance)
         Me.grpInfosPerso.Controls.Add(Me.txtPrenom)
         Me.grpInfosPerso.Controls.Add(Me.txtNom)
@@ -167,13 +167,13 @@ Partial Class InformationsPersonnellesForm
         Me.lblEmail.TabIndex = 6
         Me.lblEmail.Text = "Email :"
         '
-        'TextBox1
+        'txtDateNaissance
         '
-        Me.TextBox1.Location = New System.Drawing.Point(118, 118)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 5
+        Me.txtDateNaissance.Location = New System.Drawing.Point(118, 118)
+        Me.txtDateNaissance.Name = "txtDateNaissance"
+        Me.txtDateNaissance.ReadOnly = True
+        Me.txtDateNaissance.Size = New System.Drawing.Size(100, 20)
+        Me.txtDateNaissance.TabIndex = 5
         '
         'lblNaissance
         '
@@ -246,7 +246,7 @@ Partial Class InformationsPersonnellesForm
     Friend WithEvents txtTelephone As TextBox
     Friend WithEvents lblTelephone As Label
     Friend WithEvents lblEmail As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtDateNaissance As TextBox
     Friend WithEvents txtAdresse As TextBox
     Friend WithEvents lblAdresse As Label
     Friend WithEvents lblTaille As Label

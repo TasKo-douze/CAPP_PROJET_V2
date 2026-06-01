@@ -90,7 +90,18 @@ Public Class Inscription1
             Exit Sub
         End If
 
+        Dim age As Integer = Date.Today.Year - dtpDateNaissance.Value.Year
 
+        If dtpDateNaissance.Value.Date > Date.Today.AddYears(-age) Then
+            age -= 1
+        End If
+
+        If age < 18 Then
+            MessageBox.Show("Vous devez avoir au moins 18 ans pour vous inscrire.", "Inscription refusée", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ConnexionForm.Show()
+            Me.Hide()
+            Exit Sub
+        End If
 
 
         Dim ok As Boolean = DataAccess.InscriptionClient(txtbNom.Text, txtbPrenom.Text, mtxtbTelephone.Text, txtbEmail.Text, txtbMDPIns.Text, dtpDateNaissance.Value, CInt(nudTaille.Value), CInt(nudPoids.Value), txtbRue.Text, txtbVille.Text, CInt(txtbNumero.Text))
@@ -106,15 +117,7 @@ Public Class Inscription1
 
     End Sub
 
-    Private Sub mtxtbTelephone_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles mtxtbTelephone.MaskInputRejected
-
-    End Sub
-
     Private Sub lblInscription_Click(sender As Object, e As EventArgs) Handles lblInscription.Click
-
-    End Sub
-
-    Private Sub grpbInfoPerso_Enter(sender As Object, e As EventArgs) Handles grpbInfoPerso.Enter
 
     End Sub
 End Class
