@@ -117,9 +117,7 @@ Public Class Inscription1
 
     End Sub
 
-    Private Sub lblInscription_Click(sender As Object, e As EventArgs) Handles lblInscription.Click
 
-    End Sub
 End Class
 
 
