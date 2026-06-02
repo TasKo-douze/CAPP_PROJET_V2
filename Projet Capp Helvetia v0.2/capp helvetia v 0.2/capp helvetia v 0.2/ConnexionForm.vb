@@ -36,4 +36,8 @@ Public Class ConnexionForm
         InitTextBox(txtbEmailIns, placeholderEmail)
         InitTextBox(txtbMDPIns, placeholderMotdePasse)
     End Sub
+
+    Private Sub txtbMDP_TextChanged(sender As Object, e As EventArgs) Handles txtbMDP.TextChanged
+
+    End Sub
 End Class

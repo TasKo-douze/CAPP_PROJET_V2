@@ -151,5 +151,19 @@
 
     End Function
 
+    'samir'
+    Public Function VerifierEmail(email As String) As Boolean
+        Dim requete As String = "SELECT * FROM HS_CLIENT WHERE CLI_EMAIL = '" & email & "'"
+        Dim result = DatabaseHelper.ExecuteQuery(requete)
+        Return result.Count > 0
+    End Function
+
+    Public Sub UpdateCoordonnees(email As String, nouveauTel As String, nouveauEmail As String, rue As String, numero As String, ville As String)
+        Dim requeteClient As String = "UPDATE HS_CLIENT SET CLI_TEL = '" & nouveauTel & "', CLI_EMAIL = '" & nouveauEmail & "' WHERE CLI_EMAIL = '" & email & "'"
+        DatabaseHelper.ExecuteNonQuery(requeteClient)
+
+        Dim requeteAdresse As String = "UPDATE HS_ADRESSE SET ADR_RUE = '" & rue & "', ADR_NUM = " & numero & ", ADR_VILLE = '" & ville & "' WHERE ADR_ID = (SELECT CLI_ADR_ID FROM HS_CLIENT WHERE CLI_EMAIL = '" & nouveauEmail & "')"
+        DatabaseHelper.ExecuteNonQuery(requeteAdresse)
+    End Sub
 
 End Module
