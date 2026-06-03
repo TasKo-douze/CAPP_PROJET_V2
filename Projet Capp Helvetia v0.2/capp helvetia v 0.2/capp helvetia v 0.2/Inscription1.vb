@@ -25,16 +25,14 @@ Public Class Inscription1
     End Sub
 
     Private Sub InitTextBox(tb As TextBox, placeholder As String)
-        tb.BackColor = Color.Black
-        tb.ForeColor = Color.Gray
-        tb.BorderStyle = BorderStyle.None
+
         tb.Text = placeholder
     End Sub
 
     Private Sub HandleEnter(tb As TextBox, placeholder As String, isPassword As Boolean)
         If tb.Text = placeholder Then
             tb.Text = ""
-            tb.ForeColor = Color.White
+
             If isPassword Then tb.UseSystemPasswordChar = True
         End If
     End Sub
@@ -49,21 +47,18 @@ Public Class Inscription1
 
 
 
-
-
-
     Private Sub VerifierChamps()
 
 
         ' Tant que le text box est rempli le bouton de validation s'activera
         If txtbNom.Text.Trim() = "" And
-       txtbPrenom.Text.Trim() = "" And
-       txtbRue.Text.Trim() = "" And
-       txtbVille.Text.Trim() = "" And
-       txtbNumero.Text.Trim() = "" And
-       txtbEmailIns.Text.Trim() = "" And
-       mtxtbTelephone.Text.Trim() = "" And
-       txtbMDPIns.Text.Trim() = "" Then
+           txtbPrenom.Text.Trim() = "" And
+           txtbRue.Text.Trim() = "" And
+           txtbVille.Text.Trim() = "" And
+           txtbNumero.Text.Trim() = "" And
+           txtbEmailIns.Text.Trim() = "" And
+           mtxtbTelephone.Text.Trim() = "" And
+           txtbMDPIns.Text.Trim() = "" Then
 
             btnValiderInscription.Enabled = False
 
@@ -171,7 +166,70 @@ Public Class Inscription1
 
     End Sub
 
+    Private Sub txtbNom_Enter(sender As Object, e As EventArgs) Handles txtbNom.Enter
+        HandleEnter(txtbNom, placeholderNom, False)
+    End Sub
 
+    Private Sub txtbNom_Leave(sender As Object, e As EventArgs) Handles txtbNom.Leave
+        HandleLeave(txtbNom, placeholderNom, False)
+    End Sub
+
+    Private Sub txtbPrenom_Enter(sender As Object, e As EventArgs) Handles txtbPrenom.Enter
+        HandleEnter(txtbPrenom, placeholderPrenom, False)
+    End Sub
+
+    Private Sub txtbPrenom_Leave(sender As Object, e As EventArgs) Handles txtbPrenom.Leave
+        HandleLeave(txtbPrenom, placeholderPrenom, False)
+    End Sub
+
+    Private Sub txtbEmailIns_Enter(sender As Object, e As EventArgs) Handles txtbEmailIns.Enter
+        HandleEnter(txtbEmailIns, placeholderEmail, False)
+    End Sub
+
+    Private Sub txtbEmailIns_Leave(sender As Object, e As EventArgs) Handles txtbEmailIns.Leave
+        HandleLeave(txtbEmailIns, placeholderEmail, False)
+    End Sub
+
+    Private Sub txtbMDPIns_Enter(sender As Object, e As EventArgs) Handles txtbMDPIns.Enter
+        HandleEnter(txtbMDPIns, placeholderMotdePasse, False)
+    End Sub
+
+    Private Sub txtbMDPIns_Leave(sender As Object, e As EventArgs) Handles txtbMDPIns.Leave
+        HandleLeave(txtbMDPIns, placeholderMotdePasse, False)
+    End Sub
+
+    Private Sub txtbRue_Enter(sender As Object, e As EventArgs) Handles txtbRue.Enter
+        HandleEnter(txtbRue, placeholderRue, False)
+    End Sub
+
+    Private Sub txtbRue_Leave(sender As Object, e As EventArgs) Handles txtbRue.Leave
+        HandleLeave(txtbRue, placeholderRue, False)
+    End Sub
+
+    Private Sub txtbVille_Enter(sender As Object, e As EventArgs) Handles txtbVille.Enter
+        HandleEnter(txtbVille, placeholderVille, False)
+    End Sub
+
+    Private Sub txtbVille_Leave(sender As Object, e As EventArgs) Handles txtbVille.Leave
+        HandleLeave(txtbVille, placeholderVille, False)
+    End Sub
+
+    Private Sub txtbNumero_Enter(sender As Object, e As EventArgs) Handles txtbNumero.Enter
+        HandleEnter(txtbNumero, placeholderNumero, False)
+    End Sub
+
+    Private Sub txtbNumero_Leave(sender As Object, e As EventArgs) Handles txtbNumero.Leave
+        HandleLeave(txtbNumero, placeholderNumero, False)
+    End Sub
+
+    Private Sub btnCadena_Click(sender As Object, e As EventArgs) Handles btnCadena.Click
+        If txtbMDPIns.UseSystemPasswordChar = True Then
+            txtbMDPIns.UseSystemPasswordChar = False
+        Else
+            txtbMDPIns.UseSystemPasswordChar = True
+        End If
+
+    End Sub
 End Class
 
 

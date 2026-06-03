@@ -53,6 +53,7 @@ Partial Class Inscription1
         Me.txtbEmailIns = New System.Windows.Forms.TextBox()
         Me.txtbPrenom = New System.Windows.Forms.TextBox()
         Me.txtbNom = New System.Windows.Forms.TextBox()
+        Me.btnCadena = New System.Windows.Forms.Button()
         Me.pnlInscription.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.grpbInfoPerso.SuspendLayout()
@@ -177,6 +178,7 @@ Partial Class Inscription1
         '
         'grpbInfoPerso
         '
+        Me.grpbInfoPerso.Controls.Add(Me.btnCadena)
         Me.grpbInfoPerso.Controls.Add(Me.lblKg)
         Me.grpbInfoPerso.Controls.Add(Me.lblCm)
         Me.grpbInfoPerso.Controls.Add(Me.nudPoids)
@@ -352,6 +354,14 @@ Partial Class Inscription1
         Me.txtbNom.Size = New System.Drawing.Size(100, 20)
         Me.txtbNom.TabIndex = 2
         '
+        'btnCadena
+        '
+        Me.btnCadena.Location = New System.Drawing.Point(228, 145)
+        Me.btnCadena.Name = "btnCadena"
+        Me.btnCadena.Size = New System.Drawing.Size(26, 23)
+        Me.btnCadena.TabIndex = 21
+        Me.btnCadena.UseVisualStyleBackColor = True
+        '
         'Inscription1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -402,4 +412,5 @@ Partial Class Inscription1
     Friend WithEvents txtbRue As TextBox
     Friend WithEvents lblInscription As Label
     Friend WithEvents btnValiderInscription As Button
+    Friend WithEvents btnCadena As Button
 End Class

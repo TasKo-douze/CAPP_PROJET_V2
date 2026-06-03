@@ -65,9 +65,6 @@
 
 
 
-
-
-
         Dim requeteAdresse As String =
         "INSERT INTO HS_ADRESSE (ADR_ID,ADR_RUE, ADR_VILLE, ADR_NUM, ADR_PAYS)
         VALUES (SEQ_ADRE_ID.NEXTVAL,:rue, :ville , :numero ,'Suisse')"
@@ -106,16 +103,13 @@
     End Function
 
 
-
-
-
     Public Function Connexion(email As String, motdepasse As String) As Boolean
 
         Dim requete As String = "
         SELECT * FROM HS_CLIENT
         WHERE CLI_EMAIL = '" & email & "'
-        AND CLI_MOTS_DE_PASSE = '" & motdepasse & "'
-    "
+        AND CLI_MOTS_DE_PASSE = '" & motdepasse & "'"
+
 
         Dim result = DatabaseHelper.ExecuteQuery(requete)
 

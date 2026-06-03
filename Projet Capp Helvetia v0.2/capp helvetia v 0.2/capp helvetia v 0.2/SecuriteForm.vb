@@ -50,16 +50,16 @@
             Exit Sub
         End If
 
-        If Not DataAccess.VerifierAncienMdp(ConnexionForm.txtbEmail.Text, txtOldMdp.Text) Then
-            MessageBox.Show("Ancien mot de passe incorrect.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Exit Sub
-        End If
+        'If Not DataAccess.VerifierAncienMdp(ConnexionForm.txtbEmail.Text, txtOldMdp.Text) Then
+        'MessageBox.Show("Ancien mot de passe incorrect.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'Exit Sub
+        'End If
 
-        DataAccess.UpdateMotDePasse(ConnexionForm.txtbEmail.Text, txtNewMdp.Text)
-        MessageBox.Show("Mot de passe changé avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        txtOldMdp.Clear()
-        txtNewMdp.Clear()
-        txtValidationMdp.Clear()
+        'DataAccess.UpdateMotDePasse(ConnexionForm.txtbEmail.Text, txtNewMdp.Text)
+        'MessageBox.Show("Mot de passe changé avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'txtOldMdp.Clear()
+        'txtNewMdp.Clear()
+        'txtValidationMdp.Clear()
     End Sub
 
 

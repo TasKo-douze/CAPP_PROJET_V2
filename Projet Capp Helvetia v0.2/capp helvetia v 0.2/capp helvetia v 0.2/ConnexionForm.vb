@@ -2,8 +2,36 @@
 
 Public Class ConnexionForm
 
-    Private placeholderEmail As String = "Ex: nom@mail.com"
-    Private placeholderMotdePasse As String = "Entrez votre Mot de Passe"
+
+
+    Private placeholderEmail As String = "Votre email"
+    Private placeholderMotdePasse As String = "Votre Mot de Passe"
+
+    Private Sub ConnexionForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        InitTextBox(txtbEmail, placeholderEmail)
+        InitTextBox(txtbMDP, placeholderMotdePasse)
+
+        txtbMDP.UseSystemPasswordChar = False
+    End Sub
+
+    Private Sub InitTextBox(tb As TextBox, placeholder As String)
+        tb.Text = placeholder
+    End Sub
+
+    Private Sub HandleEnter(tb As TextBox, placeholder As String, isPassword As Boolean)
+        If tb.Text = placeholder Then
+            tb.Text = ""
+            If isPassword Then tb.UseSystemPasswordChar = True
+        End If
+    End Sub
+
+    Private Sub HandleLeave(tb As TextBox, placeholder As String, isPassword As Boolean)
+        If tb.Text = "" Then
+            tb.Text = placeholder
+            tb.ForeColor = Color.Gray
+            If isPassword Then tb.UseSystemPasswordChar = False
+        End If
+    End Sub
 
     Private Sub btnConnexion_Click(sender As Object, e As EventArgs) Handles btnConnexion.Click
 
@@ -32,12 +60,28 @@ Public Class ConnexionForm
         Me.Hide()
     End Sub
 
-    Private Sub ConnexionForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        InitTextBox(txtbEmailIns, placeholderEmail)
-        InitTextBox(txtbMDPIns, placeholderMotdePasse)
+    Private Sub txtbEmail_Enter(sender As Object, e As EventArgs) Handles txtbEmail.Enter
+        HandleEnter(txtbEmail, placeholderEmail, False)
     End Sub
 
-    Private Sub txtbMDP_TextChanged(sender As Object, e As EventArgs) Handles txtbMDP.TextChanged
+    Private Sub txtbEmail_Leave(sender As Object, e As EventArgs) Handles txtbEmail.Leave
+        HandleLeave(txtbEmail, placeholderEmail, False)
+    End Sub
+
+    Private Sub txtbMDP_Enter(sender As Object, e As EventArgs) Handles txtbMDP.Enter
+        HandleEnter(txtbMDP, placeholderMotdePasse, False)
+    End Sub
+
+    Private Sub txtbMDP_Leave(sender As Object, e As EventArgs) Handles txtbMDP.Leave
+        HandleLeave(txtbMDP, placeholderMotdePasse, False)
+    End Sub
+
+    Private Sub btnCadena_Click(sender As Object, e As EventArgs) Handles btnCadena.Click
+        If txtbMDP.UseSystemPasswordChar = True Then
+            txtbMDP.UseSystemPasswordChar = False
+        Else
+            txtbMDP.UseSystemPasswordChar = True
+        End If
 
     End Sub
 End Class
