@@ -2,8 +2,6 @@
 
     ' pour rappele yInseder = position verticale dans le groupbox
 
-
-
     Public NbPassagers As Integer
 
     Private SupBagage As Integer = 0

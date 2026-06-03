@@ -42,9 +42,22 @@
         ChargerReservation()
     End Sub
     Private Sub btnReserver_Click(sender As Object, e As EventArgs) Handles btnReserver.Click
-        ' Message indiquant la réussite de la réservation et du paiement
-        MessageBox.Show("La réservation a été effectuée et le paiement a été effectué avec succès.", "Réservation", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Close()
+
+
+
+
+        Try
+            DataAccess.InsertReservation(VilleDepart, VilleArrivee, DateReservation, NbPassagers, PrixTotal)
+
+            ' Message indiquant la réussite de la réservation et du paiement
+            MessageBox.Show("La réservation a été effectuée et le paiement a été effectué avec succès.", "Réservation", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Close()
+
+        Catch ex As Exception
+
+            MessageBox.Show("Erreur lors de l'enregistrement de la réservation : " & ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        End Try
     End Sub
 
 

@@ -25,6 +25,33 @@
         DatabaseHelper.ExecuteNonQuery(requete, parametres)
 
     End Sub
+
+    Public Sub InsertReservation(villeDepart As String, villeArrivee As String, dateReservation As Date, nbPassagers As Integer, prixTotal As Double)
+
+        Dim requete As String = "INSERT INTO HS_RESERVATION(RES_ID, VIL_ID_DE, VIL_ID_POUR, CLI_RES_ID, RES_DATE_RESERVATION,RES_DUREEESTIME, RES_ACCOMPTE, RES_STATUT, RES_NOMBRE_PASSAGERS_ESTIME)
+                                 VALUES(SEQ_RES_ID.NEXTVAL,
+        (SELECT VIL_ID FROM HS_VILLE WHERE VIL_NOM = :villeDepart),
+        (SELECT VIL_ID FROM HS_VILLE WHERE VIL_NOM = :villeArrivee),
+         1,
+        :dateReservation,
+         0,
+        :acompte,
+        'Payée',
+        :nbPassagers)"
+
+
+        Dim parametres As New Dictionary(Of String, Object)
+
+        parametres.Add("villeDepart", villeDepart)
+        parametres.Add("villeArrivee", villeArrivee)
+        parametres.Add("dateReservation", dateReservation)
+        parametres.Add("acompte", prixTotal)
+        parametres.Add("nbPassagers", nbPassagers)
+
+        DatabaseHelper.ExecuteNonQuery(requete, parametres)
+
+    End Sub
+
     Public Function InscriptionClient(nom As String, prenom As String, telephone As String, email As String, motdepasse As String, dateNaissance As Date, taille As Integer, poids As Integer, rue As String, ville As String, numero As Integer) As Boolean
 
         'trim sert a valider la donnée du client meme si il y a un esapce après

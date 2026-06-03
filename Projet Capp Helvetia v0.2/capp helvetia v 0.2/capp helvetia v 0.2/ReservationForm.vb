@@ -132,11 +132,15 @@
         End If
 
         ' Bouton pour passer à la page de détails des passagers
-        Dim form As New RecapitulatifForm()
+
+
+        Dim form As New DetailsPassagerForm()
 
         form.VilleDepart = cbmVilleDepart.Text
         form.VilleArrivee = cbmVilleArriver.Text
         form.DateReservation = dtpDateDepart.Value
+        form.NbPassagers = CInt(cbmNbPassager.Text)
+
 
         form.Show()
         Close()
