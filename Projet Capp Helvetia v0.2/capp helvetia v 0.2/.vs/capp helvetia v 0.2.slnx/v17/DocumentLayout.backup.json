@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\MATYAS.KNCSK\\Desktop\\Projet capp\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\",
   "Documents": [
     {
@@ -35,6 +36,29 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|c:\\users\\matyas.kncsk\\desktop\\projet capp\\capp_projet_v2\\projet capp helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|8998e48e-b89a-4034-b66e-353d8c1fdc2e"
+=======
+  "WorkspaceRootPath": "C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|c:\\users\\venera.rmq\\desktop\\capp_projet_v2\\projet capp helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\connexionform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\connexionform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\connexionform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\connexionform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\inscription1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\inscription1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\inscription1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\inscription1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|c:\\users\\venera.rmq\\desktop\\capp_projet_v2\\projet capp helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\dataaccess.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{880DAD94-D04D-4C85-AD02-6E7925129AE9}|capp helvetia v 0.2\\capp helvetia v 0.2.vbproj|solutionrelative:capp helvetia v 0.2\\dataaccess.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+>>>>>>> f38ed2eafa8d29b933c395ca4aa4eb28764d9a38
     }
   ],
   "DocumentGroupContainers": [
@@ -47,6 +71,7 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
+<<<<<<< HEAD
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
@@ -73,11 +98,49 @@
               "ViewState": "AgIAAHQAAAAAAAAAAAAuwI0AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-06-03T08:48:57.734Z",
+=======
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataAccess.vb",
+              "DocumentMoniker": "C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\DataAccess.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\DataAccess.vb",
+              "ToolTip": "C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\DataAccess.vb",
+              "RelativeToolTip": "capp helvetia v 0.2\\DataAccess.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-06-01T09:25:12.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ConnexionForm.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\ConnexionForm.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\ConnexionForm.vb",
+              "ToolTip": "C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\ConnexionForm.vb [Design]",
+              "RelativeToolTip": "capp helvetia v 0.2\\ConnexionForm.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-11T10:52:58.808Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ConnexionForm.vb",
+              "DocumentMoniker": "C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\ConnexionForm.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\ConnexionForm.vb",
+              "ToolTip": "C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\ConnexionForm.vb",
+              "RelativeToolTip": "capp helvetia v 0.2\\ConnexionForm.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-06-01T11:14:03.921Z",
+>>>>>>> f38ed2eafa8d29b933c395ca4aa4eb28764d9a38
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+<<<<<<< HEAD
               "Title": "RecapitulatifForm.vb",
               "DocumentMoniker": "C:\\Users\\MATYAS.KNCSK\\Desktop\\Projet capp\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\RecapitulatifForm.vb",
               "RelativeDocumentMoniker": "capp helvetia v 0.2\\RecapitulatifForm.vb",
@@ -124,10 +187,20 @@
               "RelativeToolTip": "capp helvetia v 0.2\\ReservationForm.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-06-01T09:24:50.078Z",
+=======
+              "Title": "Inscription1.vb [Design]",
+              "DocumentMoniker": "C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\Inscription1.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\Inscription1.vb",
+              "ToolTip": "C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\Inscription1.vb [Design]",
+              "RelativeToolTip": "capp helvetia v 0.2\\Inscription1.vb [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-12T14:27:05.72Z",
+>>>>>>> f38ed2eafa8d29b933c395ca4aa4eb28764d9a38
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 6,
               "Title": "DataAccess.vb",
               "DocumentMoniker": "C:\\Users\\MATYAS.KNCSK\\Desktop\\Projet capp\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\DataAccess.vb",
@@ -149,6 +222,18 @@
               "RelativeToolTip": "capp helvetia v 0.2\\ConnexionForm.vb [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2026-06-01T09:24:50.077Z"
+=======
+              "DocumentIndex": 2,
+              "Title": "Inscription1.vb",
+              "DocumentMoniker": "C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\Inscription1.vb",
+              "RelativeDocumentMoniker": "capp helvetia v 0.2\\Inscription1.vb",
+              "ToolTip": "C:\\Users\\venera.rmq\\Desktop\\CAPP_PROJET_V2\\Projet Capp Helvetia v0.2\\capp helvetia v 0.2\\capp helvetia v 0.2\\Inscription1.vb",
+              "RelativeToolTip": "capp helvetia v 0.2\\Inscription1.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-05-12T14:32:24.179Z",
+              "EditorCaption": ""
+>>>>>>> f38ed2eafa8d29b933c395ca4aa4eb28764d9a38
             }
           ]
         }

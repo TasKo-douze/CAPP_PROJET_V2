@@ -33,18 +33,15 @@ Partial Class ReservationForm
         Me.dtpDateDepart = New System.Windows.Forms.DateTimePicker()
         Me.lblDateDepart = New System.Windows.Forms.Label()
         Me.btnPrecedent = New System.Windows.Forms.Button()
-        Me.grpDetails = New System.Windows.Forms.GroupBox()
-        Me.wbGoogleMaps = New System.Windows.Forms.WebBrowser()
         Me.lblReservation = New System.Windows.Forms.Label()
         Me.pnlReservation = New System.Windows.Forms.Panel()
         Me.grbVille.SuspendLayout()
-        Me.grpDetails.SuspendLayout()
         Me.pnlReservation.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnSuivant
         '
-        Me.btnSuivant.Location = New System.Drawing.Point(684, 711)
+        Me.btnSuivant.Location = New System.Drawing.Point(558, 387)
         Me.btnSuivant.Margin = New System.Windows.Forms.Padding(4)
         Me.btnSuivant.Name = "btnSuivant"
         Me.btnSuivant.Size = New System.Drawing.Size(95, 33)
@@ -102,7 +99,7 @@ Partial Class ReservationForm
         Me.grbVille.Controls.Add(Me.cbmVilleArriver)
         Me.grbVille.Controls.Add(Me.cbmVilleDepart)
         Me.grbVille.Controls.Add(Me.lblArriveVille)
-        Me.grbVille.Location = New System.Drawing.Point(100, 67)
+        Me.grbVille.Location = New System.Drawing.Point(119, 67)
         Me.grbVille.Margin = New System.Windows.Forms.Padding(4)
         Me.grbVille.Name = "grbVille"
         Me.grbVille.Padding = New System.Windows.Forms.Padding(4)
@@ -152,7 +149,7 @@ Partial Class ReservationForm
         '
         'btnPrecedent
         '
-        Me.btnPrecedent.Location = New System.Drawing.Point(80, 711)
+        Me.btnPrecedent.Location = New System.Drawing.Point(129, 387)
         Me.btnPrecedent.Margin = New System.Windows.Forms.Padding(4)
         Me.btnPrecedent.Name = "btnPrecedent"
         Me.btnPrecedent.Size = New System.Drawing.Size(95, 33)
@@ -160,32 +157,11 @@ Partial Class ReservationForm
         Me.btnPrecedent.Text = "Précedent "
         Me.btnPrecedent.UseVisualStyleBackColor = True
         '
-        'grpDetails
-        '
-        Me.grpDetails.Controls.Add(Me.wbGoogleMaps)
-        Me.grpDetails.Location = New System.Drawing.Point(100, 408)
-        Me.grpDetails.Margin = New System.Windows.Forms.Padding(4)
-        Me.grpDetails.Name = "grpDetails"
-        Me.grpDetails.Padding = New System.Windows.Forms.Padding(4)
-        Me.grpDetails.Size = New System.Drawing.Size(562, 268)
-        Me.grpDetails.TabIndex = 12
-        Me.grpDetails.TabStop = False
-        Me.grpDetails.Text = "Détails réservation"
-        '
-        'wbGoogleMaps
-        '
-        Me.wbGoogleMaps.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.wbGoogleMaps.Location = New System.Drawing.Point(4, 22)
-        Me.wbGoogleMaps.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.wbGoogleMaps.Name = "wbGoogleMaps"
-        Me.wbGoogleMaps.Size = New System.Drawing.Size(554, 242)
-        Me.wbGoogleMaps.TabIndex = 0
-        '
         'lblReservation
         '
         Me.lblReservation.AutoSize = True
         Me.lblReservation.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblReservation.Location = New System.Drawing.Point(13, 20)
+        Me.lblReservation.Location = New System.Drawing.Point(26, 22)
         Me.lblReservation.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblReservation.Name = "lblReservation"
         Me.lblReservation.Size = New System.Drawing.Size(92, 21)
@@ -196,7 +172,6 @@ Partial Class ReservationForm
         '
         Me.pnlReservation.AutoScroll = True
         Me.pnlReservation.Controls.Add(Me.lblReservation)
-        Me.pnlReservation.Controls.Add(Me.grpDetails)
         Me.pnlReservation.Controls.Add(Me.btnPrecedent)
         Me.pnlReservation.Controls.Add(Me.grbVille)
         Me.pnlReservation.Controls.Add(Me.btnSuivant)
@@ -219,7 +194,6 @@ Partial Class ReservationForm
         Me.Text = "Réservation"
         Me.grbVille.ResumeLayout(False)
         Me.grbVille.PerformLayout()
-        Me.grpDetails.ResumeLayout(False)
         Me.pnlReservation.ResumeLayout(False)
         Me.pnlReservation.PerformLayout()
         Me.ResumeLayout(False)
@@ -233,11 +207,9 @@ Partial Class ReservationForm
     Friend WithEvents cbmVilleArriver As ComboBox
     Friend WithEvents grbVille As GroupBox
     Friend WithEvents btnPrecedent As Button
-    Friend WithEvents grpDetails As GroupBox
     Friend WithEvents dtpDateDepart As DateTimePicker
     Friend WithEvents lblDateDepart As Label
     Friend WithEvents lblReservation As Label
-    Friend WithEvents wbGoogleMaps As WebBrowser
     Friend WithEvents cbmNbPassager As ComboBox
     Friend WithEvents lblNbPassager As Label
     Friend WithEvents pnlReservation As Panel
