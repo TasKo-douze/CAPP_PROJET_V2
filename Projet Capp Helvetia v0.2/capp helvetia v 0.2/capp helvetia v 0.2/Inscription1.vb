@@ -48,14 +48,9 @@ Public Class Inscription1
     End Sub
 
 
-        btnValiderInscription.Enabled = False
 
-        mtxtbTelephone.Mask = "+41.00.000.00.00"
 
-        dtpDateNaissance.Format = DateTimePickerFormat.Custom
-        dtpDateNaissance.CustomFormat = "dd.MM.yyyy"
 
-    
 
     Private Sub VerifierChamps()
 
@@ -163,6 +158,16 @@ Public Class Inscription1
         Else
             MessageBox.Show("Erreur inscription", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+
+
+        btnValiderInscription.Enabled = False
+
+        mtxtbTelephone.Mask = "+41.00.000.00.00"
+
+        dtpDateNaissance.Format = DateTimePickerFormat.Custom
+
+        dtpDateNaissance.CustomFormat = "dd.MM.yyyy"
+
 
     End Sub
 
