@@ -11,6 +11,23 @@
 
     Public EstConnecte As Boolean = False
 
+
+    Public Sub RecupererClient(email As String)
+
+        Dim requete As String =
+            "SELECT *FROM HS_CLIENT
+             WHERE CLI_EMAIL = :email"
+
+        Dim result = DatabaseHelper.ExecuteQuery(requete)
+
+        If result.Count > 0 Then
+            Connecter(result(0))
+        End If
+
+    End Sub
+
+
+
     Public Sub Connecter(client As Dictionary(Of String, Object))
 
         Id = CInt(client("CLI_ID"))

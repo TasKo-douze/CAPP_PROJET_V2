@@ -105,10 +105,10 @@
 
     Public Function Connexion(email As String, motdepasse As String) As Boolean
 
-        Dim requete As String = "
-        SELECT * FROM HS_CLIENT
-        WHERE CLI_EMAIL = '" & email & "'
-        AND CLI_MOTS_DE_PASSE = '" & motdepasse & "'"
+        Dim requete As String =
+        " SELECT * FROM HS_CLIENT
+        WHERE CLI_EMAIL = :email
+        AND CLI_MOTS_DE_PASSE = :motdepasse"
 
 
         Dim result = DatabaseHelper.ExecuteQuery(requete)
