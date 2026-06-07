@@ -149,26 +149,12 @@
 
     Public Function GetClientByEmail(email As String) As List(Of Dictionary(Of String, Object))
 
-        ' récupère les informations du client avec son email
-        Dim requete As String = "
-    SELECT 
-        c.CLI_NOM,
-        c.CLI_PRENOM,
-        c.CLI_DATE_NAISSANCE,
-        c.CLI_TAILLE,
-        c.CLI_POIDS,
-        c.CLI_TEL,
-        c.CLI_EMAIL,
-        a.ADR_RUE,
-        a.ADR_NUM,
-        a.ADR_VILLE,
-        a.ADR_PAYS
-    FROM HS_CLIENT c
-    JOIN HS_ADRESSE a ON a.ADR_ID = c.CLI_ADR_ID
-    WHERE c.CLI_EMAIL = '" & email & "'
-    "
+        Dim requete As String = "SELECT CLI_NOM, CLI_PRENOM, CLI_DATE_NAISSANCE, CLI_TAILLE, CLI_POIDS, CLI_TEL, CLI_EMAIL, ADR_RUE, ADR_NUM, ADR_VILLE, ADR_PAYS FROM HS_CLIENT JOIN HS_ADRESSE ON ADR_ID = CLI_ADR_ID WHERE CLI_EMAIL = :email"
 
-        Return DatabaseHelper.ExecuteQuery(requete)
+        Dim parametres As New Dictionary(Of String, Object)
+        parametres.Add("email", email)
+
+        Return DatabaseHelper.ExecuteQuery(requete, parametres)
 
     End Function
 
@@ -180,11 +166,43 @@
     End Function
 
     Public Sub UpdateCoordonnees(email As String, nouveauTel As String, nouveauEmail As String, rue As String, numero As String, ville As String)
-        Dim requeteClient As String = "UPDATE HS_CLIENT SET CLI_TEL = '" & nouveauTel & "', CLI_EMAIL = '" & nouveauEmail & "' WHERE CLI_EMAIL = '" & email & "'"
-        DatabaseHelper.ExecuteNonQuery(requeteClient)
 
-        Dim requeteAdresse As String = "UPDATE HS_ADRESSE SET ADR_RUE = '" & rue & "', ADR_NUM = " & numero & ", ADR_VILLE = '" & ville & "' WHERE ADR_ID = (SELECT CLI_ADR_ID FROM HS_CLIENT WHERE CLI_EMAIL = '" & nouveauEmail & "')"
-        DatabaseHelper.ExecuteNonQuery(requeteAdresse)
+        Dim requeteClient As String = "UPDATE HS_CLIENT SET CLI_TEL = :tel, CLI_EMAIL = :nouveauEmail WHERE CLI_EMAIL = :email"
+        Dim parametresClient As New Dictionary(Of String, Object)
+        parametresClient.Add("tel", nouveauTel)
+        parametresClient.Add("nouveauEmail", nouveauEmail)
+        parametresClient.Add("email", email)
+        DatabaseHelper.ExecuteNonQuery(requeteClient, parametresClient)
+
+        Dim requeteAdresse As String = "UPDATE HS_ADRESSE SET ADR_RUE = :rue, ADR_NUM = :numero, ADR_VILLE = :ville WHERE ADR_ID = (SELECT CLI_ADR_ID FROM HS_CLIENT WHERE CLI_EMAIL = :email)"
+        Dim parametresAdresse As New Dictionary(Of String, Object)
+        parametresAdresse.Add("rue", rue)
+        parametresAdresse.Add("numero", numero)
+        parametresAdresse.Add("ville", ville)
+        parametresAdresse.Add("email", nouveauEmail)
+        DatabaseHelper.ExecuteNonQuery(requeteAdresse, parametresAdresse)
+
+    End Sub
+
+
+    'samir'
+    Public Function VerifierAncienMdp(email As String, ancienMdp As String) As Boolean
+        Dim requete As String = "SELECT * FROM HS_CLIENT WHERE CLI_EMAIL = :email AND CLI_MOTS_DE_PASSE = :mdp"
+        Dim parametres As New Dictionary(Of String, Object)
+        parametres.Add("email", email)
+        parametres.Add("mdp", ancienMdp)
+        Dim result = DatabaseHelper.ExecuteQuery(requete, parametres)
+        Return result.Count > 0
+    End Function
+
+
+    'samir'
+    Public Sub UpdateMotDePasse(email As String, nouveauMdp As String)
+        Dim requete As String = "UPDATE HS_CLIENT SET CLI_MOTS_DE_PASSE = :mdp WHERE CLI_EMAIL = :email"
+        Dim parametres As New Dictionary(Of String, Object)
+        parametres.Add("mdp", nouveauMdp)
+        parametres.Add("email", email)
+        DatabaseHelper.ExecuteNonQuery(requete, parametres)
     End Sub
 
 End Module

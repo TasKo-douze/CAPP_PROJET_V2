@@ -62,7 +62,7 @@
         'txtValidationMdp.Clear()
     End Sub
 
+    Private Sub SecuriteForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
-
+    End Sub
 End Class
