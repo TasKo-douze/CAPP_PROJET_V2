@@ -120,35 +120,25 @@
 
     End Function
 
-
+    'SAMIR'
     Public Function GetVilles() As List(Of Dictionary(Of String, Object))
         Dim selectQuery = "SELECT VIL_NOM FROM HS_VILLE ORDER BY VIL_NOM"
         Return DatabaseHelper.ExecuteQuery(selectQuery)
     End Function
 
     Public Function GetClientByEmail(email As String) As List(Of Dictionary(Of String, Object))
-
-        ' récupère les informations du client avec son email
+        ' Récupère les infos d'un client à partir de son email
         Dim requete As String = "
-    SELECT 
-        c.CLI_NOM,
-        c.CLI_PRENOM,
-        c.CLI_DATE_NAISSANCE,
-        c.CLI_TAILLE,
-        c.CLI_POIDS,
-        c.CLI_TEL,
-        c.CLI_EMAIL,
-        a.ADR_RUE,
-        a.ADR_NUM,
-        a.ADR_VILLE,
-        a.ADR_PAYS
-    FROM HS_CLIENT c
-    JOIN HS_ADRESSE a ON a.ADR_ID = c.CLI_ADR_ID
-    WHERE c.CLI_EMAIL = '" & email & "'
-    "
+        SELECT  CLI_NOM, CLI_PRENOM, CLI_DATE_NAISSANCE, CLI_TAILLE, CLI_POIDS, CLI_TEL, CLI_EMAIL, ADR_RUE, ADR_NUM, ADR_VILLE, ADR_PAYS
+        FROM HS_CLIENT
+        JOIN HS_ADRESSE ON ADR_ID = CLI_ADR_ID
+        WHERE CLI_EMAIL = @email"
 
-        Return DatabaseHelper.ExecuteQuery(requete)
+        Dim params As New Dictionary(Of String, Object) From {
+        {"@email", email}
+    }
 
+        Return DatabaseHelper.ExecuteQuery(requete, params)
     End Function
 
 
