@@ -34,29 +34,7 @@
 
     End Sub
 
-    Private Sub AfficherCarte()
 
-        ' Vérifie que les deux villes sont bien choisies
-        If cbmVilleDepart.Text <> "" And cbmVilleArriver.Text <> "" Then
-
-            ' Récupère la ville de départ
-            Dim villeDepart As String = cbmVilleDepart.Text
-
-            ' Récupère la ville d'arrivée
-            Dim villeArrivee As String = cbmVilleArriver.Text
-
-            ' Construit l'url Google Maps
-            Dim url As String = "https://www.google.com/maps/embed/v1/directions?key=AIzaSyDAyd32CGuA_QZtkAe60RGL0csL7hcPKy0&origin=" &
-                                Uri.EscapeDataString(villeDepart) &
-                                "&destination=" &
-                                Uri.EscapeDataString(villeArrivee)
-
-            ' Affiche la carte dans le WebBrowser
-            wbGoogleMaps.Navigate(url)
-
-        End If
-
-    End Sub
 
     Private Sub dtpDateDepart_ValueChanged(sender As Object, e As EventArgs) Handles dtpDateDepart.ValueChanged
 
@@ -82,42 +60,6 @@
 
     End Sub
 
-    Private Sub cbmVilleDepart_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbmVilleDepart.SelectedIndexChanged
-
-        ' Vérifie si la ville de départ est la même que la ville d'arrivée
-        If cbmVilleDepart.Text = cbmVilleArriver.Text And cbmVilleDepart.Text <> "" Then
-
-            ' Affiche un message d'erreur
-            MessageBox.Show("La ville de départ et la ville d'arrivée doivent être différentes.")
-
-            ' Réinitialise la sélection
-            cbmVilleDepart.SelectedIndex = -1
-
-        End If
-
-        ' Affiche la carte si les deux villes sont choisies
-        AfficherCarte()
-
-    End Sub
-
-    Private Sub cbmVilleArriver_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbmVilleArriver.SelectedIndexChanged
-
-        ' Vérifie si la ville d'arrivee est la même que la ville de départ
-        If cbmVilleArriver.Text = cbmVilleDepart.Text And cbmVilleArriver.Text <> "" Then
-
-            ' Affiche un message d'erreur
-            MessageBox.Show("La ville de départ et la ville d'arrivée doivent être différentes.")
-
-            ' Réinitialise la sélection
-            cbmVilleArriver.SelectedIndex = -1
-
-        End If
-
-        ' Affiche la carte si les deux villes sont choisies
-        AfficherCarte()
-
-    End Sub
-
     Private Sub btnSuivant_Click(sender As Object, e As EventArgs) Handles btnSuivant.Click
 
         ' Condition pour pouvoir passer à la suite
@@ -132,11 +74,15 @@
         End If
 
         ' Bouton pour passer à la page de détails des passagers
-        Dim form As New RecapitulatifForm()
+
+
+        Dim form As New DetailsPassagerForm()
 
         form.VilleDepart = cbmVilleDepart.Text
         form.VilleArrivee = cbmVilleArriver.Text
         form.DateReservation = dtpDateDepart.Value
+        form.NbPassagers = CInt(cbmNbPassager.Text)
+
 
         form.Show()
         Close()
@@ -152,6 +98,7 @@
 
     End Sub
 
+    Private Sub pnlReservation_Paint(sender As Object, e As PaintEventArgs) Handles pnlReservation.Paint
 
-
+    End Sub
 End Class

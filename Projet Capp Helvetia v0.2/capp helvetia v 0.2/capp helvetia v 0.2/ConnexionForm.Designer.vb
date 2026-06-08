@@ -29,6 +29,7 @@ Partial Class ConnexionForm
         Me.lnklblInscription = New System.Windows.Forms.LinkLabel()
         Me.lblEmail = New System.Windows.Forms.Label()
         Me.lblMDP = New System.Windows.Forms.Label()
+        Me.btnCadena = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblConnexion
@@ -96,11 +97,20 @@ Partial Class ConnexionForm
         Me.lblMDP.TabIndex = 6
         Me.lblMDP.Text = "Mot de Passe:"
         '
+        'btnCadena
+        '
+        Me.btnCadena.Location = New System.Drawing.Point(267, 199)
+        Me.btnCadena.Name = "btnCadena"
+        Me.btnCadena.Size = New System.Drawing.Size(26, 23)
+        Me.btnCadena.TabIndex = 7
+        Me.btnCadena.UseVisualStyleBackColor = True
+        '
         'ConnexionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(410, 456)
+        Me.Controls.Add(Me.btnCadena)
         Me.Controls.Add(Me.lblMDP)
         Me.Controls.Add(Me.lblEmail)
         Me.Controls.Add(Me.lnklblInscription)
@@ -122,4 +132,5 @@ Partial Class ConnexionForm
     Friend WithEvents lnklblInscription As LinkLabel
     Friend WithEvents lblEmail As Label
     Friend WithEvents lblMDP As Label
+    Friend WithEvents btnCadena As Button
 End Class

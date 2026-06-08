@@ -2,12 +2,10 @@
 
     ' pour rappele yInseder = position verticale dans le groupbox
 
-
-
     Public NbPassagers As Integer
-    ' a enlever nbbagage _______________________________________________________________________________________________________
-    Public NbBagage As Integer
+
     Private SupBagage As Integer = 0
+    Private NbBagagesTotal As Integer = 0
 
     Public VilleDepart As String
     Public VilleArrivee As String
@@ -21,9 +19,6 @@
     Private ClientPoids As Integer
 
 
-    ' liste des passagers et des bagages pour les envoyer au récapitulatif
-    Public ListePassagers As New List(Of String)
-    Public ListeBagages As New List(Of Integer)
 
     Private Sub DetailsPassagerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -224,7 +219,7 @@
     End Sub
 
     Private Function ValidationDonnees() As Boolean
-
+        Dim NbBagagesTotal As Integer = 0
         SupBagage = 0
 
         For Each ctrlGroup As Control In PanelPassagers.Controls
@@ -251,6 +246,8 @@
                         If tag = "Bagage" Then
 
                             If txt.Visible Then
+
+                                NbBagagesTotal += 1
 
                                 If String.IsNullOrWhiteSpace(txt.Text) Then
                                     MessageBox.Show("Veuillez entrer le poids du bagage.")
@@ -330,21 +327,13 @@
 
                         If age < 16 Then
 
-                            MessageBox.Show(
-                            "Le passager doit avoir au minimum 16 ans.",
-                            "Âge invalide",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error)
+                            MessageBox.Show("Le passager doit avoir au minimum 16 ans.", "Âge invalide", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
                             Return False
 
                         ElseIf age < 18 Then
 
-                            MessageBox.Show(
-                            "Le passager est mineur. Le client est responsable des personnes mineures.",
-                            "Passager mineur",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning)
+                            MessageBox.Show("Le passager est mineur. Le client est responsable des personnes mineures.", "Passager mineur", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
                         End If
 
@@ -352,19 +341,9 @@
 
                 Next
 
-                ' Ajout dans les listes
-                If nom <> "" Or prenom <> "" Then
-                    ListePassagers.Add(nom & " " & prenom)
-                End If
 
-                ListeBagages.Add(bagage)
 
-                DataAccess.InsertPassager(
-                nom,
-                prenom,
-                dateNaissance,
-                taille,
-                poids)
+                DataAccess.InsertPassager(nom, prenom, dateNaissance, taille, poids)
 
             End If
 
@@ -376,8 +355,7 @@
 
     Private Sub btnContinuer_Click(sender As Object, e As EventArgs) Handles btnContinuer.Click
 
-        ListePassagers.Clear()
-        ListeBagages.Clear()
+
 
         If ValidationDonnees() Then
 
@@ -402,9 +380,7 @@
             form.ClientEmail = client("CLI_EMAIL").ToString()
             form.ClientTelephone = client("CLI_TEL").ToString()
 
-            ' Passagers
-            form.ListePassagers = ListePassagers
-            form.ListeBagages = ListeBagages
+            form.NbBagages = NbBagagesTotal
 
             ' Suppléments bagages
             form.SupplementBagages = SupBagage

@@ -133,6 +133,7 @@
     <Compile Include="AProposForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ClientConnecte.vb" />
     <Compile Include="ConfidentialiteDonneesForm.Designer.vb">
       <DependentUpon>ConfidentialiteDonneesForm.vb</DependentUpon>
     </Compile>

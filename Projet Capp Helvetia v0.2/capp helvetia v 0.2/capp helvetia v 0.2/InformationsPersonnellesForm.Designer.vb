@@ -24,10 +24,14 @@ Partial Class InformationsPersonnellesForm
     Private Sub InitializeComponent()
         Me.btnValide = New System.Windows.Forms.Button()
         Me.grpInfosPerso = New System.Windows.Forms.GroupBox()
-        Me.numTaille = New System.Windows.Forms.NumericUpDown()
-        Me.numPoids = New System.Windows.Forms.NumericUpDown()
+        Me.lblVille = New System.Windows.Forms.Label()
+        Me.txtVille = New System.Windows.Forms.TextBox()
         Me.txtAdresse = New System.Windows.Forms.TextBox()
         Me.lblAdresse = New System.Windows.Forms.Label()
+        Me.lblNumero = New System.Windows.Forms.Label()
+        Me.txtNumero = New System.Windows.Forms.TextBox()
+        Me.numTaille = New System.Windows.Forms.NumericUpDown()
+        Me.numPoids = New System.Windows.Forms.NumericUpDown()
         Me.lblTaille = New System.Windows.Forms.Label()
         Me.lblPoids = New System.Windows.Forms.Label()
         Me.txtEmail = New System.Windows.Forms.TextBox()
@@ -47,7 +51,7 @@ Partial Class InformationsPersonnellesForm
         '
         'btnValide
         '
-        Me.btnValide.Location = New System.Drawing.Point(637, 170)
+        Me.btnValide.Location = New System.Drawing.Point(620, 251)
         Me.btnValide.Name = "btnValide"
         Me.btnValide.Size = New System.Drawing.Size(86, 24)
         Me.btnValide.TabIndex = 0
@@ -56,11 +60,15 @@ Partial Class InformationsPersonnellesForm
         '
         'grpInfosPerso
         '
+        Me.grpInfosPerso.Controls.Add(Me.lblVille)
+        Me.grpInfosPerso.Controls.Add(Me.txtVille)
+        Me.grpInfosPerso.Controls.Add(Me.txtAdresse)
+        Me.grpInfosPerso.Controls.Add(Me.lblAdresse)
+        Me.grpInfosPerso.Controls.Add(Me.lblNumero)
+        Me.grpInfosPerso.Controls.Add(Me.txtNumero)
         Me.grpInfosPerso.Controls.Add(Me.numTaille)
         Me.grpInfosPerso.Controls.Add(Me.btnValide)
         Me.grpInfosPerso.Controls.Add(Me.numPoids)
-        Me.grpInfosPerso.Controls.Add(Me.txtAdresse)
-        Me.grpInfosPerso.Controls.Add(Me.lblAdresse)
         Me.grpInfosPerso.Controls.Add(Me.lblTaille)
         Me.grpInfosPerso.Controls.Add(Me.lblPoids)
         Me.grpInfosPerso.Controls.Add(Me.txtEmail)
@@ -75,14 +83,65 @@ Partial Class InformationsPersonnellesForm
         Me.grpInfosPerso.Controls.Add(Me.lblPrenom)
         Me.grpInfosPerso.Location = New System.Drawing.Point(22, 25)
         Me.grpInfosPerso.Name = "grpInfosPerso"
-        Me.grpInfosPerso.Size = New System.Drawing.Size(741, 210)
+        Me.grpInfosPerso.Size = New System.Drawing.Size(741, 294)
         Me.grpInfosPerso.TabIndex = 2
         Me.grpInfosPerso.TabStop = False
-        Me.grpInfosPerso.Text = "Informations personnelles"
+        Me.grpInfosPerso.Text = " Informations personnelles"
+        '
+        'lblVille
+        '
+        Me.lblVille.AutoSize = True
+        Me.lblVille.Location = New System.Drawing.Point(535, 121)
+        Me.lblVille.Name = "lblVille"
+        Me.lblVille.Size = New System.Drawing.Size(32, 13)
+        Me.lblVille.TabIndex = 19
+        Me.lblVille.Text = "Ville :"
+        '
+        'txtVille
+        '
+        Me.txtVille.Location = New System.Drawing.Point(620, 110)
+        Me.txtVille.Multiline = True
+        Me.txtVille.Name = "txtVille"
+        Me.txtVille.Size = New System.Drawing.Size(100, 24)
+        Me.txtVille.TabIndex = 21
+        '
+        'txtAdresse
+        '
+        Me.txtAdresse.Location = New System.Drawing.Point(620, 31)
+        Me.txtAdresse.Multiline = True
+        Me.txtAdresse.Name = "txtAdresse"
+        Me.txtAdresse.Size = New System.Drawing.Size(100, 24)
+        Me.txtAdresse.TabIndex = 15
+        '
+        'lblAdresse
+        '
+        Me.lblAdresse.AutoSize = True
+        Me.lblAdresse.Location = New System.Drawing.Point(535, 42)
+        Me.lblAdresse.Name = "lblAdresse"
+        Me.lblAdresse.Size = New System.Drawing.Size(51, 13)
+        Me.lblAdresse.TabIndex = 14
+        Me.lblAdresse.Text = "Adresse :"
+        '
+        'lblNumero
+        '
+        Me.lblNumero.AutoSize = True
+        Me.lblNumero.Location = New System.Drawing.Point(535, 81)
+        Me.lblNumero.Name = "lblNumero"
+        Me.lblNumero.Size = New System.Drawing.Size(50, 13)
+        Me.lblNumero.TabIndex = 18
+        Me.lblNumero.Text = "Numéro :"
+        '
+        'txtNumero
+        '
+        Me.txtNumero.Location = New System.Drawing.Point(620, 70)
+        Me.txtNumero.Multiline = True
+        Me.txtNumero.Name = "txtNumero"
+        Me.txtNumero.Size = New System.Drawing.Size(100, 24)
+        Me.txtNumero.TabIndex = 20
         '
         'numTaille
         '
-        Me.numTaille.Location = New System.Drawing.Point(331, 74)
+        Me.numTaille.Location = New System.Drawing.Point(118, 171)
         Me.numTaille.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
         Me.numTaille.Name = "numTaille"
         Me.numTaille.ReadOnly = True
@@ -91,34 +150,16 @@ Partial Class InformationsPersonnellesForm
         '
         'numPoids
         '
-        Me.numPoids.Location = New System.Drawing.Point(331, 35)
+        Me.numPoids.Location = New System.Drawing.Point(118, 222)
         Me.numPoids.Name = "numPoids"
         Me.numPoids.ReadOnly = True
         Me.numPoids.Size = New System.Drawing.Size(100, 20)
         Me.numPoids.TabIndex = 16
         '
-        'txtAdresse
-        '
-        Me.txtAdresse.Location = New System.Drawing.Point(596, 114)
-        Me.txtAdresse.Multiline = True
-        Me.txtAdresse.Name = "txtAdresse"
-        Me.txtAdresse.ReadOnly = True
-        Me.txtAdresse.Size = New System.Drawing.Size(100, 24)
-        Me.txtAdresse.TabIndex = 15
-        '
-        'lblAdresse
-        '
-        Me.lblAdresse.AutoSize = True
-        Me.lblAdresse.Location = New System.Drawing.Point(521, 125)
-        Me.lblAdresse.Name = "lblAdresse"
-        Me.lblAdresse.Size = New System.Drawing.Size(51, 13)
-        Me.lblAdresse.TabIndex = 14
-        Me.lblAdresse.Text = "Adresse :"
-        '
         'lblTaille
         '
         Me.lblTaille.AutoSize = True
-        Me.lblTaille.Location = New System.Drawing.Point(238, 81)
+        Me.lblTaille.Location = New System.Drawing.Point(25, 174)
         Me.lblTaille.Name = "lblTaille"
         Me.lblTaille.Size = New System.Drawing.Size(84, 13)
         Me.lblTaille.TabIndex = 11
@@ -127,7 +168,7 @@ Partial Class InformationsPersonnellesForm
         'lblPoids
         '
         Me.lblPoids.AutoSize = True
-        Me.lblPoids.Location = New System.Drawing.Point(238, 42)
+        Me.lblPoids.Location = New System.Drawing.Point(25, 221)
         Me.lblPoids.Name = "lblPoids"
         Me.lblPoids.Size = New System.Drawing.Size(87, 13)
         Me.lblPoids.TabIndex = 10
@@ -135,24 +176,22 @@ Partial Class InformationsPersonnellesForm
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(596, 78)
+        Me.txtEmail.Location = New System.Drawing.Point(396, 74)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.ReadOnly = True
         Me.txtEmail.Size = New System.Drawing.Size(100, 20)
         Me.txtEmail.TabIndex = 9
         '
         'txtTelephone
         '
-        Me.txtTelephone.Location = New System.Drawing.Point(596, 35)
+        Me.txtTelephone.Location = New System.Drawing.Point(396, 35)
         Me.txtTelephone.Name = "txtTelephone"
-        Me.txtTelephone.ReadOnly = True
         Me.txtTelephone.Size = New System.Drawing.Size(100, 20)
         Me.txtTelephone.TabIndex = 8
         '
         'lblTelephone
         '
         Me.lblTelephone.AutoSize = True
-        Me.lblTelephone.Location = New System.Drawing.Point(521, 42)
+        Me.lblTelephone.Location = New System.Drawing.Point(278, 42)
         Me.lblTelephone.Name = "lblTelephone"
         Me.lblTelephone.Size = New System.Drawing.Size(64, 13)
         Me.lblTelephone.TabIndex = 7
@@ -161,7 +200,7 @@ Partial Class InformationsPersonnellesForm
         'lblEmail
         '
         Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(521, 81)
+        Me.lblEmail.Location = New System.Drawing.Point(278, 81)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(38, 13)
         Me.lblEmail.TabIndex = 6
@@ -169,7 +208,7 @@ Partial Class InformationsPersonnellesForm
         '
         'txtDateNaissance
         '
-        Me.txtDateNaissance.Location = New System.Drawing.Point(118, 118)
+        Me.txtDateNaissance.Location = New System.Drawing.Point(118, 114)
         Me.txtDateNaissance.Name = "txtDateNaissance"
         Me.txtDateNaissance.ReadOnly = True
         Me.txtDateNaissance.Size = New System.Drawing.Size(100, 20)
@@ -223,7 +262,7 @@ Partial Class InformationsPersonnellesForm
         Me.AccessibleName = ""
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 277)
+        Me.ClientSize = New System.Drawing.Size(800, 333)
         Me.Controls.Add(Me.grpInfosPerso)
         Me.Name = "InformationsPersonnellesForm"
         Me.Text = "Informations personnelles"
@@ -253,4 +292,8 @@ Partial Class InformationsPersonnellesForm
     Friend WithEvents lblPoids As Label
     Friend WithEvents numPoids As NumericUpDown
     Friend WithEvents numTaille As NumericUpDown
+    Friend WithEvents txtVille As TextBox
+    Friend WithEvents txtNumero As TextBox
+    Friend WithEvents lblVille As Label
+    Friend WithEvents lblNumero As Label
 End Class
