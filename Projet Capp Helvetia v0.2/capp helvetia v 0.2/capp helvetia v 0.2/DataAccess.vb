@@ -29,19 +29,15 @@
     Public Sub InsertReservation(villeDepart As String, villeArrivee As String, dateReservation As Date, nbPassagers As Integer, prixTotal As Double)
 
         Dim requete As String = "INSERT INTO HS_RESERVATION(RES_ID, VIL_ID_DE, VIL_ID_POUR, CLI_RES_ID, RES_DATE_RESERVATION,RES_DUREEESTIME, RES_ACCOMPTE, RES_STATUT, RES_NOMBRE_PASSAGERS_ESTIME)
-                                 VALUES(SEQ_RES_ID.NEXTVAL,
-        (SELECT VIL_ID FROM HS_VILLE WHERE VIL_NOM = :villeDepart),
-        (SELECT VIL_ID FROM HS_VILLE WHERE VIL_NOM = :villeArrivee),
-         1,
-        :dateReservation,
-         0,
-        :acompte,
-        'Payée',
-        :nbPassagers)"
+                                VALUES(SEQ_RES_ID.NEXTVAL,(SELECT VIL_ID FROM HS_VILLE WHERE VIL_NOM = :villeDepart),
+                                                          (SELECT VIL_ID FROM HS_VILLE WHERE VIL_NOM = :villeArrivee),
+                                :clientId,:dateReservation,0,:acompte,'Payée',:nbPassagers)"
+
 
 
         Dim parametres As New Dictionary(Of String, Object)
 
+        parametres.Add("clientId", ClientConnecte.Id)
         parametres.Add("villeDepart", villeDepart)
         parametres.Add("villeArrivee", villeArrivee)
         parametres.Add("dateReservation", dateReservation)
@@ -119,25 +115,19 @@
 
 
     Public Function GetHistoriqueVols() As List(Of Dictionary(Of String, Object))
-        ' a modifier avec la session pour récupérer l'id du client connecté
-        Dim requete As String = "
-        SELECT
-            tra.TRAJ_ID,
-            vd.VIL_NOM AS VILLE_DEPART,
-            va.VIL_NOM AS VILLE_ARRIVEE,
-            tra.TRAJ_DATE_EFFECTIF,
-            tra.TRAJ_DUREEESTIME,
-            tra.TRAJ_FACTURE_MONTANT
-        FROM HS_TRAJET tra
-        JOIN HS_RESERVATION res ON res.RES_ID = tra.RES_TRAJET_ID
-        JOIN HS_VILLE dep ON dep.VIL_ID = tra.VIL_ID_DEPART
-        JOIN HS_VILLE arr ON arr.VIL_ID = tra.VIL_ID_ARRIVER
-        
-        WHERE res.CLI_RES_ID = 1
-        ORDER BY tra.TRAJ_DATE_EFFECTIF DESC
-    "
 
-        Return DatabaseHelper.ExecuteQuery(requete)
+        Dim requete As String =
+        "SELECT res.RES_ID,vd.VIL_NOM AS VILLE_DEPART,va.VIL_NOM AS VILLE_ARRIVEE, res.RES_DATE_RESERVATION, res.RES_DUREEESTIME, res.RES_ACCOMPTE, res.RES_STATUT, res.RES_NOMBRE_PASSAGERS_ESTIME
+        FROM HS_RESERVATION res
+        JOIN HS_VILLE vd ON vd.VIL_ID = res.VIL_ID_DE
+        JOIN HS_VILLE va ON va.VIL_ID = res.VIL_ID_POUR
+        WHERE res.CLI_RES_ID = :clientId
+        ORDER BY res.RES_DATE_RESERVATION DESC"
+
+        Dim parametres As New Dictionary(Of String, Object)
+        parametres.Add("clientId", ClientConnecte.Id)
+
+        Return DatabaseHelper.ExecuteQuery(requete, parametres)
 
     End Function
 

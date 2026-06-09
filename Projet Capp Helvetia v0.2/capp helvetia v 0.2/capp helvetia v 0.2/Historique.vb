@@ -1,18 +1,17 @@
 ﻿Public Class Historique
-    Private Sub Historique_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private Sub Historique_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ChargerHistorique()
     End Sub
 
     Private Sub ChargerHistorique()
 
-        Dim lstTrajets = DataAccess.GetHistoriqueVols()
-        ' -------------------------------------------------------------------------------
-        ' Si aucun trajet n'est trouvé, afficher un message
-        If lstTrajets.Count = 0 Then
+        pnlHistorique.Controls.Clear()
+
+        If ClientConnecte.EstConnecte = False Then
 
             Dim lbl As New Label()
-            lbl.Text = "Vous n'avez pas encore fait de trajet."
+            lbl.Text = "Aucun client connecté."
             lbl.Font = New Font("Arial", 14, FontStyle.Bold)
             lbl.AutoSize = True
             lbl.Location = New Point(20, 20)
@@ -23,42 +22,93 @@
 
         End If
 
+        Dim lstReservations = DataAccess.GetHistoriqueVols()
 
-        ' si des trajets sont trouvés, les afficher dans des GroupBox
+        Dim lblTitre As New Label()
+        lblTitre.Text = "Historique de " & ClientConnecte.Prenom & " " & ClientConnecte.Nom
+        lblTitre.Font = New Font("Arial", 16, FontStyle.Bold)
+        lblTitre.AutoSize = True
+        lblTitre.Location = New Point(10, 10)
 
-        Dim yPosition As Integer = 10
+        pnlHistorique.Controls.Add(lblTitre)
 
-        For Each trajet In lstTrajets
+        Dim lblResume As New Label()
+        lblResume.Text = "Nombre de réservations : " & lstReservations.Count
+        lblResume.Font = New Font("Arial", 12)
+        lblResume.AutoSize = True
+        lblResume.Location = New Point(10, 40)
+
+        pnlHistorique.Controls.Add(lblResume)
+
+        If lstReservations.Count = 0 Then
+
+            Dim lbl As New Label()
+            lbl.Text = "Vous n'avez pas encore fait de réservation."
+            lbl.Font = New Font("Arial", 14, FontStyle.Bold)
+            lbl.AutoSize = True
+            lbl.Location = New Point(20, 90)
+
+            pnlHistorique.Controls.Add(lbl)
+
+            Exit Sub
+
+        End If
+
+        Dim yPosition As Integer = 90
+
+        For Each reservation In lstReservations
 
             Dim group As New GroupBox()
 
-            group.Text = "Trajet #" & trajet("TRAJ_ID").ToString()
+            group.Text = "Réservation #" & reservation("RES_ID").ToString()
             group.Font = New Font("Arial", 12, FontStyle.Bold)
 
             group.Location = New Point(10, yPosition)
-            group.Size = New Size(600, 180)
+            group.Size = New Size(650, 260)
 
             pnlHistorique.Controls.Add(group)
 
             Dim yInside As Integer = 30
 
-            AjouterLabel(group, "Départ :", trajet("VILLE_DEPART").ToString(), yInside)
+            AjouterLabel(group, "Départ :", reservation("VILLE_DEPART").ToString(), yInside)
+            AjouterLabel(group, "Arrivée :", reservation("VILLE_ARRIVEE").ToString(), yInside)
 
-            AjouterLabel(group, "Arrivée :", trajet("VILLE_ARRIVEE").ToString(), yInside)
+            AjouterLabel(
+            group,
+            "Date réservation :",
+            Convert.ToDateTime(reservation("RES_DATE_RESERVATION")).ToShortDateString(),
+            yInside
+        )
 
-            AjouterLabel(group, "Date du vol :",
-                    Convert.ToDateTime(trajet("TRAJ_DATE_EFFECTIF")).ToShortDateString(),
-                    yInside)
+            AjouterLabel(
+            group,
+            "Nombre passagers :",
+            reservation("RES_NOMBRE_PASSAGERS_ESTIME").ToString(),
+            yInside
+        )
 
-            AjouterLabel(group, "Durée estimée :",
-                    trajet("TRAJ_DUREEESTIME").ToString() & " min",
-                    yInside)
+            AjouterLabel(
+            group,
+            "Durée estimée :",
+            reservation("RES_DUREEESTIME").ToString() & " min",
+            yInside
+        )
 
-            AjouterLabel(group, "Montant :",
-                    trajet("TRAJ_FACTURE_MONTANT").ToString() & " CHF",
-                    yInside)
+            AjouterLabel(
+            group,
+            "Statut :",
+            reservation("RES_STATUT").ToString(),
+            yInside
+        )
 
-            yPosition += 200
+            AjouterLabel(
+            group,
+            "Montant payé :",
+            reservation("RES_ACCOMPTE").ToString() & " CHF",
+            yInside
+        )
+
+            yPosition += 280
 
         Next
 

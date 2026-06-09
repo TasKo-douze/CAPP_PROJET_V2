@@ -15,13 +15,18 @@
     Public Sub RecupererClient(email As String)
 
         Dim requete As String =
-            "SELECT *FROM HS_CLIENT
-             WHERE CLI_EMAIL = :email"
+        "SELECT * FROM HS_CLIENT
+         WHERE CLI_EMAIL = :email"
 
-        Dim result = DatabaseHelper.ExecuteQuery(requete)
+        Dim parametres As New Dictionary(Of String, Object)
+        parametres.Add("email", email)
+
+        Dim result = DatabaseHelper.ExecuteQuery(requete, parametres)
 
         If result.Count > 0 Then
             Connecter(result(0))
+        Else
+            MessageBox.Show("Aucun client trouvé avec cet email.")
         End If
 
     End Sub

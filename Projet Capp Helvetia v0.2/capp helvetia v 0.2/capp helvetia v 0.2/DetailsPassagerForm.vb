@@ -28,24 +28,16 @@
 
     Private Sub ChargerClient()
 
-        Dim lstClients = DataAccess.GetClient()
-
-        If lstClients.Count > 0 Then
-
-            Dim client = lstClients(0)
-            'stocke les données du client dans les variables globales en les convertissant au bon type
-            ClientNom = client("CLI_NOM").ToString()
-            ClientPrenom = client("CLI_PRENOM").ToString()
-
-
-            ClientDateNaissance = CDate(client("CLI_DATE_NAISSANCE"))
-            ClientTaille = CInt(client("CLI_TAILLE"))
-            ClientPoids = CInt(client("CLI_POIDS"))
-
-
-        Else
-            MessageBox.Show("Aucun client trouvé")
+        If ClientConnecte.EstConnecte = False Then
+            MessageBox.Show("Aucun client connecté.")
+            Return
         End If
+
+        ClientNom = ClientConnecte.Nom
+        ClientPrenom = ClientConnecte.Prenom
+        ClientDateNaissance = ClientConnecte.DateNaissance
+        ClientTaille = ClientConnecte.Taille
+        ClientPoids = ClientConnecte.Poids
 
     End Sub
 
@@ -370,15 +362,12 @@
             form.NbPassagers = NbPassagers
 
             ' Client
-            form.ClientNom = ClientNom
-            form.ClientPrenom = ClientPrenom
-            form.ClientPoids = ClientPoids
-            form.ClientTaille = ClientTaille
-
-            Dim client = DataAccess.GetClient()(0)
-
-            form.ClientEmail = client("CLI_EMAIL").ToString()
-            form.ClientTelephone = client("CLI_TEL").ToString()
+            form.ClientNom = ClientConnecte.Nom
+            form.ClientPrenom = ClientConnecte.Prenom
+            form.ClientEmail = ClientConnecte.Email
+            form.ClientTelephone = ClientConnecte.Telephone
+            form.ClientPoids = ClientConnecte.Poids
+            form.ClientTaille = ClientConnecte.Taille
 
             form.NbBagages = NbBagagesTotal
 
