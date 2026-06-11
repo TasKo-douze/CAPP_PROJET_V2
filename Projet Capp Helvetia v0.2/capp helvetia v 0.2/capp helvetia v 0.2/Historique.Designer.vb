@@ -24,17 +24,14 @@ Partial Class Historique
     Private Sub InitializeComponent()
         Me.pnlHistorique = New System.Windows.Forms.Panel()
         Me.btnRetour = New System.Windows.Forms.Button()
-        Me.pnlHistorique.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlHistorique
         '
         Me.pnlHistorique.AutoScroll = True
-        Me.pnlHistorique.Controls.Add(Me.btnRetour)
-        Me.pnlHistorique.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlHistorique.Location = New System.Drawing.Point(0, 0)
         Me.pnlHistorique.Name = "pnlHistorique"
-        Me.pnlHistorique.Size = New System.Drawing.Size(800, 450)
+        Me.pnlHistorique.Size = New System.Drawing.Size(689, 450)
         Me.pnlHistorique.TabIndex = 0
         '
         'btnRetour
@@ -52,10 +49,10 @@ Partial Class Historique
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.btnRetour)
         Me.Controls.Add(Me.pnlHistorique)
         Me.Name = "Historique"
         Me.Text = "Historique"
-        Me.pnlHistorique.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
