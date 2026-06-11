@@ -3,22 +3,22 @@ Imports System.Runtime.Remoting.Services
 
 Public Class ConnexionForm
 
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    'Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
-        Me.BackColor = Color.White
-    End Sub
+    'Me.BackColor = Color.White
+    ' End Sub
 
 
     ' procédure pour crée le dégradé de couleur 
-    Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
-        Dim brush As New LinearGradientBrush(Me.ClientRectangle,
-                                             Color.LightCoral,   ' rouge clair
-                                             Color.SlateGray,    ' bleu gris
-                                             LinearGradientMode.Vertical)
+    ''Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
+    'Dim brush As New LinearGradientBrush(Me.ClientRectangle,
+    '                                        Color.LightCoral,   ' rouge clair
+    '                                        Color.SlateGray,    ' bleu gris
+    '                                       LinearGradientMode.Vertical)
 
-        e.Graphics.FillRectangle(brush, Me.ClientRectangle)
-    End Sub
+    '   e.Graphics.FillRectangle(brush, Me.ClientRectangle)
+    'End Sub
 
 
 
