@@ -23,16 +23,29 @@ Partial Class Historique
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlHistorique = New System.Windows.Forms.Panel()
+        Me.btnRetour = New System.Windows.Forms.Button()
+        Me.pnlHistorique.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlHistorique
         '
         Me.pnlHistorique.AutoScroll = True
+        Me.pnlHistorique.Controls.Add(Me.btnRetour)
         Me.pnlHistorique.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlHistorique.Location = New System.Drawing.Point(0, 0)
         Me.pnlHistorique.Name = "pnlHistorique"
         Me.pnlHistorique.Size = New System.Drawing.Size(800, 450)
         Me.pnlHistorique.TabIndex = 0
+        '
+        'btnRetour
+        '
+        Me.btnRetour.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btnRetour.Location = New System.Drawing.Point(713, 415)
+        Me.btnRetour.Name = "btnRetour"
+        Me.btnRetour.Size = New System.Drawing.Size(75, 23)
+        Me.btnRetour.TabIndex = 0
+        Me.btnRetour.Text = "Retour"
+        Me.btnRetour.UseVisualStyleBackColor = True
         '
         'Historique
         '
@@ -42,9 +55,11 @@ Partial Class Historique
         Me.Controls.Add(Me.pnlHistorique)
         Me.Name = "Historique"
         Me.Text = "Historique"
+        Me.pnlHistorique.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents pnlHistorique As Panel
+    Friend WithEvents btnRetour As Button
 End Class
