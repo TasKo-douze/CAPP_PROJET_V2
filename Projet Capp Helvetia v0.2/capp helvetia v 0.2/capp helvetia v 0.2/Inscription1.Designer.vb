@@ -24,6 +24,7 @@ Partial Class Inscription1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inscription1))
         Me.pnlInscription = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnValiderInscription = New System.Windows.Forms.Button()
         Me.lblInscription = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -55,13 +56,12 @@ Partial Class Inscription1
         Me.txtbEmailIns = New System.Windows.Forms.TextBox()
         Me.txtbPrenom = New System.Windows.Forms.TextBox()
         Me.txtbNom = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pnlInscription.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.grpbInfoPerso.SuspendLayout()
         CType(Me.nudPoids, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTaille, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlInscription
@@ -77,6 +77,15 @@ Partial Class Inscription1
         Me.pnlInscription.Name = "pnlInscription"
         Me.pnlInscription.Size = New System.Drawing.Size(410, 456)
         Me.pnlInscription.TabIndex = 8
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(75, 71)
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
         '
         'btnValiderInscription
         '
@@ -366,15 +375,6 @@ Partial Class Inscription1
         Me.txtbNom.Size = New System.Drawing.Size(100, 20)
         Me.txtbNom.TabIndex = 2
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(75, 71)
-        Me.PictureBox1.TabIndex = 10
-        Me.PictureBox1.TabStop = False
-        '
         'Inscription1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -385,13 +385,13 @@ Partial Class Inscription1
         Me.Text = "Form1"
         Me.pnlInscription.ResumeLayout(False)
         Me.pnlInscription.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.grpbInfoPerso.ResumeLayout(False)
         Me.grpbInfoPerso.PerformLayout()
         CType(Me.nudPoids, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudTaille, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
