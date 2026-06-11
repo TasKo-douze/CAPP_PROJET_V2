@@ -211,7 +211,8 @@
     End Sub
 
     Private Function ValidationDonnees() As Boolean
-        Dim NbBagagesTotal As Integer = 0
+
+        NbBagagesTotal = 0
         SupBagage = 0
 
         For Each ctrlGroup As Control In PanelPassagers.Controls
@@ -234,7 +235,7 @@
                         Dim txt As TextBox = DirectCast(ctrl, TextBox)
                         Dim tag As String = If(txt.Tag Is Nothing, "", txt.Tag.ToString())
 
-                        ' Gestion bagage
+                        ' Gestion des bagages
                         If tag = "Bagage" Then
 
                             If txt.Visible Then
@@ -262,7 +263,8 @@
                                     "Bagage supérieur à 25 kg. Supplément de 40 CHF.",
                                     "Supplément bagage",
                                     MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning)
+                                    MessageBoxIcon.Warning
+                                )
 
                                     SupBagage += 40
 
@@ -272,34 +274,39 @@
 
                         Else
 
-                            If String.IsNullOrWhiteSpace(txt.Text) Then
-                                MessageBox.Show("Veuillez remplir tous les champs.")
-                                Return False
+                            ' On vérifie les champs seulement pour les passagers ajoutés
+                            If group.Text <> "Passager 1" Then
+
+                                If String.IsNullOrWhiteSpace(txt.Text) Then
+                                    MessageBox.Show("Veuillez remplir tous les champs.")
+                                    Return False
+                                End If
+
+                                Select Case tag
+
+                                    Case "Nom :"
+                                        nom = txt.Text
+
+                                    Case "Prénom :"
+                                        prenom = txt.Text
+
+                                    Case "Taille :"
+
+                                        If Not Integer.TryParse(txt.Text, taille) Then
+                                            MessageBox.Show("La taille doit être un nombre.")
+                                            Return False
+                                        End If
+
+                                    Case "Poids :"
+
+                                        If Not Integer.TryParse(txt.Text, poids) Then
+                                            MessageBox.Show("Le poids doit être un nombre.")
+                                            Return False
+                                        End If
+
+                                End Select
+
                             End If
-
-                            Select Case tag
-
-                                Case "Nom :"
-                                    nom = txt.Text
-
-                                Case "Prénom :"
-                                    prenom = txt.Text
-
-                                Case "Taille :"
-
-                                    If Not Integer.TryParse(txt.Text, taille) Then
-                                        MessageBox.Show("La taille doit être un nombre.")
-                                        Return False
-                                    End If
-
-                                Case "Poids :"
-
-                                    If Not Integer.TryParse(txt.Text, poids) Then
-                                        MessageBox.Show("Le poids doit être un nombre.")
-                                        Return False
-                                    End If
-
-                            End Select
 
                         End If
 
@@ -308,7 +315,6 @@
                     If TypeOf ctrl Is DateTimePicker Then
 
                         Dim dtp As DateTimePicker = DirectCast(ctrl, DateTimePicker)
-
                         dateNaissance = dtp.Value
 
                         Dim age As Integer = Date.Today.Year - dateNaissance.Year
@@ -319,13 +325,23 @@
 
                         If age < 16 Then
 
-                            MessageBox.Show("Le passager doit avoir au minimum 16 ans.", "Âge invalide", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBox.Show(
+                            "Le passager doit avoir au minimum 16 ans.",
+                            "Âge invalide",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                        )
 
                             Return False
 
                         ElseIf age < 18 Then
 
-                            MessageBox.Show("Le passager est mineur. Le client est responsable des personnes mineures.", "Passager mineur", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                            MessageBox.Show(
+                            "Le passager est mineur. Le client est responsable des personnes mineures.",
+                            "Passager mineur",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning
+                        )
 
                         End If
 
@@ -333,9 +349,12 @@
 
                 Next
 
+                ' On insère seulement les passagers ajoutés, pas le client connecté
+                If group.Text <> "Passager 1" Then
 
+                    DataAccess.InsertPassager(nom, prenom, dateNaissance, taille, poids)
 
-                DataAccess.InsertPassager(nom, prenom, dateNaissance, taille, poids)
+                End If
 
             End If
 

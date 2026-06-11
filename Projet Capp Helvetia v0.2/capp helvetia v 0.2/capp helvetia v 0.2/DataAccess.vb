@@ -1,13 +1,5 @@
 ﻿Module DataAccess
-    Public Function GetClient() As List(Of Dictionary(Of String, Object))
-        ' a modifier avec la session pour récupérer l'id du client connecté
 
-        Dim requete = "select * from HS_CLIENT where cli_id = 1"
-
-
-
-        Return DatabaseHelper.ExecuteQuery(requete)
-    End Function
 
     Public Sub InsertPassager(nom As String, prenom As String, dateNaissance As Date, taille As Integer, poids As Integer)
 
