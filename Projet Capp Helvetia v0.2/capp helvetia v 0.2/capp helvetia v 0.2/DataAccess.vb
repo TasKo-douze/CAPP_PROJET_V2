@@ -99,7 +99,10 @@
     End Function
 
 
-    Public Function Connexion(email As String, motdepasse As String) As Boolean
+    Public Function Connexion(email As String, motdepasse As String) As List(Of Dictionary(Of String, Object))
+
+        ' alice.martin@email.ch
+
 
         Dim requete As String =
         " SELECT * FROM HS_CLIENT
@@ -107,9 +110,13 @@
         AND CLI_MOTS_DE_PASSE = :motdepasse"
 
 
-        Dim result = DatabaseHelper.ExecuteQuery(requete)
 
-        Return result.Count > 0
+
+        Dim parametres As New Dictionary(Of String, Object)
+        parametres.Add("email", email)
+        parametres.Add("motdepasse", motdepasse)
+
+        Return DatabaseHelper.ExecuteQuery(requete, parametres)
 
     End Function
 
@@ -137,20 +144,7 @@
         Return DatabaseHelper.ExecuteQuery(selectQuery)
     End Function
 
-    Public Function GetClientByEmail(email As String) As List(Of Dictionary(Of String, Object))
 
-        ' Récupère les infos d'un client à partir de son email
-        Dim requete As String = "
-        SELECT  CLI_NOM, CLI_PRENOM, CLI_DATE_NAISSANCE, CLI_TAILLE, CLI_POIDS, CLI_TEL, CLI_EMAIL, ADR_RUE, ADR_NUM, ADR_VILLE, ADR_PAYS
-        FROM HS_CLIENT
-        JOIN HS_ADRESSE ON ADR_ID = CLI_ADR_ID
-        WHERE CLI_EMAIL = @email"
-
-        Dim params As New Dictionary(Of String, Object) From {{"@email", email}}
-
-
-        Return DatabaseHelper.ExecuteQuery(requete, params)
-    End Function
 
     'samir'
     Public Function VerifierEmail(email As String) As Boolean

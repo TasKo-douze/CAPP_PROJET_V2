@@ -57,18 +57,14 @@ Public Class ConnexionForm
         Dim motdepasse As String = txtbMDP.Text.Trim()
 
 
-        Dim ok As Boolean = DataAccess.Connexion(txtbEmail.Text, txtbMDP.Text)
+        RecupererClient(email, motdepasse)
 
-        If ok Then
 
-            AccueilForm.Show()
-            Me.Hide()
+        AccueilForm.Show()
+        Me.Hide()
 
-        Else
 
-            MessageBox.Show("Erreur identifiants")
 
-        End If
 
     End Sub
 

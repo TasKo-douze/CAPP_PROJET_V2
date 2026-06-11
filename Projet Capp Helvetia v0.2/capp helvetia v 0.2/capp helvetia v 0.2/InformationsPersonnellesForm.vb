@@ -1,31 +1,17 @@
 ﻿Public Class InformationsPersonnellesForm
 
     Private Sub ChargementFormulaire(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim infos = DataAccess.GetClientByEmail(ConnexionForm.txtbEmail.Text)
 
-        If infos.Count > 0 Then
-            Dim client = infos(0)
+        Nom = ClientConnecte.Nom
+        Prenom = ClientConnecte.Prenom
+        DateNaissance = ClientConnecte.DateNaissance
+        Taille = ClientConnecte.Taille
+        Poids = ClientConnecte.Poids
+        Telephone = ClientConnecte.Telephone
+        Email = ClientConnecte.Email
 
-            txtPrenom.Text = client("CLI_PRENOM").ToString()
 
-            txtNom.Text = client("CLI_NOM").ToString()
 
-            txtDateNaissance.Text = Convert.ToDateTime(client("CLI_DATE_NAISSANCE")).ToString("dd.MM.yyyy")
-
-            numPoids.Value = Convert.ToDecimal(client("CLI_POIDS"))
-
-            numTaille.Value = Convert.ToDecimal(client("CLI_TAILLE"))
-
-            txtTelephone.Text = client("CLI_TEL").ToString()
-
-            txtEmail.Text = client("CLI_EMAIL").ToString()
-
-            txtNumero.Text = client("ADR_NUM").ToString()
-
-            txtAdresse.Text = client("ADR_RUE").ToString()
-
-            txtVille.Text = client("ADR_VILLE").ToString()
-        End If
     End Sub
 
 
