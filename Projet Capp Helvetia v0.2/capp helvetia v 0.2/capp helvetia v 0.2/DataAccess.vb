@@ -149,14 +149,6 @@
         Dim params As New Dictionary(Of String, Object) From {{"@email", email}}
 
 
-        Dim requete As String = "SELECT CLI_NOM, CLI_PRENOM, CLI_DATE_NAISSANCE, CLI_TAILLE, CLI_POIDS, CLI_TEL, CLI_EMAIL, ADR_RUE, ADR_NUM, ADR_VILLE, ADR_PAYS FROM HS_CLIENT JOIN HS_ADRESSE ON ADR_ID = CLI_ADR_ID WHERE CLI_EMAIL = :email"
-
-        Dim parametres As New Dictionary(Of String, Object)
-        parametres.Add("email", email)
-
-        Return DatabaseHelper.ExecuteQuery(requete, parametres)
-
-
         Return DatabaseHelper.ExecuteQuery(requete, params)
     End Function
 
