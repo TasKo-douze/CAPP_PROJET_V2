@@ -22,6 +22,7 @@ Partial Class Inscription1
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inscription1))
         Me.pnlInscription = New System.Windows.Forms.Panel()
         Me.btnValiderInscription = New System.Windows.Forms.Button()
         Me.lblInscription = New System.Windows.Forms.Label()
@@ -35,6 +36,7 @@ Partial Class Inscription1
         Me.lblVille = New System.Windows.Forms.Label()
         Me.lblRue = New System.Windows.Forms.Label()
         Me.grpbInfoPerso = New System.Windows.Forms.GroupBox()
+        Me.btnCadena = New System.Windows.Forms.Button()
         Me.lblKg = New System.Windows.Forms.Label()
         Me.lblCm = New System.Windows.Forms.Label()
         Me.nudPoids = New System.Windows.Forms.NumericUpDown()
@@ -53,17 +55,19 @@ Partial Class Inscription1
         Me.txtbEmailIns = New System.Windows.Forms.TextBox()
         Me.txtbPrenom = New System.Windows.Forms.TextBox()
         Me.txtbNom = New System.Windows.Forms.TextBox()
-        Me.btnCadena = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pnlInscription.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.grpbInfoPerso.SuspendLayout()
         CType(Me.nudPoids, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudTaille, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlInscription
         '
         Me.pnlInscription.AutoScroll = True
+        Me.pnlInscription.Controls.Add(Me.PictureBox1)
         Me.pnlInscription.Controls.Add(Me.btnValiderInscription)
         Me.pnlInscription.Controls.Add(Me.lblInscription)
         Me.pnlInscription.Controls.Add(Me.GroupBox1)
@@ -203,6 +207,14 @@ Partial Class Inscription1
         Me.grpbInfoPerso.TabIndex = 0
         Me.grpbInfoPerso.TabStop = False
         Me.grpbInfoPerso.Text = "I. Information Personnel"
+        '
+        'btnCadena
+        '
+        Me.btnCadena.Location = New System.Drawing.Point(228, 145)
+        Me.btnCadena.Name = "btnCadena"
+        Me.btnCadena.Size = New System.Drawing.Size(26, 23)
+        Me.btnCadena.TabIndex = 21
+        Me.btnCadena.UseVisualStyleBackColor = True
         '
         'lblKg
         '
@@ -354,13 +366,14 @@ Partial Class Inscription1
         Me.txtbNom.Size = New System.Drawing.Size(100, 20)
         Me.txtbNom.TabIndex = 2
         '
-        'btnCadena
+        'PictureBox1
         '
-        Me.btnCadena.Location = New System.Drawing.Point(228, 145)
-        Me.btnCadena.Name = "btnCadena"
-        Me.btnCadena.Size = New System.Drawing.Size(26, 23)
-        Me.btnCadena.TabIndex = 21
-        Me.btnCadena.UseVisualStyleBackColor = True
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(75, 71)
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
         '
         'Inscription1
         '
@@ -378,6 +391,7 @@ Partial Class Inscription1
         Me.grpbInfoPerso.PerformLayout()
         CType(Me.nudPoids, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudTaille, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -413,4 +427,5 @@ Partial Class Inscription1
     Friend WithEvents lblInscription As Label
     Friend WithEvents btnValiderInscription As Button
     Friend WithEvents btnCadena As Button
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

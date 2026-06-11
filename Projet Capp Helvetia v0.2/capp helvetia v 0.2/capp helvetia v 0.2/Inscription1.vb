@@ -1,6 +1,26 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.Drawing.Drawing2D
+Imports System.Text.RegularExpressions
 
 Public Class Inscription1
+
+    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+        Me.BackColor = Color.White
+    End Sub
+
+
+    ' procédure pour crée le dégradé de couleur 
+    Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
+        Dim brush As New LinearGradientBrush(Me.ClientRectangle,
+                                             Color.LightCoral,   ' rouge clair
+                                             Color.SlateGray,    ' bleu gris
+                                             LinearGradientMode.Vertical)
+
+        e.Graphics.FillRectangle(brush, Me.ClientRectangle)
+    End Sub
+
+
 
     Private placeholderNom As String = "Entrez votre nom"
     Private placeholderPrenom As String = "Entrez votre prénom"

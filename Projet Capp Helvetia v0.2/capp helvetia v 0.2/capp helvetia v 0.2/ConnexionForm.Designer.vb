@@ -22,6 +22,7 @@ Partial Class ConnexionForm
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ConnexionForm))
         Me.lblConnexion = New System.Windows.Forms.Label()
         Me.txtbEmail = New System.Windows.Forms.TextBox()
         Me.txtbMDP = New System.Windows.Forms.TextBox()
@@ -30,13 +31,15 @@ Partial Class ConnexionForm
         Me.lblEmail = New System.Windows.Forms.Label()
         Me.lblMDP = New System.Windows.Forms.Label()
         Me.btnCadena = New System.Windows.Forms.Button()
+        Me.pbxLogo = New System.Windows.Forms.PictureBox()
+        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblConnexion
         '
         Me.lblConnexion.AutoSize = True
         Me.lblConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblConnexion.Location = New System.Drawing.Point(71, 64)
+        Me.lblConnexion.Location = New System.Drawing.Point(80, 100)
         Me.lblConnexion.Name = "lblConnexion"
         Me.lblConnexion.Size = New System.Drawing.Size(233, 39)
         Me.lblConnexion.TabIndex = 0
@@ -44,14 +47,14 @@ Partial Class ConnexionForm
         '
         'txtbEmail
         '
-        Me.txtbEmail.Location = New System.Drawing.Point(111, 150)
+        Me.txtbEmail.Location = New System.Drawing.Point(111, 178)
         Me.txtbEmail.Name = "txtbEmail"
         Me.txtbEmail.Size = New System.Drawing.Size(150, 20)
         Me.txtbEmail.TabIndex = 1
         '
         'txtbMDP
         '
-        Me.txtbMDP.Location = New System.Drawing.Point(111, 199)
+        Me.txtbMDP.Location = New System.Drawing.Point(111, 231)
         Me.txtbMDP.Name = "txtbMDP"
         Me.txtbMDP.Size = New System.Drawing.Size(150, 20)
         Me.txtbMDP.TabIndex = 2
@@ -60,7 +63,7 @@ Partial Class ConnexionForm
         'btnConnexion
         '
         Me.btnConnexion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.btnConnexion.Location = New System.Drawing.Point(129, 320)
+        Me.btnConnexion.Location = New System.Drawing.Point(121, 325)
         Me.btnConnexion.Name = "btnConnexion"
         Me.btnConnexion.Size = New System.Drawing.Size(126, 31)
         Me.btnConnexion.TabIndex = 3
@@ -82,7 +85,7 @@ Partial Class ConnexionForm
         'lblEmail
         '
         Me.lblEmail.AutoSize = True
-        Me.lblEmail.Location = New System.Drawing.Point(108, 134)
+        Me.lblEmail.Location = New System.Drawing.Point(108, 162)
         Me.lblEmail.Name = "lblEmail"
         Me.lblEmail.Size = New System.Drawing.Size(35, 13)
         Me.lblEmail.TabIndex = 5
@@ -91,7 +94,7 @@ Partial Class ConnexionForm
         'lblMDP
         '
         Me.lblMDP.AutoSize = True
-        Me.lblMDP.Location = New System.Drawing.Point(108, 183)
+        Me.lblMDP.Location = New System.Drawing.Point(108, 215)
         Me.lblMDP.Name = "lblMDP"
         Me.lblMDP.Size = New System.Drawing.Size(75, 13)
         Me.lblMDP.TabIndex = 6
@@ -99,17 +102,27 @@ Partial Class ConnexionForm
         '
         'btnCadena
         '
-        Me.btnCadena.Location = New System.Drawing.Point(267, 199)
+        Me.btnCadena.Location = New System.Drawing.Point(267, 228)
         Me.btnCadena.Name = "btnCadena"
         Me.btnCadena.Size = New System.Drawing.Size(26, 23)
         Me.btnCadena.TabIndex = 7
         Me.btnCadena.UseVisualStyleBackColor = True
+        '
+        'pbxLogo
+        '
+        Me.pbxLogo.Image = CType(resources.GetObject("pbxLogo.Image"), System.Drawing.Image)
+        Me.pbxLogo.Location = New System.Drawing.Point(12, 12)
+        Me.pbxLogo.Name = "pbxLogo"
+        Me.pbxLogo.Size = New System.Drawing.Size(75, 71)
+        Me.pbxLogo.TabIndex = 8
+        Me.pbxLogo.TabStop = False
         '
         'ConnexionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(410, 456)
+        Me.Controls.Add(Me.pbxLogo)
         Me.Controls.Add(Me.btnCadena)
         Me.Controls.Add(Me.lblMDP)
         Me.Controls.Add(Me.lblEmail)
@@ -120,6 +133,7 @@ Partial Class ConnexionForm
         Me.Controls.Add(Me.lblConnexion)
         Me.Name = "ConnexionForm"
         Me.Text = "ConnexionForm"
+        CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -133,4 +147,5 @@ Partial Class ConnexionForm
     Friend WithEvents lblEmail As Label
     Friend WithEvents lblMDP As Label
     Friend WithEvents btnCadena As Button
+    Friend WithEvents pbxLogo As PictureBox
 End Class
