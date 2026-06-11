@@ -12,16 +12,32 @@
     Public EstConnecte As Boolean = False
 
 
-    Public Sub RecupererClient(email As String)
+    Public Sub RecupererClient(email As String, motdepasse As String)
+
+
+
+
+
+
+
 
         Dim requete As String =
-        "SELECT * FROM HS_CLIENT
-         WHERE CLI_EMAIL = :email"
+        " SELECT * FROM HS_CLIENT
+        WHERE CLI_EMAIL = :email
+        AND CLI_MOTS_DE_PASSE = :motdepasse"
+
+
+
 
         Dim parametres As New Dictionary(Of String, Object)
         parametres.Add("email", email)
+        parametres.Add("motdepasse", motdepasse)
 
+        'Return DatabaseHelper.ExecuteQuery(requete, parametres)
         Dim result = DatabaseHelper.ExecuteQuery(requete, parametres)
+
+
+
 
         If result.Count > 0 Then
             Connecter(result(0))

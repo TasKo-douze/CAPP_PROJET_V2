@@ -416,6 +416,7 @@ C:\Users\Matyas.kncsk\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helv
 C:\Users\Matyas.kncsk\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.InformationsPersonnellesForm.resources
 C:\Users\Matyas.kncsk\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.ProfilForm.resources
 C:\Users\Matyas.kncsk\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\obj\Debug\capp_helvetia_v_0._2.SecuriteForm.resources
+<<<<<<< HEAD
 C:\Users\Matyas.kncsk\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\Matyas.kncsk\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\Matyas.kncsk\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
@@ -425,3 +426,14 @@ C:\Users\Matyas.kncsk\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helv
 C:\Users\Matyas.kncsk\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\Microsoft.Web.WebView2.Core.xml
 C:\Users\Matyas.kncsk\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
 C:\Users\Matyas.kncsk\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+=======
+C:\Users\venera.rmq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\runtimes\win-x86\native\WebView2Loader.dll
+C:\Users\venera.rmq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\runtimes\win-x64\native\WebView2Loader.dll
+C:\Users\venera.rmq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\runtimes\win-arm64\native\WebView2Loader.dll
+C:\Users\venera.rmq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\Microsoft.Web.WebView2.Core.dll
+C:\Users\venera.rmq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\Microsoft.Web.WebView2.WinForms.dll
+C:\Users\venera.rmq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\Microsoft.Web.WebView2.Wpf.dll
+C:\Users\venera.rmq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\Microsoft.Web.WebView2.Core.xml
+C:\Users\venera.rmq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\Microsoft.Web.WebView2.WinForms.xml
+C:\Users\venera.rmq\Desktop\CAPP_PROJET_V2\Projet Capp Helvetia v0.2\capp helvetia v 0.2\capp helvetia v 0.2\bin\Debug\Microsoft.Web.WebView2.Wpf.xml
+>>>>>>> 7983d2c64900a5e58c967e759aa1fa53b288d95b

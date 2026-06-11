@@ -4,7 +4,7 @@
   <MainForm>ConnexionForm</MainForm>
   <SingleInstance>false</SingleInstance>
   <ShutdownMode>0</ShutdownMode>
-  <EnableVisualStyles>true</EnableVisualStyles>
+  <EnableVisualStyles>false</EnableVisualStyles>
   <AuthenticationMode>0</AuthenticationMode>
   <MinimumSplashScreenDisplayTime>0</MinimumSplashScreenDisplayTime>
   <SaveMySettingsOnExit>true</SaveMySettingsOnExit>
