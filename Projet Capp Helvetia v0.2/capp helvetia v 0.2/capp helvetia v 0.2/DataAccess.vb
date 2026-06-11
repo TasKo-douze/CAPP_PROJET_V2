@@ -29,9 +29,10 @@
 
         Dim parametres As New Dictionary(Of String, Object)
 
-        parametres.Add("clientId", ClientConnecte.Id)
+
         parametres.Add("villeDepart", villeDepart)
         parametres.Add("villeArrivee", villeArrivee)
+        parametres.Add("clientId", ClientConnecte.Id)
         parametres.Add("dateReservation", dateReservation)
         parametres.Add("acompte", prixTotal)
         parametres.Add("nbPassagers", nbPassagers)
