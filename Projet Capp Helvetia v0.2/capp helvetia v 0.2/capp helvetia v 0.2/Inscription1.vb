@@ -166,21 +166,16 @@ Public Class Inscription1
         Dim ok As Boolean = DataAccess.InscriptionClient(txtbNom.Text, txtbPrenom.Text, mtxtbTelephone.Text, txtbEmailIns.Text, txtbMDPIns.Text, dtpDateNaissance.Value, CInt(nudTaille.Value), CInt(nudPoids.Value), txtbRue.Text, txtbVille.Text, CInt(txtbNumero.Text))
 
         If ok Then
-
+            ClientConnecte.RecupererClient(txtbEmailIns.Text, txtbMDPIns.Text)
             AccueilForm.Show()
             MessageBox.Show("Bienvenue !")
             Me.Hide()
         Else
             MessageBox.Show("Erreur inscription", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
-
-
         btnValiderInscription.Enabled = False
-
         mtxtbTelephone.Mask = "+41.00.000.00.00"
-
         dtpDateNaissance.Format = DateTimePickerFormat.Custom
-
         dtpDateNaissance.CustomFormat = "dd.MM.yyyy"
 
 
@@ -248,6 +243,10 @@ Public Class Inscription1
         Else
             txtbMDPIns.UseSystemPasswordChar = True
         End If
+
+    End Sub
+
+    Private Sub pnlInscription_Paint(sender As Object, e As PaintEventArgs) Handles pnlInscription.Paint
 
     End Sub
 End Class
