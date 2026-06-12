@@ -217,6 +217,7 @@
     <Compile Include="SecuriteForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="StyleFormulaire.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AProposForm.resx">
