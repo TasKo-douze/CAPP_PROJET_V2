@@ -50,5 +50,7 @@
         MessageBox.Show("Informations mises à jour avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
+    Private Sub grpInfosPerso_Enter(sender As Object, e As EventArgs) Handles grpInfosPerso.Enter
 
+    End Sub
 End Class
