@@ -21,9 +21,23 @@
     End Sub
 
     Private Sub lnklDeconnexion_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnklDeconnexion.LinkClicked
-        MessageBox.Show("Continuez sur OK pour poursuivre la déconnexion !")
-        ConnexionForm.Show()
-        Me.Hide()
-        MessageBox.Show("Déconnexion réussite !")
+        Dim reponse As DialogResult = MessageBox.Show(
+            "Voulez-vous vraiment vous déconnecter ?",
+            "Déconnexion",
+            MessageBoxButtons.OKCancel,
+            MessageBoxIcon.Question
+   )
+
+        If reponse = DialogResult.OK Then
+
+            ClientConnecte.Deconnecter()
+
+            ConnexionForm.Show()
+            Me.Hide()
+
+            MessageBox.Show("Déconnexion réussie !", "Déconnexion", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        End If
+
     End Sub
 End Class
