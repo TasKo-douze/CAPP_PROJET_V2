@@ -52,6 +52,7 @@
             ' Message indiquant la réussite de la réservation et du paiement
             MessageBox.Show("La réservation a été effectuée et le paiement a été effectué avec succès.", "Réservation", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Close()
+            AccueilForm.Show()
 
         Catch ex As Exception
 
@@ -87,6 +88,10 @@
     Private Sub btnRetour_Click(sender As Object, e As EventArgs) Handles btnRetour.Click
         'bouton pour revenir à la page précédente (DetailsPassagerForm)
         Dim form As New DetailsPassagerForm()
+        form.VilleDepart = VilleDepart
+        form.VilleArrivee = VilleArrivee
+        form.DateReservation = DateReservation
+        form.NbPassagers = NbPassagers
         form.Show()
         Close()
     End Sub

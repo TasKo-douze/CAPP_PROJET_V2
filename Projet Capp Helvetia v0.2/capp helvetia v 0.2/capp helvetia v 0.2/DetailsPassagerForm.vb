@@ -18,6 +18,18 @@
     Private ClientTaille As Integer
     Private ClientPoids As Integer
 
+    Private Structure PassagerSaisi
+        Public Nom As String
+        Public Prenom As String
+        Public DateNaissance As Date
+        Public Taille As Integer
+        Public Poids As Integer
+    End Structure
+
+    Private Function CreerClePassager(nom As String, prenom As String, dateNaissance As Date) As String
+        Return nom.Trim().ToUpperInvariant() & "|" & prenom.Trim().ToUpperInvariant() & "|" & dateNaissance.Date.ToString("yyyyMMdd")
+    End Function
+
 
 
     Private Sub DetailsPassagerForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -214,6 +226,8 @@
 
         NbBagagesTotal = 0
         SupBagage = 0
+        Dim passagersAInserer As New List(Of PassagerSaisi)
+        Dim passagersVus As New HashSet(Of String)(StringComparer.OrdinalIgnoreCase)
 
         For Each ctrlGroup As Control In PanelPassagers.Controls
 
@@ -349,15 +363,41 @@
 
                 Next
 
-                ' On insère seulement les passagers ajoutés, pas le client connecté
+                ' On prépare seulement les passagers ajoutés, pas le client connecté
                 If group.Text <> "Passager 1" Then
 
-                    DataAccess.InsertPassager(nom, prenom, dateNaissance, taille, poids)
+                    nom = nom.Trim()
+                    prenom = prenom.Trim()
+
+                    Dim clePassager As String = CreerClePassager(nom, prenom, dateNaissance)
+
+                    If passagersVus.Contains(clePassager) Then
+                        MessageBox.Show("Ce passager est déjà saisi dans la réservation : " & prenom & " " & nom & ".")
+                        Return False
+                    End If
+
+                    If DataAccess.PassagerExiste(nom, prenom, dateNaissance) Then
+                        MessageBox.Show("Ce passager existe déjà : " & prenom & " " & nom & ".")
+                        Return False
+                    End If
+
+                    passagersVus.Add(clePassager)
+                    passagersAInserer.Add(New PassagerSaisi With {
+                        .Nom = nom,
+                        .Prenom = prenom,
+                        .DateNaissance = dateNaissance,
+                        .Taille = taille,
+                        .Poids = poids
+                    })
 
                 End If
 
             End If
 
+        Next
+
+        For Each passager As PassagerSaisi In passagersAInserer
+            DataAccess.InsertPassager(passager.Nom, passager.Prenom, passager.DateNaissance, passager.Taille, passager.Poids)
         Next
 
         Return True

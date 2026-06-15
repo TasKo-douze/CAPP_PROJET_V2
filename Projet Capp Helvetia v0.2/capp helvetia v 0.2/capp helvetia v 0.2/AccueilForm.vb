@@ -7,7 +7,7 @@
 
     Private Sub btnHistoriques_Click(sender As Object, e As EventArgs) Handles btnHistoriques.Click
         Historique.Show()
-        Me.Hide()
+
     End Sub
 
     Private Sub btnReserver_Click(sender As Object, e As EventArgs) Handles btnReserver.Click
