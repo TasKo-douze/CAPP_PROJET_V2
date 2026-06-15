@@ -1,6 +1,23 @@
 ﻿Module DataAccess
 
 
+    Public Function PassagerExiste(nom As String, prenom As String, dateNaissance As Date) As Boolean
+
+        Dim requete As String = "SELECT PASS_ID FROM HS_PASSAGERS
+                                WHERE UPPER(TRIM(PASS_NOM)) = UPPER(TRIM(:nom))
+                                AND UPPER(TRIM(PASS_PRENOM)) = UPPER(TRIM(:prenom))
+                                AND TRUNC(PASS_DATE_NAISSANCE) = TRUNC(:dateNaissance)"
+
+        Dim parametres As New Dictionary(Of String, Object)
+
+        parametres.Add("nom", nom)
+        parametres.Add("prenom", prenom)
+        parametres.Add("dateNaissance", dateNaissance)
+
+        Return DatabaseHelper.ExecuteQuery(requete, parametres).Count > 0
+
+    End Function
+
     Public Sub InsertPassager(nom As String, prenom As String, dateNaissance As Date, taille As Integer, poids As Integer)
 
         Dim requete As String = "INSERT INTO HS_PASSAGERS(PASS_ID,PASS_TAILLE,PASS_POIDS, PASS_DATE_NAISSANCE,PASS_NOM,PASS_PRENOM)
@@ -21,9 +38,15 @@
     Public Sub InsertReservation(villeDepart As String, villeArrivee As String, dateReservation As Date, nbPassagers As Integer, prixTotal As Double)
 
         Dim requete As String = "INSERT INTO HS_RESERVATION(RES_ID, VIL_ID_DE, VIL_ID_POUR, CLI_RES_ID, RES_DATE_RESERVATION,RES_DUREEESTIME, RES_ACCOMPTE, RES_STATUT, RES_NOMBRE_PASSAGERS_ESTIME)
-                                VALUES(SEQ_RES_ID.NEXTVAL,(SELECT VIL_ID FROM HS_VILLE WHERE VIL_NOM = :villeDepart),
-                                                          (SELECT VIL_ID FROM HS_VILLE WHERE VIL_NOM = :villeArrivee),
-                                :clientId,:dateReservation,0,:acompte,'Payée',:nbPassagers)"
+                                VALUES(SEQ_RES_ID.NEXTVAL,
+                                      (SELECT VIL_ID FROM HS_VILLE WHERE VIL_NOM = :villeDepart),
+                                      (SELECT VIL_ID FROM HS_VILLE WHERE VIL_NOM = :villeArrivee),
+                                      :clientId,
+                                      :dateReservation,
+                                      0,
+                                      :acompte,
+                                      'Payée',
+                                      :nbPassagers)"
 
 
 

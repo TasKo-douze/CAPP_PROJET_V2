@@ -1,5 +1,6 @@
 ﻿Public Class Historique
 
+
     Private Sub Historique_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ChargerHistorique()
     End Sub
@@ -136,9 +137,5 @@
 
     End Sub
 
-    Private Sub btnRetour_Click(sender As Object, e As EventArgs) Handles btnRetour.Click
-        Dim form As New AccueilForm()
-        form.Show()
-        Close()
-    End Sub
+
 End Class

@@ -106,7 +106,7 @@ Partial Class AccueilForm
         Me.Controls.Add(Me.btnHistoriques)
         Me.Controls.Add(Me.pbxLogo)
         Me.Name = "AccueilForm"
-        Me.Text = "Form2"
+        Me.Text = "Accueil"
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

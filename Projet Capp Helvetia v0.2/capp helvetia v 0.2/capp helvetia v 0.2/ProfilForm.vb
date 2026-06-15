@@ -28,8 +28,8 @@
     End Sub
 
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
-        Dim affiche As New AccueilForm
-        affiche.Show()
+        AccueilForm.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnHistorique_Click(sender As Object, e As EventArgs) Handles btnHistorique.Click
