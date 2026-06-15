@@ -15,8 +15,8 @@
 
         cbmVilleDepart.Items.Clear()
 
-        For Each ville In lstVilles
-            cbmVilleDepart.Items.Add(ville("VIL_NOM"))
+        For Each ville As Dictionary(Of String, Object) In lstVilles
+            cbmVilleDepart.Items.Add(ville("VIL_NOM").ToString())
         Next
 
     End Sub
@@ -28,8 +28,8 @@
 
         cbmVilleArriver.Items.Clear()
 
-        For Each ville In lstVilles
-            cbmVilleArriver.Items.Add(ville("VIL_NOM"))
+        For Each ville As Dictionary(Of String, Object) In lstVilles
+            cbmVilleArriver.Items.Add(ville("VIL_NOM").ToString())
         Next
 
     End Sub

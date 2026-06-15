@@ -8,6 +8,9 @@
         numPoids.Value = ClientConnecte.Poids
         txtTelephone.Text = ClientConnecte.Telephone
         txtEmail.Text = ClientConnecte.Email
+        txtNumero.Text = ClientConnecte.Numero.ToString()
+        txtAdresse.Text = ClientConnecte.Rue
+        txtVille.Text = ClientConnecte.Ville
     End Sub
 
 

@@ -23,5 +23,17 @@
         affiche.Show()
     End Sub
 
+    Private Sub ProfilForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
+        Dim affiche As New AccueilForm
+        affiche.Show()
+    End Sub
+
+    Private Sub btnHistorique_Click(sender As Object, e As EventArgs) Handles btnHistorique.Click
+        Dim affiche As New Historique
+        affiche.Show()
+    End Sub
 End Class
