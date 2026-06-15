@@ -15,6 +15,7 @@
 
     Public Sub RecupererClient(email As String, motdepasse As String)
         Dim requete As String =
+<<<<<<< HEAD
         "SELECT c.CLI_ID, c.CLI_NOM, c.CLI_PRENOM, c.CLI_EMAIL, c.CLI_TEL,
         c.CLI_TAILLE, c.CLI_POIDS, c.CLI_DATE_NAISSANCE,
         a.ADR_RUE, a.ADR_NUM, a.ADR_VILLE
@@ -23,6 +24,14 @@
         WHERE c.CLI_EMAIL = :email
         AND c.CLI_MOTS_DE_PASSE = :motdepasse"
 
+=======
+"SELECT *
+FROM HS_CLIENT cli
+JOIN HS_ADRESSE adr
+ON cli.CLI_ADR_ID = adr.ADR_ID
+WHERE cli.CLI_EMAIL = :email
+AND cli.CLI_MOTS_DE_PASSE = :motdepasse"
+>>>>>>> 8c4b798eccd10f66c2f1306b4dca2e8c64a46bfb
         Dim parametres As New Dictionary(Of String, Object)
         parametres.Add("email", email)
         parametres.Add("motdepasse", motdepasse)

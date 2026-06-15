@@ -166,24 +166,34 @@
     End Sub
 
 
-    'samir'
+    'samir
     Public Function VerifierAncienMdp(email As String, ancienMdp As String) As Boolean
+
         Dim requete As String = "SELECT * FROM HS_CLIENT WHERE CLI_EMAIL = :email AND CLI_MOTS_DE_PASSE = :mdp"
+
         Dim parametres As New Dictionary(Of String, Object)
+
         parametres.Add("email", email)
         parametres.Add("mdp", ancienMdp)
+
         Dim result = DatabaseHelper.ExecuteQuery(requete, parametres)
+
         Return result.Count > 0
+
     End Function
 
-
-    'samir'
+    'samir
     Public Sub UpdateMotDePasse(email As String, nouveauMdp As String)
+
         Dim requete As String = "UPDATE HS_CLIENT SET CLI_MOTS_DE_PASSE = :mdp WHERE CLI_EMAIL = :email"
+
         Dim parametres As New Dictionary(Of String, Object)
+
         parametres.Add("mdp", nouveauMdp)
         parametres.Add("email", email)
+
         DatabaseHelper.ExecuteNonQuery(requete, parametres)
+
     End Sub
 
 End Module
