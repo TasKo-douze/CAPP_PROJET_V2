@@ -1,21 +1,10 @@
 ﻿Imports System.Drawing.Drawing2D
 
 Public Class AccueilForm
-    Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub AccueilForm_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
 
+        DessinerDegrade(Me, e)
 
-        Me.BackColor = Color.White
-    End Sub
-
-
-    'procédure pour crée le dégradé de couleur 
-    Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
-        Dim brush As New LinearGradientBrush(Me.ClientRectangle,
-                                        Color.LightCoral,   ' rouge clair
-                                        Color.SlateGray,    ' bleu gris
-                                        LinearGradientMode.Vertical)
-
-        e.Graphics.FillRectangle(brush, Me.ClientRectangle)
     End Sub
 
     Private Sub btnHistoriques_Click(sender As Object, e As EventArgs) Handles btnHistoriques.Click
