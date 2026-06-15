@@ -1,7 +1,4 @@
-﻿Imports System.Drawing.Drawing2D
-Imports System.Text.RegularExpressions
-
-Public Class Inscription1
+﻿Public Class Inscription1
 
     Private Sub Inscription1Form_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
 

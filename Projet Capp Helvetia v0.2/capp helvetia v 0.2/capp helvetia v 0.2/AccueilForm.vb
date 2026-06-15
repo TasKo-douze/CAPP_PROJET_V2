@@ -1,6 +1,4 @@
-﻿Imports System.Drawing.Drawing2D
-
-Public Class AccueilForm
+﻿Public Class AccueilForm
     Private Sub AccueilForm_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
 
         DessinerDegrade(Me, e)

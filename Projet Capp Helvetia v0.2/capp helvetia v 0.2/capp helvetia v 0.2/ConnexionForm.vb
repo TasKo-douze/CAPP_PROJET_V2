@@ -1,7 +1,4 @@
-﻿Imports System.Drawing.Drawing2D
-Imports System.Runtime.Remoting.Services
-
-Public Class ConnexionForm
+﻿Public Class ConnexionForm
 
     Private Sub ConnexionForm_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
 
