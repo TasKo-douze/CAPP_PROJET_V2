@@ -376,19 +376,17 @@
                         Return False
                     End If
 
-                    If DataAccess.PassagerExiste(nom, prenom, dateNaissance) Then
-                        MessageBox.Show("Ce passager existe déjà : " & prenom & " " & nom & ".")
-                        Return False
-                    End If
-
                     passagersVus.Add(clePassager)
-                    passagersAInserer.Add(New PassagerSaisi With {
-                        .Nom = nom,
-                        .Prenom = prenom,
-                        .DateNaissance = dateNaissance,
-                        .Taille = taille,
-                        .Poids = poids
-                    })
+
+                    If Not DataAccess.PassagerExiste(nom, prenom, dateNaissance) Then
+                        passagersAInserer.Add(New PassagerSaisi With {
+                            .Nom = nom,
+                            .Prenom = prenom,
+                            .DateNaissance = dateNaissance,
+                            .Taille = taille,
+                            .Poids = poids
+                        })
+                    End If
 
                 End If
 
