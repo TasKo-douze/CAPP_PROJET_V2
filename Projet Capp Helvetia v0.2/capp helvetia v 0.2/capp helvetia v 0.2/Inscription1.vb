@@ -28,6 +28,14 @@
         InitTextBox(txtbVille, placeholderVille)
         InitTextBox(txtbNumero, placeholderNumero)
 
+
+        mtxtbTelephone.Mask = "+41.00.000.00.00"
+        mtxtbTelephone.PromptChar = " "c
+        mtxtbTelephone.HidePromptOnLeave = True
+
+        dtpDateNaissance.Format = DateTimePickerFormat.Custom
+        dtpDateNaissance.CustomFormat = "dd.MM.yyyy"
+
     End Sub
 
     Private Sub InitTextBox(tb As TextBox, placeholder As String)
@@ -232,9 +240,7 @@
 
     End Sub
 
-    Private Sub pnlInscription_Paint(sender As Object, e As PaintEventArgs) Handles pnlInscription.Paint
 
-    End Sub
 End Class
 
 

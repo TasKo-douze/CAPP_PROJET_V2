@@ -92,7 +92,7 @@ Partial Class ProfilForm
         Me.btnMenu.Name = "btnMenu"
         Me.btnMenu.Size = New System.Drawing.Size(51, 26)
         Me.btnMenu.TabIndex = 8
-        Me.btnMenu.Text = "Menu"
+        Me.btnMenu.Text = "Accueil"
         Me.btnMenu.UseVisualStyleBackColor = True
         '
         'btnSecurite

@@ -132,7 +132,7 @@ Partial Class ConnexionForm
         Me.Controls.Add(Me.txtbEmail)
         Me.Controls.Add(Me.lblConnexion)
         Me.Name = "ConnexionForm"
-        Me.Text = "ConnexionForm"
+        Me.Text = "Connexion"
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

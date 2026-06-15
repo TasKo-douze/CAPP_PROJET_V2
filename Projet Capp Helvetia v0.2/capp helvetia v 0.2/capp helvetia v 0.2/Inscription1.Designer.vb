@@ -382,7 +382,7 @@ Partial Class Inscription1
         Me.ClientSize = New System.Drawing.Size(410, 456)
         Me.Controls.Add(Me.pnlInscription)
         Me.Name = "Inscription1"
-        Me.Text = "Form1"
+        Me.Text = "Inscription"
         Me.pnlInscription.ResumeLayout(False)
         Me.pnlInscription.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

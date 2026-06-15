@@ -40,15 +40,18 @@
         Dim email As String = txtbEmail.Text.Trim()
         Dim motdepasse As String = txtbMDP.Text.Trim()
 
+        ClientConnecte.RecupererClient(email, motdepasse)
 
-        RecupererClient(email, motdepasse)
+        If ClientConnecte.EstConnecte Then
 
+            AccueilForm.Show()
+            Me.Hide()
 
-        AccueilForm.Show()
-        Me.Hide()
+        Else
 
+            MessageBox.Show("Erreur identifiants", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
-
+        End If
 
     End Sub
 
