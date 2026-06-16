@@ -141,6 +141,7 @@ Partial Class InformationsPersonnellesForm
         '
         'numTaille
         '
+        Me.numTaille.Enabled = False
         Me.numTaille.Location = New System.Drawing.Point(118, 171)
         Me.numTaille.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
         Me.numTaille.Name = "numTaille"
@@ -150,6 +151,7 @@ Partial Class InformationsPersonnellesForm
         '
         'numPoids
         '
+        Me.numPoids.Enabled = False
         Me.numPoids.Location = New System.Drawing.Point(118, 222)
         Me.numPoids.Name = "numPoids"
         Me.numPoids.ReadOnly = True
@@ -208,6 +210,7 @@ Partial Class InformationsPersonnellesForm
         '
         'txtDateNaissance
         '
+        Me.txtDateNaissance.Enabled = False
         Me.txtDateNaissance.Location = New System.Drawing.Point(118, 114)
         Me.txtDateNaissance.Name = "txtDateNaissance"
         Me.txtDateNaissance.ReadOnly = True
@@ -225,6 +228,7 @@ Partial Class InformationsPersonnellesForm
         '
         'txtPrenom
         '
+        Me.txtPrenom.Enabled = False
         Me.txtPrenom.Location = New System.Drawing.Point(118, 74)
         Me.txtPrenom.Name = "txtPrenom"
         Me.txtPrenom.ReadOnly = True
@@ -233,6 +237,7 @@ Partial Class InformationsPersonnellesForm
         '
         'txtNom
         '
+        Me.txtNom.Enabled = False
         Me.txtNom.Location = New System.Drawing.Point(118, 35)
         Me.txtNom.Name = "txtNom"
         Me.txtNom.ReadOnly = True
