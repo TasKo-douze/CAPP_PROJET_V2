@@ -39,6 +39,8 @@ Partial Class Historique
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.pnlHistorique)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Historique"
         Me.Text = "Historique"
         Me.ResumeLayout(False)

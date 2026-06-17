@@ -53,6 +53,10 @@
 
     End Sub
 
+
+    ''' <summary>
+    ''' genère dynamiquement les groupes de champs pour chaque passager en fonction du nombre de passagers saisi dans la page précédente
+    ''' </summary>
     Private Sub GenererPassagers()
 
         Dim yPosition As Integer = 10
@@ -71,7 +75,6 @@
             Dim yInside As Integer = 30
 
             If i = 1 Then
-                '  Passager connecté
                 AjouterLabel(group, "Nom :", ClientNom, yInside)
                 AjouterLabel(group, "Prénom :", ClientPrenom, yInside)
                 AjouterLabel(group, "Date naissance :", ClientDateNaissance.ToShortDateString(), yInside)
@@ -81,7 +84,6 @@
                 AjouterChoixBagage(group, yInside)
 
             Else
-                '  Autres passagers
                 AjouterTextBox(group, "Nom :", yInside)
                 AjouterTextBox(group, "Prénom :", yInside)
                 AjouterDatePicker(group, "Date naissance :", yInside)
@@ -152,13 +154,10 @@
         dtp.Location = New Point(200, y)
         dtp.Width = 200
 
-        ' Format date
         dtp.Format = DateTimePickerFormat.Short
 
-        ' Date maximum = aujourd’hui - 16 ans
         dtp.MaxDate = Date.Today.AddYears(-16)
 
-        ' Valeur affichée par défaut
         dtp.Value = Date.Today.AddYears(-16)
 
         parent.Controls.Add(lbl)
@@ -169,14 +168,12 @@
 
     Private Sub AjouterChoixBagage(parent As Control, ByRef y As Integer)
 
-        ' Label
         Dim lbl As New Label()
         lbl.Text = "Bagage :"
         lbl.Font = New Font("Arial", 12)
         lbl.Location = New Point(10, y)
         lbl.AutoSize = True
 
-        ' ComboBox Oui / Non
         Dim cb As New ComboBox()
         cb.Location = New Point(200, y)
         cb.Width = 100
@@ -184,11 +181,8 @@
         cb.Items.Add("Oui")
         cb.Items.Add("Non")
 
-        ' Empêche de taper du texte
-        ' choix uniquement via la liste déroulante
         cb.DropDownStyle = ComboBoxStyle.DropDownList
 
-        ' TextBox poids bagage
         Dim txtPoids As New TextBox()
         txtPoids.Location = New Point(320, y)
         txtPoids.Width = 80
@@ -196,8 +190,6 @@
 
         txtPoids.Tag = "Bagage"
 
-        ' Quand on change Oui/Non
-        ' uand le ComboBox change, exécute ce code
         AddHandler cb.SelectedIndexChanged,
     Sub()
 
@@ -408,7 +400,7 @@
 
         If ValidationDonnees() Then
 
-            MessageBox.Show("Passagers enregistrés avec succès.")
+            MessageBox.Show("Enregistrés avec succès.")
 
             Dim form As New RecapitulatifForm()
 

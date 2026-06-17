@@ -74,40 +74,15 @@
             AjouterLabel(group, "Départ :", reservation("VILLE_DEPART").ToString(), yInside)
             AjouterLabel(group, "Arrivée :", reservation("VILLE_ARRIVEE").ToString(), yInside)
 
-            AjouterLabel(
-            group,
-            "Date réservation :",
-            Convert.ToDateTime(reservation("RES_DATE_RESERVATION")).ToShortDateString(),
-            yInside
-        )
+            AjouterLabel(group, "Date réservation :", Convert.ToDateTime(reservation("RES_DATE_RESERVATION")).ToShortDateString(), yInside)
 
-            AjouterLabel(
-            group,
-            "Nombre passagers :",
-            reservation("RES_NOMBRE_PASSAGERS_ESTIME").ToString(),
-            yInside
-        )
+            AjouterLabel(group, "Nombre passagers :", reservation("RES_NOMBRE_PASSAGERS_ESTIME").ToString(), yInside)
 
-            AjouterLabel(
-            group,
-            "Durée estimée :",
-            reservation("RES_DUREEESTIME").ToString() & " min",
-            yInside
-        )
+            AjouterLabel(group, "Durée estimée :", reservation("RES_DUREEESTIME").ToString() & " min", yInside)
 
-            AjouterLabel(
-            group,
-            "Statut :",
-            reservation("RES_STATUT").ToString(),
-            yInside
-        )
+            AjouterLabel(group, "Statut :", reservation("RES_STATUT").ToString(), yInside)
 
-            AjouterLabel(
-            group,
-            "Montant payé :",
-            reservation("RES_ACCOMPTE").ToString() & " CHF",
-            yInside
-        )
+            AjouterLabel(group, "Montant payé :", reservation("RES_ACCOMPTE").ToString() & " CHF", yInside)
 
             yPosition += 280
 

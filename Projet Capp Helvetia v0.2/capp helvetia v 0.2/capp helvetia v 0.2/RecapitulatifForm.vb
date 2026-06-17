@@ -1,6 +1,5 @@
 ﻿Public Class RecapitulatifForm
 
-    ' Informations réservation
 
     Public VilleDepart As String
     Public VilleArrivee As String
@@ -8,7 +7,6 @@
     Public NbPassagers As Integer
     Public NbBagages As Integer
 
-    ' Informations client
 
     Public ClientNom As String
     Public ClientPrenom As String
@@ -18,7 +16,6 @@
     Public ClientTaille As Integer
 
 
-    ' Prix
     Private PRIXPARPASSAGER As Double = 150
     Public PrixBase As Double
     Public SupplementBagages As Double
@@ -41,6 +38,11 @@
         txtTaille.Text = ClientTaille & " cm"
         ChargerReservation()
     End Sub
+
+    ''' <summary>
+    ''' recupère les informations de la réservation et les enregistre dans la base de données
+    ''' </summary>
+
     Private Sub btnReserver_Click(sender As Object, e As EventArgs) Handles btnReserver.Click
 
 
@@ -62,10 +64,11 @@
     End Sub
 
 
-
+    ''' <summary>
+    ''' affiche les informations de la réservation dans les champs correspondants du formulaire
+    ''' </summary>
     Private Sub ChargerReservation()
 
-        ' Affichage réservation
 
         txtDepart.Text = VilleDepart
         txtArriver.Text = VilleArrivee
@@ -76,7 +79,6 @@
 
         txtNbBagage.Text = NbBagages.ToString()
 
-        ' Prix : 150 CHF par passager
         PrixBase = NbPassagers * PRIXPARPASSAGER
 
         PrixTotal = PrixBase + SupplementBagages
@@ -86,7 +88,6 @@
     End Sub
 
     Private Sub btnRetour_Click(sender As Object, e As EventArgs) Handles btnRetour.Click
-        'bouton pour revenir à la page précédente (DetailsPassagerForm)
         Dim form As New DetailsPassagerForm()
         form.VilleDepart = VilleDepart
         form.VilleArrivee = VilleArrivee

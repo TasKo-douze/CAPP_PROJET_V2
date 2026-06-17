@@ -442,8 +442,10 @@ Partial Class RecapitulatifForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.pnlRecapitulatif)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "RecapitulatifForm"
-        Me.Text = "RecapitulatifForm"
+        Me.Text = "Récapitulatif"
         Me.pnlRecapitulatif.ResumeLayout(False)
         Me.grbRecap.ResumeLayout(False)
         Me.grbRecap.PerformLayout()
