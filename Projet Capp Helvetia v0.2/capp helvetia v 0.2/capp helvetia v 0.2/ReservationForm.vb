@@ -5,10 +5,10 @@
         ChargerVillesDepart()
         ChargerVillesArrivee()
 
-        ' Empêche la sélection d'une date inférieure à aujourd'hui + 48h
+
         dtpDateDepart.MinDate = Date.Today.AddDays(2)
 
-        ' Sélectionne automatiquement aujourd'hui + 48h
+
         dtpDateDepart.Value = Date.Today.AddDays(2)
 
     End Sub
@@ -39,7 +39,7 @@
 
     Private Sub dtpDateDepart_ValueChanged(sender As Object, e As EventArgs) Handles dtpDateDepart.ValueChanged
 
-        ' Vérifie si la date choisie est à moins de 48h
+
         If dtpDateDepart.Value.Date < Date.Today.AddDays(2) Then
 
             MessageBox.Show("La réservation doit être effectuée au minimum 48h avant le trajet.")
@@ -52,7 +52,7 @@
 
     Private Sub cbmVilleDepart_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbmVilleDepart.SelectedIndexChanged
 
-        ' Vérifie si la ville de départ est la même que la ville d'arrivée
+
         If cbmVilleDepart.Text = cbmVilleArriver.Text And cbmVilleDepart.Text <> "" Then
 
             MessageBox.Show("La ville de départ et la ville d'arrivée doivent être différentes.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -65,7 +65,6 @@
 
     Private Sub cbmVilleArriver_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbmVilleArriver.SelectedIndexChanged
 
-        ' Vérifie si la ville d'arrivée est la même que la ville de départ
         If cbmVilleArriver.Text = cbmVilleDepart.Text And cbmVilleArriver.Text <> "" Then
 
             MessageBox.Show("La ville de départ et la ville d'arrivée doivent être différentes.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)

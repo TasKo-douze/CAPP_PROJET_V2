@@ -14,7 +14,7 @@
 
     Private Sub CheckForm()
 
-        ' Active le bouton seulement si les 3 champs sont remplis
+
         If txtOldMdp.Text <> "" And txtNewMdp.Text <> "" And txtValidationMdp.Text <> "" Then
             btnValider.Enabled = True
         Else
@@ -30,7 +30,7 @@
         Dim aMin As Boolean = False
         Dim aChiffre As Boolean = False
 
-        ' Vérifie la composition du nouveau mot de passe
+
         For Each c As Char In mdp
             If Char.IsUpper(c) Then aMaj = True
             If Char.IsLower(c) Then aMin = True
@@ -42,13 +42,13 @@
             Exit Sub
         End If
 
-        ' Vérifie que les deux nouveaux mots de passe sont identiques
+
         If txtNewMdp.Text <> txtValidationMdp.Text Then
             MessageBox.Show("Les mots de passe ne correspondent pas.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
-        ' Vérifie l'ancien mot de passe
+
         Dim ok As Boolean = DataAccess.VerifierAncienMdp(ConnexionForm.txtbEmail.Text, txtOldMdp.Text)
 
         If Not ok Then
@@ -56,7 +56,7 @@
             Exit Sub
         End If
 
-        ' Met à jour le mot de passe dans la base
+
         DataAccess.UpdateMotDePasse(ConnexionForm.txtbEmail.Text, txtNewMdp.Text)
 
         MessageBox.Show("Le mot de passe a été modifié avec succès.", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information)
