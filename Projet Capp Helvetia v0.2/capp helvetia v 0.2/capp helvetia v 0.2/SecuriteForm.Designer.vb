@@ -140,6 +140,7 @@ Partial Class SecuriteForm
         Me.Controls.Add(Me.btnValider)
         Me.Controls.Add(Me.grpNewMdp)
         Me.Controls.Add(Me.grpAncienMdp)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "SecuriteForm"
         Me.Text = "Sécurité"
         Me.grpAncienMdp.ResumeLayout(False)

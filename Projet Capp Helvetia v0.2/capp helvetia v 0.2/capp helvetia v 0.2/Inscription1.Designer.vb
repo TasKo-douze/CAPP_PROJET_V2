@@ -381,6 +381,7 @@ Partial Class Inscription1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(410, 456)
         Me.Controls.Add(Me.pnlInscription)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "Inscription1"
         Me.Text = "Inscription"
         Me.pnlInscription.ResumeLayout(False)

@@ -21,6 +21,10 @@
     Public SupplementBagages As Double
     Public PrixTotal As Double
 
+    ''' <summary>
+    ''' charge les informations de la réservation dans le formulaire lors du chargement de celui-ci
+    ''' </summary>
+
     Private Sub RecapitulatifForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtDepart.Text = VilleDepart
         txtArriver.Text = VilleArrivee
@@ -51,7 +55,6 @@
         Try
             DataAccess.InsertReservation(VilleDepart, VilleArrivee, DateReservation, NbPassagers, PrixTotal)
 
-            ' Message indiquant la réussite de la réservation et du paiement
             MessageBox.Show("La réservation a été effectuée et le paiement a été effectué avec succès.", "Réservation", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Close()
             AccueilForm.Show()

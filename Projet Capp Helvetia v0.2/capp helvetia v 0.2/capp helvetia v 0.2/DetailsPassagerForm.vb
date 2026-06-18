@@ -1,6 +1,5 @@
 ﻿Public Class DetailsPassagerForm
 
-    ' pour rappele yInseder = position verticale dans le groupbox
 
     Public NbPassagers As Integer
 
@@ -11,7 +10,6 @@
     Public VilleArrivee As String
     Public DateReservation As Date
 
-    ' Variables globales pour stocker les données du client
     Private ClientNom As String
     Private ClientPrenom As String
     Private ClientDateNaissance As Date
@@ -38,6 +36,10 @@
         GenererPassagers()
     End Sub
 
+
+    ''' <summary>
+    ''' charge les informations du client connecté dans les variables globales
+    ''' </summary>
     Private Sub ChargerClient()
 
         If ClientConnecte.EstConnecte = False Then
@@ -100,6 +102,11 @@
 
     End Sub
 
+    ''' <summary>
+    ''' ajoute un label pour le titre et un label pour la valeur dans le parent spécifié, et met à jour la position verticale y pour le prochain contrôle.
+    ''' </summary>
+
+
     Private Sub AjouterLabel(parent As Control, titre As String, valeur As String, ByRef y As Integer)
 
         Dim lblTitre As New Label()
@@ -119,6 +126,11 @@
 
         y += 30
     End Sub
+
+    ''' <summary>
+    ''' ajoute un TextBox pour la saisie d'informations pour chaque passager, avec un label correspondant. La position verticale y est mise à jour pour le prochain contrôle.
+    ''' </summary>
+
 
     Private Sub AjouterTextBox(parent As Control, titre As String, ByRef y As Integer)
 
@@ -140,6 +152,11 @@
 
         y += 30
     End Sub
+
+    ''' <summary>
+    ''' ajoute un DateTimePicker pour la date de naissance du passager, avec une limite maximale de date pour s'assurer que le passager a au moins 16 ans.
+    ''' </summary>
+
 
     Private Sub AjouterDatePicker(parent As Control, titre As String, ByRef y As Integer)
 
@@ -165,6 +182,13 @@
 
         y += 30
     End Sub
+
+
+    ''' <summary>
+    ''' ajoute un choix de bagage pour chaque passager, avec une option "Oui" ou "Non". Si "Oui" est sélectionné, un champ de saisie pour le poids du bagage apparaît.
+    ''' </summary>
+
+
 
     Private Sub AjouterChoixBagage(parent As Control, ByRef y As Integer)
 
@@ -214,6 +238,13 @@
 
     End Sub
 
+    ''' <summary>
+    ''' 
+    ''' analyse les données saisies pour chaque passager, vérifie la validité des informations, et enregistre les passagers dans la base de données si nécessaire. 
+    ''' Retourne True si toutes les données sont valides, sinon retourne False.
+    ''' 
+    ''' </summary>
+
     Private Function ValidationDonnees() As Boolean
 
         NbBagagesTotal = 0
@@ -241,7 +272,6 @@
                         Dim txt As TextBox = DirectCast(ctrl, TextBox)
                         Dim tag As String = If(txt.Tag Is Nothing, "", txt.Tag.ToString())
 
-                        ' Gestion des bagages
                         If tag = "Bagage" Then
 
                             If txt.Visible Then
@@ -265,14 +295,9 @@
 
                                 If bagage > 25 Then
 
-                                    MessageBox.Show(
-                                    "Bagage supérieur à 25 kg. Supplément de 40 CHF.",
-                                    "Supplément bagage",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Warning
-                                )
+                                    MessageBox.Show("Bagage supérieur à 25 kg. Supplément de 40 CHF.", "Supplément bagage", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
-                                    SupBagage += 40
+                                    SupBagage += 20
 
                                 End If
 
@@ -280,7 +305,6 @@
 
                         Else
 
-                            ' On vérifie les champs seulement pour les passagers ajoutés
                             If group.Text <> "Passager 1" Then
 
                                 If String.IsNullOrWhiteSpace(txt.Text) Then
@@ -331,23 +355,13 @@
 
                         If age < 16 Then
 
-                            MessageBox.Show(
-                            "Le passager doit avoir au minimum 16 ans.",
-                            "Âge invalide",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error
-                        )
+                            MessageBox.Show("Le passager doit avoir au minimum 16 ans.", "Âge invalide", MessageBoxButtons.OK, MessageBoxIcon.Error)
 
                             Return False
 
                         ElseIf age < 18 Then
 
-                            MessageBox.Show(
-                            "Le passager est mineur. Le client est responsable des personnes mineures.",
-                            "Passager mineur",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning
-                        )
+                            MessageBox.Show("Le passager est mineur. Le client est responsable des personnes mineures.", "Passager mineur", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
                         End If
 
@@ -355,7 +369,6 @@
 
                 Next
 
-                ' On prépare seulement les passagers ajoutés, pas le client connecté
                 If group.Text <> "Passager 1" Then
 
                     nom = nom.Trim()
@@ -394,23 +407,22 @@
 
     End Function
 
+    ''' <summary>
+    ''' Gère le clic sur le bouton "Continuer". Valide les données saisies pour chaque passager, affiche un message de succès, puis ouvre le formulaire de récapitulatif avec les informations pertinentes.
+    ''' </summary>
+
     Private Sub btnContinuer_Click(sender As Object, e As EventArgs) Handles btnContinuer.Click
-
-
-
         If ValidationDonnees() Then
 
             MessageBox.Show("Enregistrés avec succès.")
 
             Dim form As New RecapitulatifForm()
 
-            ' Réservation
             form.VilleDepart = VilleDepart
             form.VilleArrivee = VilleArrivee
             form.DateReservation = DateReservation
             form.NbPassagers = NbPassagers
 
-            ' Client
             form.ClientNom = ClientConnecte.Nom
             form.ClientPrenom = ClientConnecte.Prenom
             form.ClientEmail = ClientConnecte.Email
@@ -420,18 +432,15 @@
 
             form.NbBagages = NbBagagesTotal
 
-            ' Suppléments bagages
             form.SupplementBagages = SupBagage
 
             form.Show()
             Me.Close()
 
         End If
-
     End Sub
 
     Private Sub btnRetourDetails_Click(sender As Object, e As EventArgs) Handles btnRetourDetails.Click
-        'bouton pour retourner à la page de réservation
         Dim form As New ReservationForm()
         form.Show()
         Close()

@@ -67,6 +67,7 @@ Partial Class ConfidentialiteDonneesForm
         Me.Controls.Add(Me.txtMessageConfidentialite)
         Me.Controls.Add(Me.lblContenue)
         Me.Controls.Add(Me.lblTitreConf)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "ConfidentialiteDonneesForm"
         Me.Text = "Confidentialité "
         Me.ResumeLayout(False)

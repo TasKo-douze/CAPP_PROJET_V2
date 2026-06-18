@@ -189,6 +189,7 @@ Partial Class ReservationForm
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.pnlReservation)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ReservationForm"
         Me.Text = "Réservation"

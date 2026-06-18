@@ -131,6 +131,7 @@ Partial Class ConnexionForm
         Me.Controls.Add(Me.txtbMDP)
         Me.Controls.Add(Me.txtbEmail)
         Me.Controls.Add(Me.lblConnexion)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "ConnexionForm"
         Me.Text = "Connexion"
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()

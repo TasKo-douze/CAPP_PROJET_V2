@@ -27,5 +27,74 @@ capp helvetia v 0.2
   Recherche une ressource localisée de type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="M:capp_helvetia_v_0._2.DetailsPassagerForm.ChargerClient">
+ <summary>
+ charge les informations du client connecté dans les variables globales
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.DetailsPassagerForm.GenererPassagers">
+ <summary>
+ genère dynamiquement les groupes de champs pour chaque passager en fonction du nombre de passagers saisi dans la page précédente
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.DetailsPassagerForm.AjouterLabel(System.Windows.Forms.Control,System.String,System.String,System.Int32@)">
+ <summary>
+ ajoute un label pour le titre et un label pour la valeur dans le parent spécifié, et met à jour la position verticale y pour le prochain contrôle.
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.DetailsPassagerForm.AjouterTextBox(System.Windows.Forms.Control,System.String,System.Int32@)">
+ <summary>
+ ajoute un TextBox pour la saisie d'informations pour chaque passager, avec un label correspondant. La position verticale y est mise à jour pour le prochain contrôle.
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.DetailsPassagerForm.AjouterDatePicker(System.Windows.Forms.Control,System.String,System.Int32@)">
+ <summary>
+ ajoute un DateTimePicker pour la date de naissance du passager, avec une limite maximale de date pour s'assurer que le passager a au moins 16 ans.
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.DetailsPassagerForm.AjouterChoixBagage(System.Windows.Forms.Control,System.Int32@)">
+ <summary>
+ ajoute un choix de bagage pour chaque passager, avec une option "Oui" ou "Non". Si "Oui" est sélectionné, un champ de saisie pour le poids du bagage apparaît.
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.DetailsPassagerForm.ValidationDonnees">
+ <summary>
+ 
+ analyse les données saisies pour chaque passager, vérifie la validité des informations, et enregistre les passagers dans la base de données si nécessaire. 
+ Retourne True si toutes les données sont valides, sinon retourne False.
+ 
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.DetailsPassagerForm.btnContinuer_Click(System.Object,System.EventArgs)">
+ <summary>
+ Gère le clic sur le bouton "Continuer". Valide les données saisies pour chaque passager, affiche un message de succès, puis ouvre le formulaire de récapitulatif avec les informations pertinentes.
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.Historique.ChargerHistorique">
+ <summary>
+ Charge l'historique des réservations du client connecté et les affiche dans le panneau pnlHistorique. 
+ Si aucun client n'est connecté, un message approprié est affiché. Si le client n'a pas de réservations, un message indiquant qu'aucune réservation n'a été faite est affiché.
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.Historique.AjouterLabel(System.Windows.Forms.Control,System.String,System.String,System.Int32@)">
+ <summary>
+ Ajoute un label pour le titre et un label pour la valeur dans le parent spécifié, et met à jour la position verticale y pour le prochain contrôle.
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.RecapitulatifForm.RecapitulatifForm_Load(System.Object,System.EventArgs)">
+ <summary>
+ charge les informations de la réservation dans le formulaire lors du chargement de celui-ci
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.RecapitulatifForm.btnReserver_Click(System.Object,System.EventArgs)">
+ <summary>
+ recupère les informations de la réservation et les enregistre dans la base de données
+ </summary>
+</member>
+<member name="M:capp_helvetia_v_0._2.RecapitulatifForm.ChargerReservation">
+ <summary>
+ affiche les informations de la réservation dans les champs correspondants du formulaire
+ </summary>
+</member>
 </members>
 </doc>

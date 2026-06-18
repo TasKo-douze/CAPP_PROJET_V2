@@ -5,6 +5,11 @@
         ChargerHistorique()
     End Sub
 
+    ''' <summary>
+    ''' Charge l'historique des réservations du client connecté et les affiche dans le panneau pnlHistorique. 
+    ''' Si aucun client n'est connecté, un message approprié est affiché. Si le client n'a pas de réservations, un message indiquant qu'aucune réservation n'a été faite est affiché.
+    ''' </summary>
+
     Private Sub ChargerHistorique()
 
         pnlHistorique.Controls.Clear()
@@ -90,6 +95,10 @@
 
 
     End Sub
+
+    ''' <summary>
+    ''' Ajoute un label pour le titre et un label pour la valeur dans le parent spécifié, et met à jour la position verticale y pour le prochain contrôle.
+    ''' </summary>
 
     Private Sub AjouterLabel(parent As Control, titre As String, valeur As String, ByRef y As Integer)
 

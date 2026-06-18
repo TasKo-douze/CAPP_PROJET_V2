@@ -117,6 +117,7 @@ Partial Class ProfilForm
         Me.Controls.Add(Me.btnAPropos)
         Me.Controls.Add(Me.btnHistorique)
         Me.Controls.Add(Me.btnInformationsPersonnelles)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "ProfilForm"
         Me.Text = "Profil"
         CType(Me.BindingSource1, System.ComponentModel.ISupportInitialize).EndInit()

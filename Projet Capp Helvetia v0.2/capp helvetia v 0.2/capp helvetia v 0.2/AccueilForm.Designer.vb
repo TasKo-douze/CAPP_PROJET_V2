@@ -105,6 +105,7 @@ Partial Class AccueilForm
         Me.Controls.Add(Me.btnReserver)
         Me.Controls.Add(Me.btnHistoriques)
         Me.Controls.Add(Me.pbxLogo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "AccueilForm"
         Me.Text = "Accueil"
         CType(Me.pbxLogo, System.ComponentModel.ISupportInitialize).EndInit()

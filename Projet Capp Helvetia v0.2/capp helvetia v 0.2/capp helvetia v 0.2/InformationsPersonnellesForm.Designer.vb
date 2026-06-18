@@ -269,6 +269,7 @@ Partial Class InformationsPersonnellesForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 333)
         Me.Controls.Add(Me.grpInfosPerso)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "InformationsPersonnellesForm"
         Me.Text = "Informations personnelles"
         Me.grpInfosPerso.ResumeLayout(False)

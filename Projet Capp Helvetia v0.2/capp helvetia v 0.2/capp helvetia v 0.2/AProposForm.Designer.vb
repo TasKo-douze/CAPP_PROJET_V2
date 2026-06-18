@@ -59,6 +59,7 @@ Partial Class AProposForm
         Me.ClientSize = New System.Drawing.Size(345, 450)
         Me.Controls.Add(Me.txtAPropos)
         Me.Controls.Add(Me.lblTitre)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "AProposForm"
         Me.Text = "A propos"
         Me.ResumeLayout(False)
